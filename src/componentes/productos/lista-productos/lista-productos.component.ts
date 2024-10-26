@@ -19,7 +19,7 @@ export class ListaProductosComponent implements OnInit {
   constructor(private productosService: ProductoService) { }
 
   ngOnInit(): void {
-    this.mostrarLista();
+    
   }
 
   mostrarLista(){
@@ -35,21 +35,6 @@ export class ListaProductosComponent implements OnInit {
       }
     )
   }
-
-  agregarLista(prod: Producto){
-    this.productosService.postProductos(prod).subscribe(
-      {
-        next:() => {
-          this.mostrarLista();
-        },
-        error: (err) => {
-          console.log("Error",err);
-        }
-      }
-    )
-  }
-
-  
 
 
 }

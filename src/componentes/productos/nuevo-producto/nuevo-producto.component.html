@@ -1,17 +1,19 @@
 <section>
     <fieldset>
-        <form>
+        <form [formGroup] = "formulario" >
             <legend>Formulario de productos</legend>
             
             <label for="Producto">Producto: </label>
-            <input type = "text" placeholder="Escribe un producto..." [(ngModel)] = "producto.nombre" [ngModelOptions] = "{standalone: true}">
+            <input type = "text" placeholder="Escribe un producto..." formControlName = "nombre">
             <label for="Precio"> Precio: </label>
-            <input type = "number" placeholder="Escribe un precio..." [(ngModel)] = "producto.precio" [ngModelOptions] = "{standalone: true}">
+            <input type = "number" placeholder="Escribe un precio..." formControlName = "precio">
             <label for="Cantidad"> Cantidad: </label>
-            <input type = "number" placeholder="Escribe una cantidad..." [(ngModel)] = "producto.cantidad" [ngModelOptions] = "{standalone: true}">
+            <input type = "number" placeholder="Escribe una cantidad..." formControlName = "cantidad">
             <label for="Categoria"> Categoria: </label>
-            <input type = "text" placeholder="Escribe una categoria..." [(ngModel)] = "producto.categoria" [ngModelOptions] = "{standalone: true}">
+            <input type = "text" placeholder="Escribe una categoria..." formControlName = "categoria">
             <button (click) = "addProducto()" >Enviar formulario</button>
+
+            <select>Categoria</select>
         </form>
     </fieldset>
 </section>
