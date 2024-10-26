@@ -1,0 +1,19 @@
+<section>
+    <fieldset>
+        <form>
+            <legend>Formulario de productos</legend>
+            
+            <label for="Producto">Producto: </label>
+            <input type = "text" placeholder="Escribe un producto..." [(ngModel)] = "producto.nombre" [ngModelOptions] = "{standalone: true}">
+            <label for="Precio"> Precio: </label>
+            <input type = "number" placeholder="Escribe un precio..." [(ngModel)] = "producto.precio" [ngModelOptions] = "{standalone: true}">
+            <label for="Cantidad"> Cantidad: </label>
+            <input type = "number" placeholder="Escribe una cantidad..." [(ngModel)] = "producto.cantidad" [ngModelOptions] = "{standalone: true}">
+            <label for="Categoria"> Categoria: </label>
+            <input type = "text" placeholder="Escribe una categoria..." [(ngModel)] = "producto.categoria" [ngModelOptions] = "{standalone: true}">
+            <button (click) = "addProducto()" >Enviar formulario</button>
+        </form>
+    </fieldset>
+</section>
+
+
