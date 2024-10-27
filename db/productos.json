@@ -139,20 +139,6 @@
       "precio": 95.99,
       "categoria": "Calzado",
       "cantidad": 20
-    },
-    {
-      "id": "7788",
-      "nombre": "adasd",
-      "precio": 4,
-      "cantidad": 135,
-      "categoria": "adasd"
-    },
-    {
-      "id": "d688",
-      "nombre": "adasd",
-      "precio": 4,
-      "cantidad": 135,
-      "categoria": "adasd"
     }
   ]
 }

@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Output, inject } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { Component, EventEmitter, OnInit, Output, inject } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Producto } from '../../../interfaces/Producto.interface';
 import { ProductoService } from '../../../services/producto.service'; 
 import { CommonModule } from '@angular/common';
@@ -11,42 +11,56 @@ import { CommonModule } from '@angular/common';
   templateUrl: './nuevo-producto.component.html',
   styleUrl: './nuevo-producto.component.css'
 })
-export class NuevoProductoComponent {
+export class NuevoProductoComponent implements OnInit{
 
   constructor(private productosService: ProductoService) { }
 
   fb = inject(FormBuilder);
+  listaProductos: Producto[] = [];
+  categorias: string[] = [];
+
+  ngOnInit(): void {
+    this.getLista();
+  }
 
   formulario = this.fb.nonNullable.group(
     {
-      nombre: [''],
-      precio: [0],
-      cantidad: [0],
-      categoria: ['']
+      nombre: ['',[Validators.required]],
+      precio: [0,[Validators.required]],
+      cantidad: [0,[Validators.required]],
+      categoria: ['',[Validators.required]]
     }
-  )
-
-
-  productoSeleccionado: Producto | undefined;
-
-  @Output()
-  emitirProducto: EventEmitter<Producto> = new EventEmitter();
+  );
 
   addProducto(){
 
     if(this.formulario.invalid) return;
 
-    const tarea = this.formulario.getRawValue();
+    const prod = this.formulario.getRawValue();
+    console.log(prod);
 
-    this.agregarLista(tarea);
+    if(!this.validarNombreProducto(this.formulario.controls['nombre'].value)){
+      
+      this.agregarLista(prod);
+      
+      this.formulario.reset(
+        {
+        nombre: '',
+        precio: 0,
+        cantidad: 0,
+        categoria: ''
+        }
+      ) 
+    }else{
+      alert("Nombre existente");
+    }
 
-    this.emitirProducto.emit(tarea);
-
+   return false;
   }
 
-  agregarLista(tarea: Producto){
+  agregarLista(prod: Producto){
 
-    this.productosService.postProductos(tarea).subscribe(
+    this.productosService.postProductos(prod).subscribe(
       {
         next:() => {
           alert("Producto agregado exitosamente");
@@ -58,8 +72,31 @@ export class NuevoProductoComponent {
     )
   }
 
-  seleccionarProducto(tarea: Producto) :void{
-    this.emitirProducto.emit(this.productoSeleccionado);
+  // cargarCategorias(){
+
+  //   this.categorias = this.listaProductos.filter((a,b) => a.categoria !== b.categoria);
+
+  // }
+
+  getLista(){
+     this.productosService.getProductos().subscribe(
+      {
+        next:(prod) => {
+          this.listaProductos = prod;
+        },
+        error:(err) => {
+          console.log("Error",err);
+        }
+      }
+    )
   }
+
+  validarNombreProducto(nombre: string){
+
+    return this.listaProductos.find(prod => prod.nombre === nombre);
+    
+  }
+
+
 
 }
