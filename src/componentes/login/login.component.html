@@ -1,23 +1,24 @@
-<h1>Inicio de sesion</h1>
+
 <section>
     <form [formGroup] = "formulario" >
+        <p>INICIAR SESION</p>
                         
-        <label for="nombreUsuario">Nombre Usuario: </label>
+        <label for="nombreUsuario">Nombre de Usuario: </label>
         <input type = "text" placeholder="Nombre de usuario..." formControlName = "nombre">
 
         @if(formulario.controls['nombre'].getError('required')  && formulario.controls['nombre'].touched){
-            <div>
+            <p class="warn">
                 Campo requerido
-            </div>
+            </p>
         }   
 
-        <label for="contrasena"> Contrasena: </label>
-        <input type = "string" placeholder="Contrasena... " formControlName = "contrasena">
+        <label for="contrasena"> Contraseña: </label>
+        <input type = "string" placeholder="Contraseña... " formControlName = "contrasena">
 
         @if(formulario.controls['contrasena'].getError('required')  && formulario.controls['contrasena'].touched){
-            <div>
+            <p class="warn">
                 Campo requerido
-            </div>
+            </p>
         }  
 
         <button>Iniciar Sesion</button>
