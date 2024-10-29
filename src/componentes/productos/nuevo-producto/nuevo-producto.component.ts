@@ -38,7 +38,6 @@ export class NuevoProductoComponent implements OnInit{
     if(this.formulario.invalid) return;
 
     const prod = this.formulario.getRawValue();
-    console.log(prod);
 
     if(!this.validarNombreProducto(this.formulario.controls['nombre'].value)){
       
@@ -90,7 +89,7 @@ export class NuevoProductoComponent implements OnInit{
   validarNombreProducto(nombre: string){
 
     return this.listaProductos.find(prod => prod.nombre === nombre);
-    
+      
   }
 
   cargarCategorias(){
