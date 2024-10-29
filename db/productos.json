@@ -15,25 +15,11 @@
       "cantidad": 50
     },
     {
-      "id": "3",
-      "nombre": "Sudadera con Capucha",
-      "precio": 30.5,
-      "categoria": "Abrigos",
-      "cantidad": 75
-    },
-    {
       "id": "4",
       "nombre": "Chaqueta de Cuero",
       "precio": 120,
       "categoria": "Abrigos",
       "cantidad": 25
-    },
-    {
-      "id": "5",
-      "nombre": "Zapatos Deportivos",
-      "precio": 65.99,
-      "categoria": "Calzado",
-      "cantidad": 40
     },
     {
       "id": "6",
@@ -43,53 +29,11 @@
       "cantidad": 30
     },
     {
-      "id": "7",
-      "nombre": "Camiseta Deportiva",
-      "precio": 25.99,
-      "categoria": "Ropa Deportiva",
-      "cantidad": 90
-    },
-    {
-      "id": "8",
-      "nombre": "Chaqueta Impermeable",
-      "precio": 80,
-      "categoria": "Abrigos",
-      "cantidad": 60
-    },
-    {
-      "id": "9",
-      "nombre": "Gorra de Béisbol",
-      "precio": 10,
-      "categoria": "Accesorios",
-      "cantidad": 120
-    },
-    {
-      "id": "10",
-      "nombre": "Cinturón de Cuero",
-      "precio": 25,
-      "categoria": "Accesorios",
-      "cantidad": 80
-    },
-    {
-      "id": "11",
-      "nombre": "Pantalón de Vestir",
-      "precio": 50,
-      "categoria": "Pantalones",
-      "cantidad": 35
-    },
-    {
       "id": "12",
       "nombre": "Blusa Formal",
       "precio": 40,
       "categoria": "Ropa Formal",
       "cantidad": 45
-    },
-    {
-      "id": "13",
-      "nombre": "Zapatos de Tacón",
-      "precio": 75.99,
-      "categoria": "Calzado",
-      "cantidad": 25
     },
     {
       "id": "14",
@@ -139,13 +83,6 @@
       "precio": 95.99,
       "categoria": "Calzado",
       "cantidad": 20
-    },
-    {
-      "id": "de79",
-      "nombre": "vzcasac",
-      "precio": 1312,
-      "cantidad": 2300,
-      "categoria": ""
     }
   ]
 }

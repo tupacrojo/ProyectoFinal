@@ -20,6 +20,10 @@ export class ProductoService {
   postProductos(prod:Producto): Observable<Producto>{
     return this.http.post<Producto>(this.urlApi,prod);
   }
+
+  deleteProductos(id:number | undefined): Observable<Producto>{
+    return this.http.delete<Producto>(`${this.urlApi}/${id}`)
+  }
   
 }
 

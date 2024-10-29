@@ -3,11 +3,12 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Producto } from '../../../interfaces/Producto.interface';
 import { ProductoService } from '../../../services/producto.service'; 
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-nuevo-producto',
   standalone: true,
-  imports: [ReactiveFormsModule,CommonModule],
+  imports: [ReactiveFormsModule,CommonModule,RouterModule],
   templateUrl: './nuevo-producto.component.html',
   styleUrl: './nuevo-producto.component.css'
 })
