@@ -17,7 +17,7 @@ export class NuevoProductoComponent implements OnInit{
 
   fb = inject(FormBuilder);
   listaProductos: Producto[] = [];
-  categorias: string[] = [];
+  listaCategorias: string[] = [];
 
   ngOnInit(): void {
     this.getLista();
@@ -26,8 +26,8 @@ export class NuevoProductoComponent implements OnInit{
   formulario = this.fb.nonNullable.group(
     {
       nombre: ['',[Validators.required]],
-      precio: [0,[Validators.required]],
-      cantidad: [0,[Validators.required]],
+      precio: [null,[Validators.required]],
+      cantidad: [null,[Validators.required]],
       categoria: ['',[Validators.required]]
     }
   );
@@ -46,8 +46,8 @@ export class NuevoProductoComponent implements OnInit{
       this.formulario.reset(
         {
         nombre: '',
-        precio: 0,
-        cantidad: 0,
+        precio: null,
+        cantidad: null,
         categoria: ''
         }
       ) 
@@ -72,17 +72,12 @@ export class NuevoProductoComponent implements OnInit{
     )
   }
 
-  // cargarCategorias(){
-
-  //   this.categorias = this.listaProductos.filter((a,b) => a.categoria !== b.categoria);
-
-  // }
-
   getLista(){
      this.productosService.getProductos().subscribe(
       {
         next:(prod) => {
           this.listaProductos = prod;
+          this.cargarCategorias();
         },
         error:(err) => {
           console.log("Error",err);
@@ -97,6 +92,34 @@ export class NuevoProductoComponent implements OnInit{
     
   }
 
+  cargarCategorias(){
+    this.listaCategorias = Array.from([...new Set(this.listaProductos.map(prod => prod.categoria))]);
+  }
 
+  buscarCategoria(categoria:string){
+    return this.listaCategorias.some(cate => cate = categoria);
+  }
 
+  cargarDatoCaregorias(categoria:string){
+
+    if(this.buscarCategoria(categoria)){
+      this.listaCategorias.push(categoria);
+      this.habilitarCategoria();
+      alert("Se agrego correctamente");
+    }else{
+      alert("La categoria ya existe dentro de la base de datos");
+    }
+  }
+
+  deshabilitarCategoria() {
+    this.formulario.get('categoria')?.disable();
+  }
+
+  habilitarCategoria() {
+    this.formulario.get('categoria')?.enable();
+  }
+
+  estadoCategoria(){
+    return this.formulario.get('categoria')?.disabled;
+  }
 }

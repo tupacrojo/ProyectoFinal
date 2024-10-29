@@ -139,6 +139,13 @@
       "precio": 95.99,
       "categoria": "Calzado",
       "cantidad": 20
+    },
+    {
+      "id": "de79",
+      "nombre": "vzcasac",
+      "precio": 1312,
+      "cantidad": 2300,
+      "categoria": ""
     }
   ]
 }

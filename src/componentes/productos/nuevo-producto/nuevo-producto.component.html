@@ -31,11 +31,24 @@
             }
 
             <label for="categoria"> Categoria: </label>
-            <select formControlName = "categoria">
-                <option [ngValue]="null" disabled>Ingrese una categoria...</option>
-                <option *ngFor = "let producto of listaProductos" [ngValue] = "producto.categoria">{{producto.categoria}}</option>
 
+            <select formControlName = "categoria" >
+                <option [ngValue]="null" disabled>Ingrese una categoria...</option>
+                <option *ngFor = "let categoria of listaCategorias" [ngValue] = "categoria">{{categoria}}</option>
             </select>
+            
+            
+
+            <div>
+                <button type="button" (click)="deshabilitarCategoria()">Agregar categoria</button>
+                
+                <div *ngIf = "estadoCategoria()">
+                
+                    <input #categoriaInput type = "string" placeholder="Escribe una categoria nueva..." >
+                    <button type="button" (click)="habilitarCategoria()">Cancelar</button>
+                    <button type="button" (click)="cargarDatoCaregorias(categoriaInput.value)">Agregar</button>
+                </div>
+            </div>    
 
             @if(formulario.controls['categoria'].getError('required')  && formulario.controls['categoria'].touched){
                 <div>

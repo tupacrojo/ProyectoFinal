@@ -1,9 +1,9 @@
 export interface Producto {
     id?: number,
     nombre: string,
-    precio?: number, 
+    precio: number | null, 
     categoria: string,
-    cantidad?: number, 
+    cantidad: number | null, 
 };
 
 
