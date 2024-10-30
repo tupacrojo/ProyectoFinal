@@ -1,5 +1,4 @@
 <section>
-    <fieldset>
         <form [formGroup] = "formulario" >
             <legend>Formulario de productos</legend>
             
@@ -36,7 +35,11 @@
                 <option [ngValue]="null" disabled>Ingrese una categoria...</option>
                 <option *ngFor = "let categoria of listaCategorias" [ngValue] = "categoria">{{categoria}}</option>
             </select>
-            
+            @if(formulario.controls['categoria'].getError('required')  && formulario.controls['categoria'].touched){
+                <div>
+                    Campo requerido
+                </div>
+            }
             
 
             <div>
@@ -50,17 +53,11 @@
                 </div>
             </div>    
 
-            @if(formulario.controls['categoria'].getError('required')  && formulario.controls['categoria'].touched){
-                <div>
-                    Campo requerido
-                </div>
-            }
 
             <button (click) = "addProducto()" >Enviar formulario</button>
         </form>
-    </fieldset>
 
-    <button routerLink = "/ListaProductos">Lista Productos</button>
+    <button class="volverProductos" routerLink = "/ListaProductos">Lista Productos</button>
 
 </section>
 
