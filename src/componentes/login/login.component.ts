@@ -1,6 +1,6 @@
 import { Component,inject, OnInit } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { RouterModule ,Router} from '@angular/router';
 import { Usuario } from '../../interfaces/Usuario.interface';
 import { UsuarioService } from '../../services/usuario.service';
 import { CommonModule } from '@angular/common';
@@ -13,8 +13,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './login.component.css'
 })
 export class LoginComponent implements OnInit{
-  
-  constructor(private us: UsuarioService){}
+
+  constructor(private us: UsuarioService, private router: Router){}
   fb = inject(FormBuilder);
   listaUsuarios: Usuario[] = [];
   
@@ -50,16 +50,37 @@ export class LoginComponent implements OnInit{
 
     const {nombre, contrasena}  = this.formulario.getRawValue();
 
-    if(this.validarUsuarioYContrasena(nombre,contrasena)){
-      alert("Ingreso correctamente")
-    }else{
+    const usuario = this.validarUsuarioYContrasena(nombre,contrasena);
+
+    if(usuario){
+
+      alert("Ingreso correctamente");
+
+      switch (usuario.tipoUsuario) {
+        case 'administrador':
+          this.router.navigate(['/MenuAdministrador']);
+          break;
+        case 'supervisor':
+          this.router.navigate(['/MenuSupervisor']);
+          break;
+        case 'vendedor':
+          this.router.navigate(['/MenuVendedor']);
+          break;
+        case 'encargado':
+          this.router.navigate(['/MenuEncargado']);
+          break;
+        default:
+          console.log('Tipo de usuario no reconocido');
+      }
+
+    } else {
       alert("Usuario o contrasena incorrectos");
     }
   
   }
-
-  validarUsuarioYContrasena(nombre: string, contrasena: string): boolean {
-    return this.listaUsuarios.some(
+  
+  validarUsuarioYContrasena(nombre: string, contrasena: string): Usuario | undefined {
+    return this.listaUsuarios.find(
       usuario => usuario.nombreUsuario === nombre && usuario.contrasena === contrasena
     );
   }

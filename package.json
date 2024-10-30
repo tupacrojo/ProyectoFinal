@@ -7,8 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "backendProductos": "json-server ./db/productos.json --watch",
-    "backendUsuarios": "json-server ./db/usuarios.json --watch"
+    "backend": "json-server ./db/bdd.json --watch"
+
   },
   "private": true,
   "dependencies": {
