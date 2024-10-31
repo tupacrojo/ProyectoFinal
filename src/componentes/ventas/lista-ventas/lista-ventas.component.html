@@ -1,8 +1,20 @@
 <table>
     <thead>
         <tr>
-            <th>Fecha</th>
-            <th>Productos</th>
+            <th>Fecha </th>
+            <th>
+                Productos
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                </table>
+
+            </th>
             <th>Total</th>
         </tr>
     </thead>
@@ -14,17 +26,9 @@
             
             <td>
                 <table>
-                    <thead>
-                        <tr>
-                            <th>Nombre del producto</th>
-                            <th>Cantidad</th>
-                            <th>Precio unitario</th>
-                        </tr>
-                    </thead>
-
                     <tbody>
                         <tr *ngFor = "let producto of  venta.productos" class="productos-table">
-                            <td>{{producto.nombre}}</td>
+                            <td>{{producto.nombre}} </td>
                             <td>{{producto.cantidad}}</td>
                             <td>{{producto.precio}}</td>
                         </tr>
