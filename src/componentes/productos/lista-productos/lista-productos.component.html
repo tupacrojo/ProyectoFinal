@@ -1,11 +1,26 @@
-<ul>
-    <li *ngFor = "let producto of listaProductos" >
-        <a>
-            {{producto.nombre}} - Precio {{producto.precio}}    
-        </a>
-        <button (click) = "eliminarProducto(producto.id)">Eliminar</button> 
-        
-    </li>
-</ul>
+<table>
+    <thead>
+        <tr>
+            <th (click) = "ordenarPor('nombre')">Nombre</th>
+            <th (click) = "ordenarPor('precio')">Precio</th>
+            <th (click) = "ordenarPor('cantidad')">Stock</th>
+            <th (click) = "ordenarPor('categoria')">Categoria</th>
+        </tr>
+    </thead>
 
-<button routerLink = "/AgregarProducto"> buton </button>
+    <tbody>
+        @for (producto of listaProductos; track $index){
+            <tr>
+                <td>{{producto.nombre}}</td>
+                <td>{{producto.precio}}</td>
+                <td>{{producto.cantidad}}</td>
+                <td>{{producto.categoria}}</td>
+                <td><a (click) = "eliminarProducto(producto.id)">Eliminar</a></td>
+                <td><a>Modificar</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+
