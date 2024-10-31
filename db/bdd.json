@@ -117,7 +117,99 @@
             "contrasena": "An4M@rt1nez!",
             "tipoUsuario": "vendedor"
         }
-    ]
+    ],
+
+    "ventas":[
+    {
+      "id": "1",
+      "fecha": "2024-10-01",
+      "total": 75.98,
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "Camiseta Básica",
+          "precio": 15.99,
+          "cantidad": 2
+        },
+        {
+          "id": "14",
+          "nombre": "Sombrero de Paja",
+          "precio": 20,
+          "cantidad": 1
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "fecha": "2024-10-05",
+      "total": 158.99,
+      "productos": [
+        {
+          "id": "2",
+          "nombre": "Pantalón Jeans",
+          "precio": 45,
+          "cantidad": 1
+        },
+        {
+          "id": "17",
+          "nombre": "Pijama de Algodón",
+          "precio": 35,
+          "cantidad": 2
+        },
+        {
+          "id": "20",
+          "nombre": "Botas de Montaña",
+          "precio": 95.99,
+          "cantidad": 1
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "fecha": "2024-10-10",
+      "total": 189.99,
+      "productos": [
+        {
+          "id": "4",
+          "nombre": "Chaqueta de Cuero",
+          "precio": 120,
+          "cantidad": 1
+        },
+        {
+          "id": "6",
+          "nombre": "Falda de Cuero",
+          "precio": 55,
+          "cantidad": 1
+        },
+        {
+          "id": "12",
+          "nombre": "Blusa Formal",
+          "precio": 40,
+          "cantidad": 1
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "fecha": "2024-10-15",
+      "total": 89.99,
+      "productos": [
+        {
+          "id": "15",
+          "nombre": "Shorts Deportivos",
+          "precio": 18.99,
+          "cantidad": 2
+        },
+        {
+          "id": "19",
+          "nombre": "Chaleco Acolchado",
+          "precio": 70,
+          "cantidad": 1
+        }
+      ]
+    }
+  ]
+
 
 
 }

@@ -1,0 +1,60 @@
+table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+thead th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+
+/* Estilos para la subtabla de productos */
+.productos-table {
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+}
+
+.productos-table thead th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Colores de fondo alternados para las filas */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Resalta la fila de la tabla principal */
+.ventas-header {
+    background-color: #e3f2fd;
+    font-weight: bold;
+}
+
+/* Ajustes para ocupar todo el ancho de la pantalla */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Ajustes para hacer que el encabezado de la tabla principal se mantenga visible */
+thead th, .productos-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}

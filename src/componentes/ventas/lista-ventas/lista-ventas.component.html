@@ -1,1 +1,39 @@
-<p>lista-ventas works!</p>
+<table>
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Productos</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let venta of listaVentas" class="ventas-header">
+            
+            <td>{{ venta.fecha }}</td>
+            
+            <td>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre del producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio unitario</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor = "let producto of  venta.productos" class="productos-table">
+                            <td>{{producto.nombre}}</td>
+                            <td>{{producto.cantidad}}</td>
+                            <td>{{producto.precio}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+
+            <td>{{ venta.total }}</td>
+        </tr>
+    </tbody>
+
+</table>

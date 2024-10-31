@@ -67,11 +67,9 @@ export class ListaProductosComponent implements OnInit {
       const valorA = a[campo];
       const valorB = b[campo];
 
-      // Manejo de valores nulos
       if (valorA === null || valorA === undefined) return this.esAscendente ? 1 : -1;
       if (valorB === null || valorB === undefined) return this.esAscendente ? -1 : 1;
-
-      // Comparar valores no nulos
+      
       if (valorA < valorB) return this.esAscendente ? -1 : 1;
       if (valorA > valorB) return this.esAscendente ? 1 : -1;
       return 0;
