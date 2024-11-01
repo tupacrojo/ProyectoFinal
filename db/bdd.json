@@ -85,41 +85,39 @@
       "cantidad": 20
     }
   ],
-
-  "usuarios" :[
-        {
-            "id": "a1b2c3d4",
-            "nombreUsuario": "juan_perez",
-            "contrasena": "Ju4nP3r3z!",
-            "tipoUsuario": "administrador"
-        },
-        {
-            "id": "e5f6g7h8",
-            "nombreUsuario": "maria_gomez",
-            "contrasena": "M4ri4G0m3z#",
-            "tipoUsuario": "supervisor"
-        },
-        {
-            "id": "i9j0k1l2",
-            "nombreUsuario": "carlos_ortega",
-            "contrasena": "C@rl0sOrt3g4",
-            "tipoUsuario": "vendedor"
-        },
-        {
-            "id": "m3n4o5p6",
-            "nombreUsuario": "luis_rodriguez",
-            "contrasena": "Lui$R0drigu3z",
-            "tipoUsuario": "encargado"
-        },
-        {
-            "id": "q7r8s9t0",
-            "nombreUsuario": "ana_martinez",
-            "contrasena": "An4M@rt1nez!",
-            "tipoUsuario": "vendedor"
-        }
-    ],
-
-    "ventas":[
+  "usuarios": [
+    {
+      "id": "a1b2c3d4",
+      "nombreUsuario": "juan_perez",
+      "contrasena": "Ju4nP3r3z!",
+      "tipoUsuario": "administrador"
+    },
+    {
+      "id": "e5f6g7h8",
+      "nombreUsuario": "maria_gomez",
+      "contrasena": "M4ri4G0m3z#",
+      "tipoUsuario": "supervisor"
+    },
+    {
+      "id": "i9j0k1l2",
+      "nombreUsuario": "carlos_ortega",
+      "contrasena": "C@rl0sOrt3g4",
+      "tipoUsuario": "vendedor"
+    },
+    {
+      "id": "m3n4o5p6",
+      "nombreUsuario": "luis_rodriguez",
+      "contrasena": "Lui$R0drigu3z",
+      "tipoUsuario": "encargado"
+    },
+    {
+      "id": "q7r8s9t0",
+      "nombreUsuario": "ana_martinez",
+      "contrasena": "An4M@rt1nez!",
+      "tipoUsuario": "vendedor"
+    }
+  ],
+  "ventas": [
     {
       "id": "1",
       "fecha": "2024-10-01",
@@ -207,9 +205,34 @@
           "cantidad": 1
         }
       ]
+    },
+    {
+      "id": "b074",
+      "fecha": "31/10/2024",
+      "total": 632.25,
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "Camiseta Básica",
+          "precio": 15.99,
+          "categoria": "Ropa Casual",
+          "cantidad": 15
+        },
+        {
+          "id": "15",
+          "nombre": "Shorts Deportivos",
+          "precio": 18.99,
+          "categoria": "Ropa Deportiva",
+          "cantidad": 10
+        },
+        {
+          "id": "18",
+          "nombre": "Pantalón Cargo",
+          "precio": 40.5,
+          "categoria": "Pantalones",
+          "cantidad": 5
+        }
+      ]
     }
   ]
-
-
-
 }

@@ -17,7 +17,9 @@ export class VentaService {
     return this.http.get<venta[]>(this.url);
   }
   
-
+  postVenta(ven:venta):Observable<venta>{
+    return this.http.post<venta>(this.url,ven)
+  }
 
   
 }

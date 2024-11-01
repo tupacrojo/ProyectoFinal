@@ -6,6 +6,8 @@ import { AdministradorComponent } from '../componentes/menus/administrador/admin
 import { EncargadoComponent } from '../componentes/menus/encargado/encargado.component';
 import { SupervisorComponent } from '../componentes/menus/supervisor/supervisor.component';
 import { VendedorComponent } from '../componentes/menus/vendedor/vendedor.component';
+import { ListaVentasComponent } from '../componentes/ventas/lista-ventas/lista-ventas.component';
+import { NuevaVentaComponent } from '../componentes/ventas/nueva-venta/nueva-venta.component';
 
 export const routes: Routes = [ 
     {
@@ -35,6 +37,14 @@ export const routes: Routes = [
     {
         path: 'MenuVendedor',
         component: VendedorComponent
+    },
+    {
+        path: 'ListaVentas',
+        component: ListaVentasComponent
+    },
+    {
+        path: 'NuevaVenta',
+        component: NuevaVentaComponent
     },
     {
         path: '**',

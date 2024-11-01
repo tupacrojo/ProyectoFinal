@@ -1,0 +1,32 @@
+<section>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre del producto</th>
+                <th>Precio unitario</th>
+                <th>Cantidad en stock</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor = "let producto of listaProductos; let i = index">
+                <td>{{producto.nombre}}</td>
+                <td>{{producto.precio}}</td>
+                <td>{{producto.cantidad}}</td>
+                <td>
+                    <a (click) = "cambiarEstadoInput(i)">Agregar Producto</a>
+                </td>
+                    
+                <div *ngIf = "estadosInput[i]">
+                    <input #cantidadInput type = "number" placeholder = "Cantidad a comprar.." (input) = "verificarCantidad(+cantidadInput.value,i,cantidadInput)">
+                    
+                    <button type = "text" (click) = "cambiarEstadoInput(i)"> Cancelar </button>                  
+                    <button type = "text" (click) = "cargarArregloProductos(+cantidadInput.value,i)"> Agregar </button>
+                </div>
+            </tr>
+            
+        </tbody>
+    </table>
+</section>
+
+<button type = "text" (click) = "cargarVenta()">Cargar venta</button>
