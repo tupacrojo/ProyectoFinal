@@ -58,16 +58,30 @@ export class NuevaVentaComponent implements OnInit
   }
 
   verificarCantidad(cantidad: number, index: number, cantidadInput: HTMLInputElement) {
-    
+
+    console.log("verificando cantidad: ", cantidad);
+
+    if (cantidadInput.value === null || cantidad <= 0) {
+      alert("Por favor, ingresa una cantidad válida.");
+      cantidadInput.value = ''; 
+      return;
+  }
+
     if (this.listaProductos[index].cantidad === null || this.listaProductos[index].cantidad <= cantidad) {
         alert("Cantidad insuficiente en el stock");
         cantidadInput.value = '';
-
     }
 
   }
 
   cargarArregloProductos(cantidad: number,index: number){
+
+      console.log("Cargando cantidad: ",cantidad);
+
+      if (isNaN(cantidad)) {
+        alert("El campo está vacío o tiene un valor no numérico.");
+      return;
+      }
     
       this.producto = {...this.listaProductos[index]};
       this.producto.cantidad = cantidad;
@@ -79,6 +93,7 @@ export class NuevaVentaComponent implements OnInit
       }
 
       console.log(this.listaProductosVenta);
+
   }
 
   obtenerFechaActual(): string {

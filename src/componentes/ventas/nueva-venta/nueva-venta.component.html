@@ -5,6 +5,7 @@
                 <th>Nombre del producto</th>
                 <th>Precio unitario</th>
                 <th>Cantidad en stock</th>
+                <th>Seleccionar Producto</th>
             </tr>
         </thead>
 
@@ -13,16 +14,19 @@
                 <td>{{producto.nombre}}</td>
                 <td>{{producto.precio}}</td>
                 <td>{{producto.cantidad}}</td>
-                <td>
-                    <a (click) = "cambiarEstadoInput(i)">Agregar Producto</a>
+                <td>    
+                    <input type = "checkbox" (click) = "cambiarEstadoInput(i)" #checkbox>
+                    <div *ngIf = "estadosInput[i]" >
+                        <input 
+                            #cantidadInput 
+                            type = "number" 
+                            placeholder = "Cantidad a comprar.." 
+                            (input) = "verificarCantidad(+cantidadInput.value,i,cantidadInput)" 
+                            (blur)="cargarArregloProductos(+cantidadInput.value,i)"
+                        >
+                    </div>
                 </td>
                     
-                <div *ngIf = "estadosInput[i]">
-                    <input #cantidadInput type = "number" placeholder = "Cantidad a comprar.." (input) = "verificarCantidad(+cantidadInput.value,i,cantidadInput)">
-                    
-                    <button type = "text" (click) = "cambiarEstadoInput(i)"> Cancelar </button>                  
-                    <button type = "text" (click) = "cargarArregloProductos(+cantidadInput.value,i)"> Agregar </button>
-                </div>
             </tr>
             
         </tbody>
