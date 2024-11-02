@@ -1,43 +1,46 @@
-<table>
-    <thead>
-        <tr>
-            <th>Fecha </th>
-            <th>
-                Productos
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Cantidad</th>
-                            <th>Precio</th>
-                        </tr>
-                    </thead>
-                </table>
 
-            </th>
-            <th>Total</th>
-        </tr>
-    </thead>
+<div class = "contenedor">
+    <table class = "tablaVentas">
+        <thead>
+            <tr>
+                <th>Fecha </th>
+                <th>
+                    Productos
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                            </tr>
+                        </thead>
+                    </table>
 
-    <tbody>
-        <tr *ngFor="let venta of listaVentas" class="ventas-header">
-            
-            <td>{{ venta.fecha }}</td>
-            
-            <td>
-                <table>
-                    <tbody>
-                        <tr *ngFor = "let producto of  venta.productos" class="productos-table">
-                            <td>{{producto.nombre}} </td>
-                            <td>{{producto.cantidad}}</td>
-                            <td>{{producto.precio}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </td>
+                </th>
+                <th>Total</th>
+            </tr>
+        </thead>
 
-            <td>{{ venta.total }}</td>
-        </tr>
-    </tbody>
+        <tbody>
+            <tr *ngFor="let venta of listaVentas" class="ventas-header">
+                
+                <td>{{ venta.fecha }}</td>
+                
+                <td>
+                    <table>
+                        <tbody>
+                            <tr *ngFor = "let producto of  venta.productos" class="productos-table">
+                                <td>{{producto.nombre}} </td>
+                                <td>{{producto.cantidad}}</td>
+                                <td>{{producto.precio}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
 
-</table>
+                <td>{{ venta.total }}</td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>

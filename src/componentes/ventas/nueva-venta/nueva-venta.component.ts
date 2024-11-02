@@ -61,7 +61,7 @@ export class NuevaVentaComponent implements OnInit
 
     console.log("verificando cantidad: ", cantidad);
 
-    if (cantidadInput.value === null || cantidad <= 0) {
+    if (isNaN(cantidad) || cantidad <= 0) {
       alert("Por favor, ingresa una cantidad válida.");
       cantidadInput.value = ''; 
       return;
@@ -77,7 +77,7 @@ export class NuevaVentaComponent implements OnInit
   cargarArregloProductos(cantidad: number,index: number){
 
       console.log("Cargando cantidad: ",cantidad);
-
+      
       if (isNaN(cantidad)) {
         alert("El campo está vacío o tiene un valor no numérico.");
       return;
