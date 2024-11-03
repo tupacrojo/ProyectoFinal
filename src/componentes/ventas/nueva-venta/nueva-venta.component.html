@@ -1,11 +1,13 @@
-<section>
+<div>
     <table>
         <thead>
             <tr>
                 <th>Nombre del producto</th>
                 <th>Precio unitario</th>
                 <th>Cantidad en stock</th>
+                <th>Categoria</th>
                 <th>Seleccionar Producto</th>
+
             </tr>
         </thead>
 
@@ -14,23 +16,39 @@
                 <td>{{producto.nombre}}</td>
                 <td>{{producto.precio}}</td>
                 <td>{{producto.cantidad}}</td>
+                <td>{{producto.categoria}}</td>
                 <td>    
-                    <input type = "checkbox" (click) = "cambiarEstadoInput(i)" #checkbox>
-                    <div *ngIf = "estadosInput[i]" >
-                        <input 
-                            #cantidadInput 
-                            type = "number" 
-                            placeholder = "Cantidad a comprar.." 
-                            (input) = "verificarCantidad(+cantidadInput.value,i,cantidadInput)" 
-                            (blur)="cargarArregloProductos(+cantidadInput.value,i)"
-                        >
-                    </div>
+                    <input type = "checkbox" #checkbox (change) = "seleccionarProducto(i,checkbox)" [checked] = "estadoCheckbox[i]">
+                    <a *ngIf = "estadoCheckbox[i]" (click) = "seleccionarProducto(i,checkbox)">Modificar</a>
                 </td>
                     
             </tr>
             
         </tbody>
     </table>
-</section>
+</div>
+
+<div *ngIf = "mostrarFormulario">
+    <form >
+        <fieldset>
+
+            <label for = "Nombre"> Nombre: </label>
+            <input type = "text" [value] = "productoSeleccionado.nombre" disabled> 
+            
+            <label for = "Categoria"> Categoria: </label>
+            <input type = "text" [value] = "productoSeleccionado.categoria" disabled>
+            
+            <label for = "Precio"> Precio: </label>
+            <input type = "number" [value] = "productoSeleccionado.precio" disabled>
+
+            <label for = "Cantidad"> Cantidad: </label>
+            <input type = "number" [value] = "validarCantidadInicial(productoSeleccionado.id)" min = "1" [max] = "verificarCantidad()" #cantidadInput (input) = "validarCantidad(cantidadInput)">
+        
+            <button type ="button" (click) = "eliminarDatoFormulario()">Eliminar</button>
+            <button type ="button" (click) = "cargarArregloProductos(+cantidadInput.value)">Agregar</button>
+
+        </fieldset>
+    </form>
+</div>
 
 <button type = "text" (click) = "cargarVenta()">Cargar venta</button>

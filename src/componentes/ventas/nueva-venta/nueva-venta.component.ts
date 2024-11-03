@@ -5,6 +5,7 @@ import { Producto } from '../../../interfaces/Producto.interface';
 import { ProductoService } from '../../../services/producto.service';
 import { CommonModule } from '@angular/common';
 import { venta } from '../../../interfaces/Venta.interface';
+import { FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-nueva-venta',
@@ -22,24 +23,20 @@ export class NuevaVentaComponent implements OnInit
   listaProductos: Producto[] = [];
   listaProductosVenta: Producto[] = [];
 
-  producto: Producto = {
-    id: undefined,
-    nombre: '',
-    precio: null,
-    categoria: '',
-    cantidad:null
-  };
-
   venta: venta = {
     fecha: '', 
     total: 0,
     productos: []
   }
 
-  estadosInput: { [key: number]: boolean } = {};
+  mostrarFormulario: boolean = false;
+  productoSeleccionado: any = null;
+  producto: any = null;
+  estadoCheckbox: boolean[] = [];
 
   pt = inject(ProductoService);
   vt = inject(VentaService);
+  fb = inject(FormBuilder);
 
   getListaProductos(){
     this.pt.getProductos().subscribe({
@@ -53,50 +50,94 @@ export class NuevaVentaComponent implements OnInit
 
   }
 
-  cambiarEstadoInput(index: number) {
-    this.estadosInput[index] = !this.estadosInput[index];
+  seleccionarProducto(index: number, checkbox: HTMLInputElement){
+
+    if(checkbox.checked){
+      this.productoSeleccionado = {...this.listaProductos[index]};
+      this.mostrarFormulario = true;
+
+    }else{
+
+      if(this.productoSeleccionado != null){
+        this.listaProductosVenta = this.listaProductosVenta.filter(producto => producto.id !== this.productoSeleccionado.id);
+      }
+
+      this.mostrarFormulario = false;
+      this.productoSeleccionado = null;
+      this.estadoCheckbox[index] = false;
+    }
   }
 
-  verificarCantidad(cantidad: number, index: number, cantidadInput: HTMLInputElement) {
+  verificarCantidad(): number {
 
-    console.log("verificando cantidad: ", cantidad);
-
-    if (isNaN(cantidad) || cantidad <= 0) {
-      alert("Por favor, ingresa una cantidad válida.");
-      cantidadInput.value = ''; 
-      return;
+    if(this.productoSeleccionado != null){
+      return this.productoSeleccionado.cantidad;
+    }
+    return 0;
   }
 
-    if (this.listaProductos[index].cantidad === null || this.listaProductos[index].cantidad <= cantidad) {
-        alert("Cantidad insuficiente en el stock");
-        cantidadInput.value = '';
+  validarCantidad(cantidadInput: HTMLInputElement){
+
+    const max = this.verificarCantidad();
+    const valor = +cantidadInput.value;
+
+    if(valor > max){
+      cantidadInput.value = max.toString();
     }
 
   }
 
-  cargarArregloProductos(cantidad: number,index: number){
+  validarCantidadInicial(id: number): number | null{
 
-      console.log("Cargando cantidad: ",cantidad);
-      
-      if (isNaN(cantidad)) {
-        alert("El campo está vacío o tiene un valor no numérico.");
-      return;
-      }
-    
-      this.producto = {...this.listaProductos[index]};
-      this.producto.cantidad = cantidad;
-      this.listaProductosVenta.push(this.producto)
-      this.cambiarEstadoInput(index);
+    const index = this.listaProductosVenta.findIndex(producto => producto.id = id);
 
-      if(this.listaProductos[index].cantidad != null){
-        this.listaProductos[index].cantidad = this.listaProductos[index].cantidad - cantidad;
-      }
-
-      console.log(this.listaProductosVenta);
+    if(index == -1){
+      return 1;
+    }else{
+      return this.listaProductosVenta[index].cantidad;
+    }
 
   }
 
+  eliminarDatoFormulario(){
+
+    if(this.mostrarFormulario && this.productoSeleccionado != null){
+      
+      const index = this.listaProductos.findIndex(producto => producto.id === this.productoSeleccionado.id);
+      
+      if(this.listaProductosVenta.some(producto => producto.id === this.productoSeleccionado.id)){
+        this.listaProductosVenta = this.listaProductosVenta.filter(producto => producto.id != this.productoSeleccionado.id )
+      }
+
+      this.estadoCheckbox[index] = false;
+      this.mostrarFormulario = !this.mostrarFormulario;
+    
+    }
+  }
+
+  cargarArregloProductos(cantidad: number){
+      
+    if(this.productoSeleccionado != null){
+
+      const index = this.listaProductosVenta.findIndex(producto => producto.id === this.productoSeleccionado.id)
+      const indice = this.listaProductos.findIndex(producto => producto.id === this.productoSeleccionado.id);
+
+      if(index == -1){
+        this.productoSeleccionado.cantidad = cantidad;
+        this.listaProductosVenta.push(this.productoSeleccionado);
+      }else{
+        this.listaProductosVenta[index].cantidad = cantidad;       
+      }
+      
+      this.estadoCheckbox[indice] = true;
+      this.mostrarFormulario = !this.mostrarFormulario;
+
+   }
+
+}
+
   obtenerFechaActual(): string {
+
     const fechaActual: Date = new Date();
 
     const dia: string = String(fechaActual.getDate()).padStart(2, '0');
@@ -117,19 +158,24 @@ export class NuevaVentaComponent implements OnInit
 
   cargarVenta(){
 
-    this.venta.fecha = this.obtenerFechaActual();
-    this.venta.total = this.calcularTotalVenta();
-    this.venta.productos = [...this.listaProductosVenta];
+    if(this.listaProductosVenta.length != 0){
 
-    this.vt.postVenta(this.venta).subscribe({
-      next: () => {
-        alert("Se ingreso correctamente");
-      },
-      error: (err) => {
-        console.log("Error",err);
-      }
+      this.venta.fecha = this.obtenerFechaActual();
+      this.venta.total = this.calcularTotalVenta();
+      this.venta.productos = [...this.listaProductosVenta];
+
+      this.vt.postVenta(this.venta).subscribe({
+        next: () => {
+          alert("Se ingreso correctamente");
+        },
+        error: (err) => {
+          console.log("Error",err);
+        }
       
-    })
+      })
+    }else{
+      alert("No se ha cargado ningun producto a la venta");
+    }
   }
 
 }

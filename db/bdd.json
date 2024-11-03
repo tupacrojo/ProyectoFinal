@@ -233,6 +233,34 @@
           "cantidad": 5
         }
       ]
+    },
+    {
+      "id": "df98",
+      "fecha": "03/11/2024",
+      "total": 40,
+      "productos": [
+        {
+          "id": "12",
+          "nombre": "Blusa Formal",
+          "precio": 40,
+          "categoria": "Ropa Formal",
+          "cantidad": 1
+        }
+      ]
+    },
+    {
+      "id": "e8c1",
+      "fecha": "03/11/2024",
+      "total": 18.99,
+      "productos": [
+        {
+          "id": "15",
+          "nombre": "Shorts Deportivos",
+          "precio": 18.99,
+          "categoria": "Ropa Deportiva",
+          "cantidad": 1
+        }
+      ]
     }
   ]
 }
