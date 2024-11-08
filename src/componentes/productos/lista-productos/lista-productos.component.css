@@ -1,35 +1,47 @@
-
 .contenedor {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow-x: auto; /* Permite el desplazamiento horizontal si es necesario */
+}
 
 .tablaProd {
-    position: fixed;
-    top: 15%;
-    left: 5%;
-    width: 90%;
-    margin: 0 auto;
-    background: rgba(0,0,0,.5);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
-  }
+  position: relative;
+  height: 90%;
+  width: 100%;
+  max-width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  min-width: fit-content;
+  overflow-x: auto; /* Permite el desplazamiento horizontal si es necesario */
+}
 
+.header {
+  font-weight: bold;
+  text-align: center;
+}
 
-  .header {
-    font-weight: bold;
-    text-align: center;
+tr:nth-child(even) {
+  background-color: #3d3b3b;
+}
+
+td,
+th {
+  border: 1px solid #f2f2f2;
+  padding: 8px;
+}
+
+/* Media query para ajustar el diseño en pantallas más pequeñas */
+@media (max-width: 768px) {
+  .tablaProd {
+    font-size: 0.9em; /* Ajusta el tamaño de la fuente si es necesario */
   }
-  
-  tr:nth-child(even) {
-    background-color: #3d3b3b;
+}
+
+@media (max-width: 472px) {
+  .tablaProd {
+    font-size: 0.6em;
   }
-  
-  td, th {
-    border: 1px solid #f2f2f2;
-    padding: 8px;
-  }
-    
+}
