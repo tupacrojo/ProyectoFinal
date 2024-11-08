@@ -15,19 +15,19 @@ table {
 
 th,
 td {
-  border: 1px solid #ddd;
+  border: 1px solid #a7a7a7;
   padding: 8px;
 }
 
 th {
-  background-color: #f2f2f2;
+  background-color: #a2a2a264;
   text-align: left;
 }
 
 tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: #8a8a8a5d;
 }
 
 tr:hover {
-  background-color: #ddd;
+  background-color: #d8d8d854;
 }
