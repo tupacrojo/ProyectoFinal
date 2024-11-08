@@ -5,105 +5,120 @@
       "nombre": "Camiseta Básica",
       "precio": 15.99,
       "categoria": "Ropa Casual",
-      "cantidad": 100
+      "cantidad": 100,
+      "diferencia": 0
     },
     {
       "id": "4",
       "nombre": "Chaqueta de Cuero",
       "precio": 120,
       "categoria": "Abrigos",
-      "cantidad": 25
+      "cantidad": 25,
+      "diferencia": 0
     },
     {
       "nombre": "Falda de Ecocuero",
       "precio": 75,
       "cantidad": 30,
       "categoria": "Faldas",
-      "id": "6"
+      "id": "6",
+      "diferencia": 0
     },
     {
       "id": "12",
       "nombre": "Blusa Formal",
       "precio": 40,
       "categoria": "Ropa Formal",
-      "cantidad": 45
+      "cantidad": 45,
+      "diferencia": 0
     },
     {
       "id": "14",
       "nombre": "Sombrero de Paja",
       "precio": 20,
       "categoria": "Accesorios",
-      "cantidad": 100
+      "cantidad": 100,
+      "diferencia": 0
     },
     {
       "nombre": "Shorts Deportivos",
       "precio": 18.99,
       "cantidad": 110,
       "categoria": "Ropa Deportiva",
-      "id": "15"
+      "id": "15",
+      "diferencia": 0
     },
     {
       "id": "16",
       "nombre": "Bufanda de Lana",
       "precio": 15,
       "categoria": "Accesorios",
-      "cantidad": 70
+      "cantidad": 70,
+      "diferencia": 0
     },
     {
       "nombre": "Pijama de Algodón",
       "precio": 35,
       "cantidad": 60,
       "categoria": "Ropa Interior",
-      "id": "17"
+      "id": "17",
+      "diferencia": 0
     },
     {
       "id": "18",
       "nombre": "Pantalón Cargo",
       "precio": 40.5,
       "categoria": "Pantalones",
-      "cantidad": 55
+      "cantidad": 55,
+      "diferencia": 0
     },
     {
       "id": "19",
       "nombre": "Chaleco Acolchado",
       "precio": 70,
       "categoria": "Abrigos",
-      "cantidad": 40
+      "cantidad": 40,
+      "diferencia": 0
     },
     {
       "id": "414b",
       "nombre": "producto 1",
       "precio": 11,
       "cantidad": 11,
-      "categoria": "nueva"
+      "categoria": "nueva",
+      "diferencia": 0
     },
     {
       "id": "486f",
       "nombre": "producto 2",
       "precio": 2,
       "cantidad": 2,
-      "categoria": "Abrigos"
+      "categoria": "Abrigos",
+      "diferencia": 0
     },
     {
       "id": "20",
       "nombre": "Botas de Montaña",
       "precio": 95.99,
       "categoria": "Calzado",
-      "cantidad": 20
+      "cantidad": 20,
+      "diferencia": 0
     },
     {
       "id": "eda4",
       "nombre": "Producto 1",
       "precio": 100,
       "cantidad": 10,
-      "categoria": "Abrigos"
+      "categoria": "Abrigos",
+      "diferencia": 0
     },
     {
       "id": "08f7",
       "nombre": "Producto 2",
       "precio": 100,
       "cantidad": 9,
-      "categoria": "Categoria nueva"
+      "categoria": "Categoria nueva",
+      "diferencia": 0
     }
   ],
   "usuarios": [

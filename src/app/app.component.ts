@@ -9,11 +9,17 @@ import { ListaVentasComponent } from '../componentes/ventas/lista-ventas/lista-v
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,CommonModule,ListaProductosComponent,NuevoProductoComponent,AdministradorComponent,ListaVentasComponent],
+  imports: [
+    RouterOutlet,
+    CommonModule,
+    ListaProductosComponent,
+    NuevoProductoComponent,
+    AdministradorComponent,
+    ListaVentasComponent,
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
-
 export class AppComponent {
   title = 'ProyectoFinal';
 }

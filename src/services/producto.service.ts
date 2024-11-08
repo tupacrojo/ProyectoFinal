@@ -4,34 +4,42 @@ import { Producto } from '../interfaces/Producto.interface';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class ProductoService {
-
   urlApi: string = 'http://localhost:3000/productos';
-  
-  constructor(private http: HttpClient) { }
 
-  getProductos(): Observable<Producto[]>{
-    return this.http.get<Producto[]>(this.urlApi)
+  constructor(private http: HttpClient) {}
+
+  getProductos(): Observable<Producto[]> {
+    return this.http.get<Producto[]>(this.urlApi);
   }
 
-  postProductos(prod:Producto): Observable<Producto>{
-    return this.http.post<Producto>(this.urlApi,prod);
+  postProductos(prod: Producto): Observable<Producto> {
+    return this.http.post<Producto>(this.urlApi, prod);
   }
 
-  deleteProductos(id:number | undefined): Observable<Producto>{
-    return this.http.delete<Producto>(`${this.urlApi}/${id}`)
+  deleteProductos(id: number | undefined): Observable<Producto> {
+    return this.http.delete<Producto>(`${this.urlApi}/${id}`);
   }
 
-  getProductoById(id:number | null):Observable<Producto>{
-    return this.http.get<Producto>(`${this.urlApi}/${id}`)
+  getProductoById(id: number | null): Observable<Producto> {
+    return this.http.get<Producto>(`${this.urlApi}/${id}`);
   }
 
-  putProducto(id:number, prod:Producto):Observable<Producto>{
-    return this.http.put<Producto>(`${this.urlApi}/${id}`,prod);
+  getProductoOrderByDiferenciaMayor(): Observable<Producto> {
+    return this.http.get<Producto>(`${this.urlApi}?diferencia_gt=0`);
   }
-  
+
+  getProductoOrderByDiferenciaMenor(): Observable<Producto> {
+    return this.http.get<Producto>(`${this.urlApi}?diferencia_lt=0`);
+  }
+
+  getProductoOrderByDiferencia(): Observable<Producto> {
+    return this.http.get<Producto>(`${this.urlApi}?_sort=diferencia`);
+  } // no funciona traer solo los que tengan diferencia
+
+  putProducto(id: number, prod: Producto): Observable<Producto> {
+    return this.http.put<Producto>(`${this.urlApi}/${id}`, prod);
+  }
 }
-

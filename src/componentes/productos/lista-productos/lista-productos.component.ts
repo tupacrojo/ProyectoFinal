@@ -33,6 +33,27 @@ export class ListaProductosComponent implements OnInit {
     });
   }
 
+  setSubtotal(id: number, cantidad: string | null) {
+    this.productosService.getProductoById(id).subscribe({
+      next: (produc: Producto) => {
+        produc.diferencia = -(produc.cantidad == null
+          ? 0
+          : produc.cantidad - (Number(cantidad) ?? 0));
+        this.productosService.putProducto(id, produc).subscribe({
+          next: (produc: Producto) => {
+            this.mostrarLista();
+          },
+          error: (err) => {
+            console.log('Error', err);
+          },
+        });
+      },
+      error: (err) => {
+        console.log('Error', err);
+      },
+    });
+  }
+
   eliminarProducto(id: number | undefined) {
     this.productosService.deleteProductos(id).subscribe({
       next: (produc: Producto) => {
