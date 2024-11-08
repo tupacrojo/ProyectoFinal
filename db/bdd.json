@@ -36,11 +36,11 @@
       "cantidad": 100
     },
     {
-      "id": "15",
       "nombre": "Shorts Deportivos",
       "precio": 18.99,
+      "cantidad": 110,
       "categoria": "Ropa Deportiva",
-      "cantidad": 110
+      "id": "15"
     },
     {
       "id": "16",
@@ -50,11 +50,11 @@
       "cantidad": 70
     },
     {
-      "id": "17",
       "nombre": "Pijama de Algodón",
       "precio": 35,
+      "cantidad": 60,
       "categoria": "Ropa Interior",
-      "cantidad": 60
+      "id": "17"
     },
     {
       "id": "18",
@@ -280,6 +280,123 @@
           "precio": 18.99,
           "categoria": "Ropa Deportiva",
           "cantidad": 1
+        }
+      ]
+    }
+  ],
+  "pedidos": [
+    {
+      "id": "p001",
+      "fecha": "2024-11-08",
+      "estado": "En espera de confirmacion",
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "Camiseta Básica",
+          "precio": 15.99,
+          "cantidad": 2
+        },
+        {
+          "id": "12",
+          "nombre": "Blusa Formal",
+          "precio": 40,
+          "cantidad": 1
+        }
+      ]
+    },
+    {
+      "id": "p002",
+      "fecha": "2024-11-08",
+      "estado": "En espera de confirmacion",
+      "productos": [
+        {
+          "id": "4",
+          "nombre": "Chaqueta de Cuero",
+          "precio": 120,
+          "cantidad": 1
+        },
+        {
+          "id": "16",
+          "nombre": "Bufanda de Lana",
+          "precio": 15,
+          "cantidad": 3
+        }
+      ]
+    },
+    {
+      "id": "p003",
+      "fecha": "2024-11-07",
+      "estado": "En espera de confirmacion",
+      "productos": [
+        {
+          "id": "18",
+          "nombre": "Pantalón Cargo",
+          "precio": 40.5,
+          "cantidad": 2
+        },
+        {
+          "id": "6",
+          "nombre": "Falda de Ecocuero",
+          "precio": 75,
+          "cantidad": 1
+        },
+        {
+          "id": "20",
+          "nombre": "Botas de Montaña",
+          "precio": 95.99,
+          "cantidad": 1
+        }
+      ]
+    },
+    {
+      "id": "p004",
+      "fecha": "2024-11-06",
+      "estado": "En espera de confirmacion",
+      "productos": [
+        {
+          "id": "15",
+          "nombre": "Shorts Deportivos",
+          "precio": 18.99,
+          "cantidad": 2
+        },
+        {
+          "id": "14",
+          "nombre": "Sombrero de Paja",
+          "precio": 20,
+          "cantidad": 1
+        }
+      ]
+    },
+    {
+      "id": "p005",
+      "fecha": "2024-11-05",
+      "estado": "En espera de confirmacion",
+      "productos": [
+        {
+          "id": "414b",
+          "nombre": "producto 1",
+          "precio": 11,
+          "cantidad": 5
+        },
+        {
+          "id": "486f",
+          "nombre": "producto 2",
+          "precio": 2,
+          "cantidad": 10
+        }
+      ]
+    },
+    {
+      "id": "1e0c",
+      "fecha": "08/11/2024",
+      "estado": "En espera de confirmacion",
+      "productos": [
+        {
+          "id": "16",
+          "nombre": "Bufanda de Lana",
+          "precio": 15,
+          "categoria": "Accesorios",
+          "cantidad": 5
         }
       ]
     }

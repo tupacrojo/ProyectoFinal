@@ -80,9 +80,14 @@ export class NuevaVentaComponent implements OnInit
 
     const max = this.verificarCantidad();
     const valor = +cantidadInput.value;
+    const min = 1;
 
     if(valor > max){
       cantidadInput.value = max.toString();
+    }
+
+    if(valor <= 0){
+      cantidadInput.value = min.toString();
     }
 
   }

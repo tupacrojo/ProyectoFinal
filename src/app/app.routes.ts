@@ -10,6 +10,7 @@ import { ListaVentasComponent } from '../componentes/ventas/lista-ventas/lista-v
 import { NuevaVentaComponent } from '../componentes/ventas/nueva-venta/nueva-venta.component';
 import { ModificarProductoComponent } from '../componentes/productos/modificar-producto/modificar-producto.component';
 import { FiltrarProductosComponent } from '../componentes/productos/filtrar-productos/filtrar-productos.component';
+import { NuevoPedidoComponent } from '../componentes/pedidos/nuevo-pedido/nuevo-pedido.component';
 
 export const routes: Routes = [ 
     {
@@ -55,6 +56,10 @@ export const routes: Routes = [
     {
         path:'filtrar',
         component: FiltrarProductosComponent
+    },
+    {
+        path: 'NuevoPedido',
+        component: NuevoPedidoComponent
     },
     {
         path: '**',
