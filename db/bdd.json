@@ -71,6 +71,7 @@
       "cantidad": 40
     },
     {
+<<<<<<< Updated upstream
       "id": "414b",
       "nombre": "producto 1",
       "precio": 11,
@@ -83,6 +84,27 @@
       "precio": 2,
       "cantidad": 2,
       "categoria": "Abrigos"
+=======
+      "id": "20",
+      "nombre": "Botas de Montaña",
+      "precio": 95.99,
+      "categoria": "Calzado",
+      "cantidad": 20
+    },
+    {
+      "id": "eda4",
+      "nombre": "Producto 1",
+      "precio": 100,
+      "cantidad": 10,
+      "categoria": "Abrigos"
+    },
+    {
+      "id": "08f7",
+      "nombre": "Producto 2",
+      "precio": 100,
+      "cantidad": 9,
+      "categoria": "Categoria nueva"
+>>>>>>> Stashed changes
     }
   ],
   "usuarios": [
