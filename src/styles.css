@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body {
+<<<<<<< HEAD
     font-family: "Roboto" ,Arial, sans-serif;
     background: linear-gradient(to bottom right, #333, #990033);
     height: 100vh;
@@ -7,3 +8,12 @@ body {
   
   }
   
+=======
+  font-family: "Roboto", Arial, sans-serif;
+  background: linear-gradient(to bottom right, #333, #990033);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+>>>>>>> 7c397b6b37eb832c8a60db428746a9b9e1eb4891
