@@ -8,13 +8,6 @@
       "cantidad": 100
     },
     {
-      "id": "2",
-      "nombre": "Pantalón Jeans",
-      "precio": 45,
-      "categoria": "Pantalones",
-      "cantidad": 50
-    },
-    {
       "id": "4",
       "nombre": "Chaqueta de Cuero",
       "precio": 120,
@@ -78,11 +71,18 @@
       "cantidad": 40
     },
     {
-      "id": "20",
-      "nombre": "Botas de Montaña",
-      "precio": 95.99,
-      "categoria": "Calzado",
-      "cantidad": 20
+      "id": "414b",
+      "nombre": "producto 1",
+      "precio": 11,
+      "cantidad": 11,
+      "categoria": "nueva"
+    },
+    {
+      "id": "486f",
+      "nombre": "producto 2",
+      "precio": 2,
+      "cantidad": 2,
+      "categoria": "Abrigos"
     }
   ],
   "usuarios": [

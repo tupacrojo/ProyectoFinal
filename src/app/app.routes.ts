@@ -9,6 +9,7 @@ import { VendedorComponent } from '../componentes/menus/vendedor/vendedor.compon
 import { ListaVentasComponent } from '../componentes/ventas/lista-ventas/lista-ventas.component';
 import { NuevaVentaComponent } from '../componentes/ventas/nueva-venta/nueva-venta.component';
 import { ModificarProductoComponent } from '../componentes/productos/modificar-producto/modificar-producto.component';
+import { FiltrarProductosComponent } from '../componentes/productos/filtrar-productos/filtrar-productos.component';
 
 export const routes: Routes = [ 
     {
@@ -50,6 +51,10 @@ export const routes: Routes = [
     {
         path: 'NuevaVenta',
         component: NuevaVentaComponent
+    },
+    {
+        path:'filtrar',
+        component: FiltrarProductosComponent
     },
     {
         path: '**',

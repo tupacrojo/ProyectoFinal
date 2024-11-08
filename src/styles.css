@@ -2,10 +2,8 @@
 body {
     font-family: "Roboto" ,Arial, sans-serif;
     background: linear-gradient(to bottom right, #333, #990033);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     margin: 0;
+    
   }
   

@@ -1,0 +1,45 @@
+<div class="contenedor">
+    <!-- Filtro de categorías -->
+     <section>
+    <form [formGroup]="filtroForm" class="filtro-categoria">
+      <label for="categoriaSelect">Filtrar por Categoría:</label>
+      <select formControlName = "categoria" >
+        <option *ngFor = "let categoria of listaCategorias" [ngValue] = "categoria">{{categoria}}</option>
+    </select>
+      <button (click)="filtrarPorCategoria()">Aplicar Filtro</button>
+    </form>
+  </section>
+
+
+
+
+  
+<div>
+  <table class="tablaProd">
+      <thead>
+          <tr>
+              <th class="header" (click) = "ordenarPor('nombre')">Nombre</th>
+              <th class="header" (click) = "ordenarPor('precio')">Precio</th>
+              <th class="header" (click) = "ordenarPor('cantidad')">Stock</th>
+              <th class="header" (click) = "ordenarPor('categoria')">Categoria</th>
+          </tr>
+      </thead>
+  
+      <tbody>
+          @for (producto of listaFiltradaProductos; track $index){
+              <tr>
+                  <td>{{producto.nombre}}</td>
+                  <td>{{producto.precio}}</td>
+                  <td>{{producto.cantidad}}</td>
+                  <td>{{producto.categoria}}</td>
+                  <td><a (click) = "eliminarProducto(producto.id)">Eliminar</a></td>
+                  <td><a [routerLink]="['/ModificarProducto', producto.id]">Modificar</a></td>
+              </tr>
+          }
+  
+      </tbody>
+  </table>
+  </div>
+  </div>
+  
+  

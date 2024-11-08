@@ -1,27 +1,36 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Producto } from '../../../interfaces/Producto.interface';
-import { ProductoService } from '../../../services/producto.service'; 
+import { ProductoService } from '../../../services/producto.service';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { NuevoProductoComponent } from '../nuevo-producto/nuevo-producto.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-lista-productos',
+  selector: 'app-filtrar-productos',
   standalone: true,
   imports: [NuevoProductoComponent,CommonModule,RouterModule, ReactiveFormsModule],
-  templateUrl: './lista-productos.component.html',
-  styleUrl: './lista-productos.component.css'
+  templateUrl: './filtrar-productos.component.html',
+  styleUrl: './filtrar-productos.component.css'
 })
-
-export class ListaProductosComponent implements OnInit {
+export class FiltrarProductosComponent implements OnInit {
   
   listaProductos: Producto[] = [];
+  listaFiltradaProductos: Producto[] = [];
+  listaCategorias: string[] = [];
+  fb = inject(FormBuilder);
+
+  filtroForm = this.fb.nonNullable.group({
+    
+    categoria :['']
+  });
+
   
   constructor(private productosService: ProductoService) { }
 
   ngOnInit(): void {
     this.mostrarLista();
+    
   }
 
   mostrarLista(){
@@ -29,6 +38,8 @@ export class ListaProductosComponent implements OnInit {
       {
         next: (prod) => {
           this.listaProductos = prod;
+          this.listaFiltradaProductos = prod; 
+          this.extraerCategorias();
         },
 
         error: (err) => {
@@ -43,6 +54,10 @@ export class ListaProductosComponent implements OnInit {
       {
         next:(produc: Producto) => {
           this.listaProductos = this.listaProductos.filter(
+            (producto) => producto.id !== id
+          );
+          
+          this.listaFiltradaProductos = this.listaFiltradaProductos.filter(
             (producto) => producto.id !== id
           );
         },
@@ -78,4 +93,22 @@ export class ListaProductosComponent implements OnInit {
   }
 
 
+  
+  extraerCategorias() {
+    this.listaCategorias = Array.from(
+      new Set(this.listaProductos.map(producto => producto.categoria))
+    );
+  }
+
+  filtrarPorCategoria() {
+    const categoriaSeleccionada = this.filtroForm.get('categoria')?.value;
+    if (categoriaSeleccionada) {
+      this.listaFiltradaProductos = this.listaProductos.filter(
+        producto => producto.categoria === categoriaSeleccionada
+      );
+    } else {
+      this.listaFiltradaProductos = [...this.listaProductos];
+    }
+  }
 }
+
