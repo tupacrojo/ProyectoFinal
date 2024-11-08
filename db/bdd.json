@@ -22,11 +22,11 @@
       "cantidad": 25
     },
     {
-      "id": "6",
-      "nombre": "Falda de Cuero",
-      "precio": 55,
+      "nombre": "Falda de Ecocuero",
+      "precio": 75,
+      "cantidad": 30,
       "categoria": "Faldas",
-      "cantidad": 30
+      "id": "6"
     },
     {
       "id": "12",

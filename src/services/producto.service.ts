@@ -24,6 +24,14 @@ export class ProductoService {
   deleteProductos(id:number | undefined): Observable<Producto>{
     return this.http.delete<Producto>(`${this.urlApi}/${id}`)
   }
+
+  getProductoById(id:number | null):Observable<Producto>{
+    return this.http.get<Producto>(`${this.urlApi}/${id}`)
+  }
+
+  putProducto(id:number, prod:Producto):Observable<Producto>{
+    return this.http.put<Producto>(`${this.urlApi}/${id}`,prod);
+  }
   
 }
 
