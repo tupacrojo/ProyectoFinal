@@ -12,59 +12,57 @@ import { ModificarProductoComponent } from '../componentes/productos/modificar-p
 import { FiltrarProductosComponent } from '../componentes/productos/filtrar-productos/filtrar-productos.component';
 import { NuevoPedidoComponent } from '../componentes/pedidos/nuevo-pedido/nuevo-pedido.component';
 
-export const routes: Routes = [ 
-    {
-        path: '',
-        component: LoginComponent
-    },
-    {
-        path: 'AgregarProducto',
-        component: NuevoProductoComponent
-    },
-    {
-        path: 'ListaProductos',
-        component: ListaProductosComponent
-    },
-    {
-        path: 'ModificarProducto/:id',
-        component: ModificarProductoComponent
-    },
-    {
-        path: 'MenuAdministrador',
-        component: AdministradorComponent
-    },
-    {
-        path: 'MenuEncargado',
-        component: EncargadoComponent
-    },
-    {
-        path: 'MenuSupervisor',
-        component: SupervisorComponent
-    },
-    {
-        path: 'MenuVendedor',
-        component: VendedorComponent
-    },
-    {
-        path: 'ListaVentas',
-        component: ListaVentasComponent
-    },
-    {
-        path: 'NuevaVenta',
-        component: NuevaVentaComponent
-    },
-    {
-        path:'filtrar',
-        component: FiltrarProductosComponent
-    },
-    {
-        path: 'NuevoPedido',
-        component: NuevoPedidoComponent
-    },
-    {
-        path: '**',
-        redirectTo: ''
-    }
-    
+export const routes: Routes = [
+  {
+    path: '',
+    component: LoginComponent,
+  },
+  {
+    path: 'AgregarProducto',
+    component: NuevoProductoComponent,
+  },
+  {
+    path: 'ListaProductos',
+    component: ListaProductosComponent,
+  },
+  {
+    path: 'ModificarProducto/:id',
+    component: ModificarProductoComponent,
+  },
+  {
+    path: 'MenuAdministrador',
+    component: AdministradorComponent,
+  },
+  {
+    path: 'MenuEncargado',
+    component: EncargadoComponent,
+  },
+  {
+    path: 'MenuSupervisor',
+    component: SupervisorComponent,
+  },
+  {
+    path: 'MenuVendedor',
+    component: VendedorComponent,
+  },
+  {
+    path: 'ListaVentas',
+    component: ListaVentasComponent,
+  },
+  {
+    path: 'NuevaVenta',
+    component: NuevaVentaComponent,
+  },
+  {
+    path: 'filtrar',
+    component: FiltrarProductosComponent,
+  },
+  {
+    path: 'NuevoPedido',
+    component: NuevoPedidoComponent,
+  },
+  {
+    path: '**',
+    redirectTo: '',
+  },
 ];
-  
