@@ -1,8 +1,8 @@
-import { Producto } from "./Producto.interface";
+import { Producto } from './Producto.interface';
 
 export interface Pedido {
-    id?: string,
-    fecha: string,
-    estado: string,
-    productos: Producto[];
+  id?: string;
+  fecha: string;
+  estado: string;
+  productos: Producto[];
 }

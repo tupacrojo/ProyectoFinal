@@ -422,6 +422,21 @@
           "cantidad": 5
         }
       ]
+    },
+    {
+      "id": "2a2f",
+      "fecha": "09/11/2024",
+      "estado": "En espera de confirmacion",
+      "productos": [
+        {
+          "id": "18",
+          "nombre": "Pantalón Cargo",
+          "precio": 40.5,
+          "categoria": "Pantalones",
+          "cantidad": 1,
+          "diferencia": 0
+        }
+      ]
     }
   ],
   "reportes": [

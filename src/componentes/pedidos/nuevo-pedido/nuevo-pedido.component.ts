@@ -67,6 +67,14 @@ export class NuevoPedidoComponent {
     }
   }
 
+  sumar(i: number) {
+    // if ((this.listaProductos[i].cantidad || 0) > this.ArregloCantidad[i]) // limitar la cantidad de productos al stock
+    this.ArregloCantidad[i]++;
+  }
+  restar(i: number) {
+    if (this.ArregloCantidad[i] > 0) this.ArregloCantidad[i]--;
+  }
+
   verificarCantidad(): number {
     if (this.productoSeleccionado != null) {
       return this.productoSeleccionado.cantidad;
