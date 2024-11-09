@@ -3,7 +3,6 @@ import { Producto } from '../../../interfaces/Producto.interface';
 import { ProductoService } from '../../../services/producto.service';
 import { CommonModule } from '@angular/common';
 import { Reporte } from '../../../interfaces/Reporte.interface';
-import { post } from 'request';
 import { ReporteService } from '../../../services/reporte.service';
 
 @Component({
