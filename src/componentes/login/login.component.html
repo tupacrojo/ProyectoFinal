@@ -1,27 +1,26 @@
-
 <section>
-    <form [formGroup] = "formulario" >
+    <form [formGroup]="formulario">
         <p>INICIAR SESION</p>
-                        
-        <label for="nombreUsuario">Nombre de Usuario: </label>
-        <input type = "text" placeholder="Nombre de usuario..." formControlName = "nombre">
 
-        @if(formulario.controls['nombre'].getError('required')  && formulario.controls['nombre'].touched){
-            <p class="warn">
-                Campo requerido
-            </p>
-        }   
+        <label for="nombreUsuario">Nombre de Usuario: </label>
+        <input type="text" placeholder="Nombre de usuario..." formControlName="nombre">
+
+        @if(formulario.controls['nombre'].getError('required') && formulario.controls['nombre'].touched){
+        <p class="warn">
+            Campo requerido
+        </p>
+        }
 
         <label for="contrasena"> Contraseña: </label>
-        <input type = "string" placeholder="Contraseña... " formControlName = "contrasena">
+        <input type="password" placeholder="Contraseña... " formControlName="contrasena">
 
-        @if(formulario.controls['contrasena'].getError('required')  && formulario.controls['contrasena'].touched){
-            <p class="warn">
-                Campo requerido
-            </p>
-        }  
+        @if(formulario.controls['contrasena'].getError('required') && formulario.controls['contrasena'].touched){
+        <p class="warn">
+            Campo requerido
+        </p>
+        }
 
-        <button (click) = "ingresarUsuarioYContrasena()">Iniciar Sesion</button>
-        
+        <button (click)="ingresarUsuarioYContrasena()">Iniciar Sesion</button>
+
     </form>
 </section>

@@ -11,6 +11,7 @@ import { NuevaVentaComponent } from '../componentes/ventas/nueva-venta/nueva-ven
 import { ModificarProductoComponent } from '../componentes/productos/modificar-producto/modificar-producto.component';
 import { FiltrarProductosComponent } from '../componentes/productos/filtrar-productos/filtrar-productos.component';
 import { NuevoPedidoComponent } from '../componentes/pedidos/nuevo-pedido/nuevo-pedido.component';
+import { NuevoReporteComponent } from '../componentes/reportes/nuevo-reporte/nuevo-reporte.component';
 
 export const routes: Routes = [
   {
@@ -60,6 +61,10 @@ export const routes: Routes = [
   {
     path: 'NuevoPedido',
     component: NuevoPedidoComponent,
+  },
+  {
+    path: 'NuevoReporte',
+    component: NuevoReporteComponent,
   },
   {
     path: '**',

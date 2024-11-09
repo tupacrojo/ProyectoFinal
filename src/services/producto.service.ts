@@ -27,16 +27,16 @@ export class ProductoService {
     return this.http.get<Producto>(`${this.urlApi}/${id}`);
   }
 
-  getProductoOrderByDiferenciaMayor(): Observable<Producto> {
-    return this.http.get<Producto>(`${this.urlApi}?diferencia_gt=0`);
+  getProductoOrderByDiferenciaMayor(): Observable<Producto[]> {
+    return this.http.get<Producto[]>(`${this.urlApi}?diferencia_gt=0`);
   }
 
-  getProductoOrderByDiferenciaMenor(): Observable<Producto> {
-    return this.http.get<Producto>(`${this.urlApi}?diferencia_lt=0`);
+  getProductoOrderByDiferenciaMenor(): Observable<Producto[]> {
+    return this.http.get<Producto[]>(`${this.urlApi}?diferencia_lt=0`);
   }
 
-  getProductoOrderByDiferencia(): Observable<Producto> {
-    return this.http.get<Producto>(`${this.urlApi}?diferencia_ne=0`);
+  getProductoOrderByDiferencia(): Observable<Producto[]> {
+    return this.http.get<Producto[]>(`${this.urlApi}?diferencia_ne=0`);
   } // no funciona traer solo los que tengan diferencia
 
   putProducto(id: number, prod: Producto): Observable<Producto> {

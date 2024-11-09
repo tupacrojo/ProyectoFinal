@@ -6,7 +6,7 @@
       "precio": 15.99,
       "categoria": "Ropa Casual",
       "cantidad": 100,
-      "diferencia": 10
+      "diferencia": -10
     },
     {
       "id": "4",
