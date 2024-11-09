@@ -6,7 +6,7 @@
       "precio": 15.99,
       "categoria": "Ropa Casual",
       "cantidad": 100,
-      "diferencia": 0
+      "diferencia": -8
     },
     {
       "id": "4",
@@ -434,6 +434,29 @@
           "precio": 40.5,
           "categoria": "Pantalones",
           "cantidad": 1,
+          "diferencia": 0
+        }
+      ]
+    },
+    {
+      "id": "1722",
+      "fecha": "09/11/2024",
+      "estado": "En espera de confirmacion",
+      "productos": [
+        {
+          "id": "14",
+          "nombre": "Sombrero de Paja",
+          "precio": 20,
+          "categoria": "Accesorios",
+          "cantidad": 3,
+          "diferencia": 0
+        },
+        {
+          "id": "18",
+          "nombre": "Pantalón Cargo",
+          "precio": 40.5,
+          "categoria": "Pantalones",
+          "cantidad": 4,
           "diferencia": 0
         }
       ]

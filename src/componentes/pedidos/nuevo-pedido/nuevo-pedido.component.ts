@@ -26,6 +26,7 @@ export class NuevoPedidoComponent {
   productoSeleccionado: any = null;
   producto: any = null;
   estadoCheckbox: boolean[] = [];
+  mostrarInput: boolean[] = [];
   ArregloCantidad: number[] = [];
 
   pedido: Pedido = {
@@ -53,7 +54,8 @@ export class NuevoPedidoComponent {
   seleccionarProducto(index: number, checkbox: HTMLInputElement) {
     if (checkbox.checked) {
       this.productoSeleccionado = { ...this.listaProductos[index] };
-      this.mostrarFormulario = true;
+      this.estadoCheckbox[index] = true;
+      this.mostrarInput[index] = true;
     } else {
       if (this.productoSeleccionado != null) {
         this.listaProductosPedido = this.listaProductosPedido.filter(
@@ -61,9 +63,10 @@ export class NuevoPedidoComponent {
         );
       }
 
-      this.mostrarFormulario = false;
+      this.ArregloCantidad[index] = 0;
       this.productoSeleccionado = null;
       this.estadoCheckbox[index] = false;
+      this.mostrarInput[index] = false;
     }
   }
 
@@ -75,59 +78,59 @@ export class NuevoPedidoComponent {
     if (this.ArregloCantidad[i] > 0) this.ArregloCantidad[i]--;
   }
 
-  verificarCantidad(): number {
-    if (this.productoSeleccionado != null) {
-      return this.productoSeleccionado.cantidad;
-    }
-    return 0;
-  }
+  // verificarCantidad(): number {
+  //   if (this.productoSeleccionado != null) {
+  //     return this.productoSeleccionado.cantidad;
+  //   }
+  //   return 0;
+  // }
 
-  validarCantidad(cantidadInput: HTMLInputElement) {
-    const max = this.verificarCantidad();
-    const valor = +cantidadInput.value;
-    const min = 1;
+  // validarCantidad(cantidadInput: HTMLInputElement) {
+  //   const max = this.verificarCantidad();
+  //   const valor = +cantidadInput.value;
+  //   const min = 1;
 
-    if (valor > max) {
-      cantidadInput.value = max.toString();
-    }
+  //   if (valor > max) {
+  //     cantidadInput.value = max.toString();
+  //   }
 
-    if (valor <= 0) {
-      cantidadInput.value = min.toString();
-    }
-  }
+  //   if (valor <= 0) {
+  //     cantidadInput.value = min.toString();
+  //   }
+  // }
 
-  validarCantidadInicial(id: number): number | null {
-    const index = this.listaProductosPedido.findIndex(
-      (producto) => (producto.id = id)
-    );
+  // validarCantidadInicial(id: number): number | null {
+  //   const index = this.listaProductosPedido.findIndex(
+  //     (producto) => (producto.id = id)
+  //   );
 
-    if (index == -1) {
-      return 1;
-    } else {
-      return this.listaProductosPedido[index].cantidad;
-    }
-  }
+  //   if (index == -1) {
+  //     return 1;
+  //   } else {
+  //     return this.listaProductosPedido[index].cantidad;
+  //   }
+  // }
 
-  eliminarDatoFormulario() {
-    if (this.mostrarFormulario && this.productoSeleccionado != null) {
-      const index = this.listaProductos.findIndex(
-        (producto) => producto.id === this.productoSeleccionado.id
-      );
+  // eliminarDatoFormulario() {
+  //   if (this.mostrarFormulario && this.productoSeleccionado != null) {
+  //     const index = this.listaProductos.findIndex(
+  //       (producto) => producto.id === this.productoSeleccionado.id
+  //     );
 
-      if (
-        this.listaProductosPedido.some(
-          (producto) => producto.id === this.productoSeleccionado.id
-        )
-      ) {
-        this.listaProductosPedido = this.listaProductosPedido.filter(
-          (producto) => producto.id != this.productoSeleccionado.id
-        );
-      }
+  //     if (
+  //       this.listaProductosPedido.some(
+  //         (producto) => producto.id === this.productoSeleccionado.id
+  //       )
+  //     ) {
+  //       this.listaProductosPedido = this.listaProductosPedido.filter(
+  //         (producto) => producto.id != this.productoSeleccionado.id
+  //       );
+  //     }
 
-      this.estadoCheckbox[index] = false;
-      this.mostrarFormulario = !this.mostrarFormulario;
-    }
-  }
+  //     this.estadoCheckbox[index] = false;
+  //     this.mostrarFormulario = !this.mostrarFormulario;
+  //   }
+  // }
 
   cargarArregloProductos(cantidad: number) {
     if (this.productoSeleccionado != null) {
@@ -147,7 +150,7 @@ export class NuevoPedidoComponent {
 
       this.ArregloCantidad[indice] = cantidad;
       this.estadoCheckbox[indice] = true;
-      this.mostrarFormulario = !this.mostrarFormulario;
+      this.mostrarInput[indice] = !this.mostrarInput;
     }
   }
 
