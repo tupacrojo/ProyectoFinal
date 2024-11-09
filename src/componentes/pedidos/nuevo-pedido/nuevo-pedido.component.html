@@ -16,13 +16,13 @@
                 <td>{{producto.precio}}</td>
                 <td>{{producto.categoria}}</td>
                 <td>
-                    <!-- <input type="checkbox" #checkbox (change)="seleccionarProducto(i,checkbox)"
-                        [checked]="estadoCheckbox[i]">
-                    <a *ngIf="estadoCheckbox[i]" (click)="seleccionarProducto(i,checkbox)">Modificar</a> -->
                     <div class="counter">
-                        <button (click)="restar(i)" class="btn btn-unplus">-</button>
-                        <div class="counter-score">{{ArregloCantidad[i]}}</div>
-                        <button (click)="sumar(i)" class="btn btn-plus">+</button>
+                        <button *ngIf="!mostrarFormulario" (click)="restar(i)" class="btn btn-unplus">-</button>
+                        <div  class="counter-score">{{ArregloCantidad[i]}}</div>
+                        <button *ngIf="!mostrarFormulario" (click)="sumar(i)" class="btn btn-plus">+</button>
+                        <input type="checkbox" #checkbox (change)="seleccionarProducto(i,checkbox)"
+                        [checked]="estadoCheckbox[i]">
+                        <button *ngIf="mostrarFormulario" type="button" (click)="cargarArregloProductos(ArregloCantidad[i])">Agregar</button>
                     </div>
                 </td>
             </tr>
