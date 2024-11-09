@@ -37,7 +37,7 @@ export class ModificarProductoComponent implements OnInit {
     this.ar.paramMap.subscribe({
       next: (param) => {
         this.id = param.get('id');
-        this.setearFormulario(Number(this.id));
+        this.setearFormulario(this.id ?? '');
       },
       error: (err) => {
         console.log(err.message);
@@ -45,7 +45,7 @@ export class ModificarProductoComponent implements OnInit {
     });
   }
 
-  setearFormulario(id: number) {
+  setearFormulario(id: string) {
     this.productosService.getProductoById(id).subscribe({
       next: (prod) => {
         this.formulario.controls['nombre'].setValue(prod.nombre);

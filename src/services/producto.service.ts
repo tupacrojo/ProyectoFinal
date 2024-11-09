@@ -23,7 +23,7 @@ export class ProductoService {
     return this.http.delete<Producto>(`${this.urlApi}/${id}`);
   }
 
-  getProductoById(id: number | null): Observable<Producto> {
+  getProductoById(id: number | string | null): Observable<Producto> {
     return this.http.get<Producto>(`${this.urlApi}/${id}`);
   }
 
