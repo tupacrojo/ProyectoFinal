@@ -39,7 +39,10 @@ export class ProductoService {
     return this.http.get<Producto[]>(`${this.urlApi}?diferencia_ne=0`);
   } // no funciona traer solo los que tengan diferencia
 
-  putProducto(id: number, prod: Producto): Observable<Producto> {
+  putProducto(id: string, prod: Producto): Observable<Producto> {
     return this.http.put<Producto>(`${this.urlApi}/${id}`, prod);
+  }
+  putProductos(prod: Producto[]): Observable<Producto[]> {
+    return this.http.put<Producto[]>(`${this.urlApi}`, prod);
   }
 }

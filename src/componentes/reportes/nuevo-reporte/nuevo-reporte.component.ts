@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { Producto } from '../../../interfaces/Producto.interface';
 import { ProductoService } from '../../../services/producto.service';
 import { CommonModule } from '@angular/common';
+import { Reporte } from '../../../interfaces/Reporte.interface';
+import { post } from 'request';
+import { ReporteService } from '../../../services/reporte.service';
 
 @Component({
   selector: 'app-nuevo-reporte',
@@ -12,7 +15,11 @@ import { CommonModule } from '@angular/common';
 })
 export class NuevoReporteComponent {
   productos: Producto[] = [];
-  constructor(private productosService: ProductoService) {}
+  reporte: Reporte = { fecha: new Date(), productos: [] };
+  constructor(
+    private productosService: ProductoService,
+    private reporteService: ReporteService
+  ) {}
 
   ngOnInit(): void {
     this.mostrarLista();
@@ -30,7 +37,7 @@ export class NuevoReporteComponent {
     });
   }
 
-  setSubtotal(id: number, cantidad: string | null) {
+  setSubtotal(id: string, cantidad: string | null) {
     this.productosService.getProductoById(id).subscribe({
       next: (produc: Producto) => {
         produc.diferencia = -(produc.cantidad == null
@@ -51,7 +58,24 @@ export class NuevoReporteComponent {
     });
   }
 
-  enviarDatos() {}
+  enviarDatos() {
+    this.reporte.productos = this.productos.filter(
+      (producto) => producto.diferencia !== 0
+    );
+    this.reporteService.postReportes(this.reporte).subscribe({
+      next: (rep: Reporte) => {
+        console.log('Reporte creado', rep);
+        this.productos.forEach((producto) => {
+          producto.diferencia = 0;
+          this.productosService.putProducto(producto.id, producto).subscribe({
+            next: (prod: Producto) => {
+              this.mostrarLista();
+            },
+          });
+        });
+      },
+    });
+  }
 
   campoOrden: keyof Producto | null = null;
   esAscendente: boolean = true;

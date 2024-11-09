@@ -1,8 +1,6 @@
-export interface Usuario
-    {
-        id: string,
-        nombreUsuario: string,
-        contrasena: string,
-        tipoUsuario: string
-    }
-
+export interface Usuario {
+  id: string;
+  nombreUsuario: string;
+  contrasena: string;
+  tipoUsuario: string;
+}
