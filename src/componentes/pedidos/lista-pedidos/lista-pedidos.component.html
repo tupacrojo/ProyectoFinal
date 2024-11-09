@@ -1,1 +1,19 @@
-<p>lista-pedidos works!</p>
+<div class="contenedor">
+
+
+    <table class="tablaProd">
+
+        <tbody>
+            @for (pedidos of listaPedidos; track $index){
+            <tr>
+                <td>{{pedidos.id}}</td>
+                <td>{{pedidos.estado}}</td>
+                <td>{{pedidos.fecha}}</td>
+                <td>{{pedidos.productos}}</td>
+                <td><a (click)="eliminarPedido(pedidos.id)">Eliminar</a></td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
