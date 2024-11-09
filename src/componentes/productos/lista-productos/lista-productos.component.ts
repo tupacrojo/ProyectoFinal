@@ -39,7 +39,7 @@ export class ListaProductosComponent implements OnInit {
         produc.diferencia = -(produc.cantidad == null
           ? 0
           : produc.cantidad - (Number(cantidad) ?? 0));
-        this.productosService.putProducto(id, produc).subscribe({
+        this.productosService.putProducto(produc).subscribe({
           next: (produc: Producto) => {
             this.mostrarLista();
           },

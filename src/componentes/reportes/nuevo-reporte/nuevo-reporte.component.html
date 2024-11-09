@@ -1,3 +1,4 @@
+<h1>{{dia}}</h1>
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr>
@@ -19,13 +20,13 @@
             <td>{{ (producto.diferencia != 0 || producto.diferencia == null) ? producto.diferencia : "0" }}</td>
             <td><input *ngIf="producto.id" type="number"
                     [value]="((producto.diferencia !=null) && producto.cantidad !=null ) ? ((producto.diferencia) + producto.cantidad) : 0"
-                    #subtotalInput (change)="setSubtotal(producto.id, subtotalInput.value)">
+                    #subtotalInput (change)="setSubtotal(producto.id.toString() , subtotalInput.value)">
             </td>
 
         </tr>
         }
     </tbody>
 </table>
-<button (click)="enviarDatos()">
+<button type="button" (click)="enviarDatos()">
     Enviar Datos
 </button>

@@ -13,8 +13,13 @@ import { ReporteService } from '../../../services/reporte.service';
   styleUrl: './nuevo-reporte.component.css',
 })
 export class NuevoReporteComponent {
+  dia = new Date().getDate();
   productos: Producto[] = [];
-  reporte: Reporte = { fecha: new Date(), productos: [] };
+  reporte: Reporte = {
+    id: 'default',
+    fecha: new Date(),
+    productos: new Array<Producto>(),
+  };
   constructor(
     private productosService: ProductoService,
     private reporteService: ReporteService
@@ -42,7 +47,7 @@ export class NuevoReporteComponent {
         produc.diferencia = -(produc.cantidad == null
           ? 0
           : produc.cantidad - (Number(cantidad) ?? 0));
-        this.productosService.putProducto(id, produc).subscribe({
+        this.productosService.putProducto(produc).subscribe({
           next: (produc: Producto) => {
             this.mostrarLista();
           },
@@ -65,12 +70,14 @@ export class NuevoReporteComponent {
       next: (rep: Reporte) => {
         console.log('Reporte creado', rep);
         this.productos.forEach((producto) => {
-          producto.diferencia = 0;
-          this.productosService.putProducto(producto.id, producto).subscribe({
-            next: (prod: Producto) => {
-              this.mostrarLista();
-            },
-          });
+          if (producto.id) {
+            producto.diferencia = 0;
+            this.productosService.putProducto(producto).subscribe({
+              next: (prod: Producto) => {
+                this.mostrarLista();
+              },
+            });
+          }
         });
       },
     });

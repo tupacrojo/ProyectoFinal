@@ -1,7 +1,7 @@
 import { Producto } from './Producto.interface';
 
 export interface Reporte {
-  id?: string;
+  id: null | string | number;
   fecha: Date;
   productos: Producto[];
 }

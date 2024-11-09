@@ -42,15 +42,15 @@ export class FiltrarProductosComponent implements OnInit {
     });
   }
 
-  eliminarProducto(id: number | undefined) {
-    this.productosService.deleteProductos(id).subscribe({
+  eliminarProducto(producto: Producto) {
+    this.productosService.deleteProductos(producto.id).subscribe({
       next: (produc: Producto) => {
         this.listaProductos = this.listaProductos.filter(
-          (producto) => producto.id !== id
+          (producto) => producto.id !== producto.id
         );
 
         this.listaFiltradaProductos = this.listaFiltradaProductos.filter(
-          (producto) => producto.id !== id
+          (producto) => producto.id !== producto.id
         );
       },
       error: (err) => {

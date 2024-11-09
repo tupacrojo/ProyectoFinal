@@ -64,7 +64,7 @@ export class ModificarProductoComponent implements OnInit {
   }
 
   updateProd(prod: Producto) {
-    this.productosService.putProducto(Number(this.id), prod).subscribe({
+    this.productosService.putProducto(prod).subscribe({
       next: () => {
         alert('El producto se actualizo correctamente');
       },
