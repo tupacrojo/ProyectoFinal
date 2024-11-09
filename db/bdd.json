@@ -6,7 +6,7 @@
       "precio": 15.99,
       "categoria": "Ropa Casual",
       "cantidad": 100,
-      "diferencia": 0
+      "diferencia": 10
     },
     {
       "id": "4",
@@ -14,7 +14,7 @@
       "precio": 120,
       "categoria": "Abrigos",
       "cantidad": 25,
-      "diferencia": 0
+      "diferencia": -10
     },
     {
       "nombre": "Falda de Ecocuero",
@@ -118,6 +118,14 @@
       "precio": 100,
       "cantidad": 9,
       "categoria": "Categoria nueva",
+      "diferencia": 0
+    },
+    {
+      "id": "0ce2",
+      "nombre": "vaso",
+      "precio": 20,
+      "cantidad": 50,
+      "categoria": "nueva",
       "diferencia": 0
     }
   ],
@@ -412,6 +420,30 @@
           "precio": 15,
           "categoria": "Accesorios",
           "cantidad": 5
+        }
+      ]
+    }
+  ],
+  "reportes": [
+    {
+      "id": "r001",
+      "fecha": "2024-11-08",
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "Camiseta Básica",
+          "precio": 15.99,
+          "categoria": "Ropa Casual",
+          "cantidad": 100,
+          "diferencia": 0
+        },
+        {
+          "id": "4",
+          "nombre": "Chaqueta de Cuero",
+          "precio": 120,
+          "categoria": "Abrigos",
+          "cantidad": 25,
+          "diferencia": 0
         }
       ]
     }

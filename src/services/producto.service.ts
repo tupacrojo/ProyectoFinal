@@ -36,7 +36,7 @@ export class ProductoService {
   }
 
   getProductoOrderByDiferencia(): Observable<Producto> {
-    return this.http.get<Producto>(`${this.urlApi}?_sort=diferencia`);
+    return this.http.get<Producto>(`${this.urlApi}?diferencia_ne=0`);
   } // no funciona traer solo los que tengan diferencia
 
   putProducto(id: number, prod: Producto): Observable<Producto> {

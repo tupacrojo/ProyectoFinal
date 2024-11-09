@@ -8,13 +8,12 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-modificar-producto',
   standalone: true,
-  imports: [CommonModule,ReactiveFormsModule,RouterModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './modificar-producto.component.html',
-  styleUrl: './modificar-producto.component.css'
+  styleUrl: './modificar-producto.component.css',
 })
-export class ModificarProductoComponent implements OnInit{
-
-  constructor(private productosService: ProductoService) { }
+export class ModificarProductoComponent implements OnInit {
+  constructor(private productosService: ProductoService) {}
 
   fb = inject(FormBuilder);
   ar = inject(ActivatedRoute);
@@ -24,65 +23,54 @@ export class ModificarProductoComponent implements OnInit{
     this.setearIdProducto();
   }
 
-  formulario = this.fb.nonNullable.group(
-    {
-      nombre: ['',[Validators.required]],
-      precio: [0,[Validators.required]],
-      cantidad: [0,[Validators.required]],
-      categoria: ['',[Validators.required]]
-    }
-  );
+  formulario = this.fb.nonNullable.group({
+    nombre: ['', [Validators.required]],
+    precio: [0, [Validators.required]],
+    cantidad: [0, [Validators.required]],
+    categoria: ['', [Validators.required]],
+    diferencia: [0, [Validators.required]],
+  });
 
-  updateProducto(){
-    
+  updateProducto() {}
 
-  }
-
-  setearIdProducto(){
+  setearIdProducto() {
     this.ar.paramMap.subscribe({
       next: (param) => {
         this.id = param.get('id');
         this.setearFormulario(Number(this.id));
       },
-      error:(err) => {
+      error: (err) => {
         console.log(err.message);
-      }
-    })
-
+      },
+    });
   }
 
-  setearFormulario(id:number){
+  setearFormulario(id: number) {
     this.productosService.getProductoById(id).subscribe({
       next: (prod) => {
         this.formulario.controls['nombre'].setValue(prod.nombre);
         this.formulario.controls['precio'].setValue(prod.precio ?? 0);
         this.formulario.controls['categoria'].setValue(prod.categoria);
         this.formulario.controls['cantidad'].setValue(prod.cantidad ?? 0);
-      }
-    })
-
+      },
+    });
   }
 
-  actualizarProducto(){
-    if(this.formulario.invalid) return;
+  actualizarProducto() {
+    if (this.formulario.invalid) return;
 
     const prod = this.formulario.getRawValue();
     this.updateProd(prod);
-
   }
 
-  updateProd(prod: Producto){
-    this.productosService.putProducto(Number(this.id),prod).subscribe({
+  updateProd(prod: Producto) {
+    this.productosService.putProducto(Number(this.id), prod).subscribe({
       next: () => {
-        alert("El producto se actualizo correctamente");
+        alert('El producto se actualizo correctamente');
       },
-      error(err){
+      error(err) {
         console.log(err.message);
-      }
-    })
-
+      },
+    });
   }
-
-
-
 }

@@ -28,6 +28,7 @@ export class NuevoProductoComponent implements OnInit {
     precio: [null, [Validators.required]],
     cantidad: [null, [Validators.required]],
     categoria: ['', [Validators.required]],
+    diferencia: [0, [Validators.required]],
   });
 
   addProducto() {
@@ -43,6 +44,7 @@ export class NuevoProductoComponent implements OnInit {
         precio: null,
         cantidad: null,
         categoria: '',
+        diferencia: 0,
       });
     } else {
       alert('Nombre existente');

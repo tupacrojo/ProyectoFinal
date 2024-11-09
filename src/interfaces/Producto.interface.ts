@@ -4,5 +4,5 @@ export interface Producto {
   precio: number | null;
   categoria: string;
   cantidad: number | null;
-  diferencia?: number | null;
+  diferencia: number;
 }

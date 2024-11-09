@@ -1,48 +1,49 @@
 <section>
-    <form [formGroup] = "formulario" >
+    <form [formGroup]="formulario">
         <fieldset>
-        <legend>Modificar Producto</legend>
-        
-        <label for="Producto">Producto: </label>
-        <input type = "text" placeholder="Escribe un producto..." formControlName = "nombre">
+            <legend>Modificar Producto</legend>
 
-        @if(formulario.controls['nombre'].getError('required')  && formulario.controls['nombre'].touched){
+            <label for="Producto">Producto: </label>
+            <input type="text" placeholder="Escribe un producto..." formControlName="nombre">
+
+            @if(formulario.controls['nombre'].getError('required') && formulario.controls['nombre'].touched){
             <div>
                 Campo requerido
             </div>
-        }   
+            }
 
-        <label for="Precio"> Precio: </label>
-        <input type = "number" placeholder="Escribe un precio..." formControlName = "precio">
+            <label for="Precio"> Precio: </label>
+            <input type="number" placeholder="Escribe un precio..." formControlName="precio">
 
-        @if(formulario.controls['precio'].getError('required')  && formulario.controls['precio'].touched){
+            @if(formulario.controls['precio'].getError('required') && formulario.controls['precio'].touched){
             <div>
                 Campo requerido
             </div>
-        }
+            }
 
-        <label for="Cantidad"> Cantidad: </label>
-        <input type = "number" placeholder="Escribe una cantidad..." formControlName = "cantidad">
+            <label for="Cantidad"> Cantidad: </label>
+            <input type="number" placeholder="Escribe una cantidad..." formControlName="cantidad">
 
-        @if(formulario.controls['cantidad'].getError('required')  && formulario.controls['cantidad'].touched){
+            @if(formulario.controls['cantidad'].getError('required') && formulario.controls['cantidad'].touched){
             <div>
                 Campo requerido
             </div>
-        }
+            }
 
-        <label for="categoria"> Categoria: </label>
+            <label for="categoria"> Categoria: </label>
 
-        <input type = "text" formControlName = "categoria" readonly>
-        
+            <input type="text" formControlName="categoria" readonly>
 
-        @if(formulario.controls['categoria'].getError('required')  && formulario.controls['categoria'].touched){
+
+            @if(formulario.controls['categoria'].getError('required') && formulario.controls['categoria'].touched){
             <div>
                 Campo requerido
             </div>
-        } 
+            }
 
-        <button (click) = "actualizarProducto()" routerLink = "/ListaProductos">Actualizar producto</button>
+
+            <button (click)="actualizarProducto()" routerLink="/ListaProductos">Actualizar producto</button>
         </fieldset>
     </form>
-       
-</section>      
+
+</section>
