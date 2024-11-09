@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { Pedido } from '../../../interfaces/Pedido.interface';
 import { PedidoService } from '../../../services/pedido.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-lista-pedidos',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './lista-pedidos.component.html',
   styleUrl: './lista-pedidos.component.css'
 })
@@ -30,16 +31,5 @@ export class ListaPedidosComponent {
     });
   }
 
-  eliminarPedido(id: string | undefined) {
-    this.listaPedidosService.deleteProductos(id).subscribe({
-      next: (pedido: Pedido) => {
-        this.listaPedidos = this.listaPedidos.filter(
-          (pedido) => pedido.id !== id
-        );
-      },
-      error: (err) => {
-        console.log('Error', err);
-      },
-    });
-  }
+
 }

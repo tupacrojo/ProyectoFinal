@@ -460,6 +460,67 @@
           "diferencia": 0
         }
       ]
+    },
+    {
+      "id": "cd73",
+      "fecha": "09/11/2024",
+      "estado": "En espera de confirmacion",
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "Camiseta Básica",
+          "precio": 15.99,
+          "categoria": "Ropa Casual",
+          "cantidad": 8,
+          "diferencia": -8
+        },
+        {
+          "id": "4",
+          "nombre": "Chaqueta de Cuero",
+          "precio": 120,
+          "categoria": "Abrigos",
+          "cantidad": 6,
+          "diferencia": 0
+        }
+      ]
+    },
+    {
+      "id": "4766",
+      "fecha": "09/11/2024",
+      "estado": "En espera de confirmacion",
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "Camiseta Básica",
+          "precio": 15.99,
+          "categoria": "Ropa Casual",
+          "cantidad": 8,
+          "diferencia": -8
+        },
+        {
+          "id": "4",
+          "nombre": "Chaqueta de Cuero",
+          "precio": 120,
+          "categoria": "Abrigos",
+          "cantidad": 6,
+          "diferencia": 0
+        }
+      ]
+    },
+    {
+      "id": "9e13",
+      "fecha": "09/11/2024",
+      "estado": "En espera de confirmacion",
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "Camiseta Básica",
+          "precio": 15.99,
+          "categoria": "Ropa Casual",
+          "cantidad": 5,
+          "diferencia": -8
+        }
+      ]
     }
   ],
   "reportes": [
