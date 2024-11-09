@@ -18,4 +18,8 @@ export class PedidoService {
   postPedido(ven: Pedido): Observable<Pedido> {
     return this.http.post<Pedido>(this.url, ven);
   }
+
+  deleteProductos(id: string | undefined): Observable<Pedido> {
+    return this.http.delete<Pedido>(`${this.url}/${id}`);
+  }
 }
