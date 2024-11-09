@@ -19,7 +19,13 @@ export class PedidoService {
     return this.http.post<Pedido>(this.url, ven);
   }
 
-  deleteProductos(id: string | undefined): Observable<Pedido> {
+  deletePedido(id: string | undefined): Observable<Pedido> {
     return this.http.delete<Pedido>(`${this.url}/${id}`);
   }
+
+  putPedido(ped: Pedido): Observable<Pedido> {
+    return this.http.put<Pedido>(`${this.url}/${ped.id}`, ped);
+  }
+
+
 }

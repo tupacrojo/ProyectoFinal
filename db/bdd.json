@@ -311,7 +311,7 @@
     {
       "id": "p001",
       "fecha": "2024-11-08",
-      "estado": "En espera de confirmacion",
+      "estado": "En preparacion",
       "productos": [
         {
           "id": "1",
@@ -349,7 +349,7 @@
     {
       "id": "p003",
       "fecha": "2024-11-07",
-      "estado": "En espera de confirmacion",
+      "estado": "Rechazado",
       "productos": [
         {
           "id": "18",

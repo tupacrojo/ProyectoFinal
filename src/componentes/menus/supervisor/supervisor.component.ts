@@ -34,4 +34,34 @@ export class SupervisorComponent {
     });
   }
 
+  modficarPedido(ped: Pedido){
+    this.listaPedidosService.putPedido(ped).subscribe({
+      next:() => {
+        console.log("Actualizado el estado correctamente");
+      }, 
+      error: (err) => {
+        console.log(err.message);
+      }
+    })
+  }
+
+
+  valorEstado(valorEstado: string):boolean{
+    if(valorEstado === "En espera de confirmacion") return true;
+
+    return false;
+  }
+
+  cambiarEstadoAceptacion(index: number){
+    this.listaPedidos[index].estado = "En preparacion";
+
+    this.modficarPedido(this.listaPedidos[index]);
+  }
+
+  cambiarEstadoRechazo(index: number){
+    this.listaPedidos[index].estado = "Rechazado";
+
+    this.modficarPedido(this.listaPedidos[index]);
+  }
+
 }
