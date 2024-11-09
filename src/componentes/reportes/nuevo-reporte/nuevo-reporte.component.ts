@@ -13,10 +13,10 @@ import { ReporteService } from '../../../services/reporte.service';
   styleUrl: './nuevo-reporte.component.css',
 })
 export class NuevoReporteComponent {
-  dia = new Date().getDate();
+  dia = new Date();
   productos: Producto[] = [];
   reporte: Reporte = {
-    id: 'default',
+    id: null,
     fecha: new Date(),
     productos: new Array<Producto>(),
   };
@@ -37,6 +37,14 @@ export class NuevoReporteComponent {
 
       error: (err) => {
         console.log('Error', err);
+      },
+    });
+  }
+
+  listaReporte() {
+    this.reporteService.getListaReportes().subscribe({
+      next: (rep) => {
+        console.log('Reportes', rep);
       },
     });
   }
