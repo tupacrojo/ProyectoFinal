@@ -16,8 +16,8 @@
                 <td>{{producto.precio}}</td>
                 <td>{{producto.categoria}}</td>
                 <td>
-                    <input type="checkbox" #checkbox (change)="seleccionarProducto(i,checkbox)" [checked]="estadoCheckbox[i]">  
-                    <a *ngIf = "estadoCheckbox[i]" (click) = "seleccionarProducto(i,checkbox)">Modificar</a>                  
+                    <input type="checkbox" #checkbox (change)="seleccionarProducto(i,checkbox)" [checked]="estadoCheckbox[i]">
+                    <a *ngIf = "estadoCheckbox[i]" (click) = "seleccionarProducto(i,checkbox)">Modificar</a>                
                 </td>
 
                 <td>
