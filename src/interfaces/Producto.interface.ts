@@ -3,6 +3,6 @@ export interface Producto {
   nombre: string;
   precio: number | null;
   categoria: string;
-  cantidad: number | null;
+  cantidad: number;
   diferencia: number;
 }

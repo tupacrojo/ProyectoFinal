@@ -26,7 +26,7 @@ export class NuevoProductoComponent implements OnInit {
   formulario = this.fb.nonNullable.group({
     nombre: ['', [Validators.required]],
     precio: [null, [Validators.required]],
-    cantidad: [null, [Validators.required]],
+    cantidad: [0, [Validators.required]],
     categoria: ['', [Validators.required]],
     diferencia: [0, [Validators.required]],
   });
@@ -42,7 +42,7 @@ export class NuevoProductoComponent implements OnInit {
       this.formulario.reset({
         nombre: '',
         precio: null,
-        cantidad: null,
+        cantidad: 0,
         categoria: '',
         diferencia: 0,
       });
