@@ -19,7 +19,7 @@
     {
       "nombre": "Falda de Ecocuero",
       "precio": 75,
-      "cantidad": 29,
+      "cantidad": 33,
       "categoria": "Faldas",
       "id": "6",
       "diferencia": 0
@@ -451,12 +451,12 @@
     {
       "id": "79ac",
       "fecha": "10/11/2024",
-      "estado": "Aceptado",
+      "estado": "Entregado",
       "productos": [
         {
           "nombre": "Falda de Ecocuero",
           "precio": 75,
-          "cantidad": 3,
+          "cantidad": 4,
           "categoria": "Faldas",
           "id": "6",
           "diferencia": 0
