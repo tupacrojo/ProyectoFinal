@@ -41,21 +41,10 @@
                         <a (click)="cambiarEstadoRechazo(i)">Rechazar</a>
                     </div>
 
-                    <div>
-                        <div *ngIf="!selects[i] && modifyEstado[i]">
-                            <a (click)="habilitarSelect(i)">Modificar estado</a>
-                        </div>
-                        <select *ngIf="selects[i]">
-                            <option>En transito</option>
-                            <option>Demorado</option>
-                            <option>Entregado</option>
-                        </select>
-                    </div>
-
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
 
-<button routerLink = "">Salir</button>
+<button routerLink="">Salir</button>

@@ -22,11 +22,10 @@ export class SupervisorComponent {
   }
 
   mostrarLista() {
-    this.listaPedidosService.getListaPedidos().subscribe({
+    this.listaPedidosService.getPedidosEnEspera().subscribe({
       next: (pedido) => {
         this.listaPedidos = pedido;
       },
-
       error: (err) => {
         console.log('Error', err);
       },
@@ -46,29 +45,16 @@ export class SupervisorComponent {
 
   valorEstado(valorEstado: string, index: number): boolean {
     if (valorEstado === 'En espera de confirmacion') return true;
-
-    this.modificarEstado(index);
     return false;
   }
 
-  modificarEstado(index: number) {
-    this.modifyEstado[index] = true;
-  }
-
   cambiarEstadoAceptacion(index: number) {
-    this.listaPedidos[index].estado = 'En preparacion';
-
+    this.listaPedidos[index].estado = 'Aceptado';
     this.modficarPedido(this.listaPedidos[index]);
   }
 
   cambiarEstadoRechazo(index: number) {
     this.listaPedidos[index].estado = 'Rechazado';
-
     this.modficarPedido(this.listaPedidos[index]);
-  }
-
-  habilitarSelect(index: number) {
-    this.modifyEstado[index] = false;
-    this.selects[index] = true;
   }
 }

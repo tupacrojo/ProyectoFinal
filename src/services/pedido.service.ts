@@ -27,6 +27,9 @@ export class PedidoService {
     return this.http.put<Pedido>(`${this.url}/${ped.id}`, ped);
   }
 
+  getPedidosEnEspera(): Observable<Pedido[]> {
+    return this.http.get<Pedido[]>(`${this.url}?estado=En espera de confirmacion`);
+  }
   getPedidosAceptados(): Observable<Pedido[]> {
     return this.http.get<Pedido[]>(`${this.url}?estado=Aceptado`);
   }

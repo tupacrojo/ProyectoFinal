@@ -397,7 +397,7 @@
     {
       "id": "7a39",
       "fecha": "10/11/2024",
-      "estado": "En espera de confirmacion",
+      "estado": "En preparacion",
       "productos": [
         {
           "id": "14",
@@ -413,6 +413,91 @@
           "cantidad": 2,
           "categoria": "Ropa Interior",
           "id": "17",
+          "diferencia": 0
+        }
+      ]
+    },
+    {
+      "id": "1424",
+      "fecha": "10/11/2024",
+      "estado": "En preparacion",
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "Camiseta Básica",
+          "precio": 15.99,
+          "categoria": "Ropa Casual",
+          "cantidad": 3,
+          "diferencia": 0
+        },
+        {
+          "id": "4",
+          "nombre": "Chaqueta de Cuero",
+          "precio": 120,
+          "categoria": "Abrigos",
+          "cantidad": 1,
+          "diferencia": 0
+        },
+        {
+          "id": "16",
+          "nombre": "Bufanda de Lana",
+          "precio": 15,
+          "categoria": "Accesorios",
+          "cantidad": 1,
+          "diferencia": 0
+        }
+      ]
+    },
+    {
+      "id": "79ac",
+      "fecha": "10/11/2024",
+      "estado": "Aceptado",
+      "productos": [
+        {
+          "nombre": "Falda de Ecocuero",
+          "precio": 75,
+          "cantidad": 3,
+          "categoria": "Faldas",
+          "id": "6",
+          "diferencia": 0
+        }
+      ]
+    },
+    {
+      "id": "1c74",
+      "fecha": "10/11/2024",
+      "estado": "En espera de confirmacion",
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "Camiseta Básica",
+          "precio": 15.99,
+          "categoria": "Ropa Casual",
+          "cantidad": 3,
+          "diferencia": 0
+        },
+        {
+          "id": "4",
+          "nombre": "Chaqueta de Cuero",
+          "precio": 120,
+          "categoria": "Abrigos",
+          "cantidad": 4,
+          "diferencia": 0
+        },
+        {
+          "id": "18",
+          "nombre": "Pantalón Cargo",
+          "precio": 40.5,
+          "categoria": "Pantalones",
+          "cantidad": 3,
+          "diferencia": 0
+        },
+        {
+          "id": "19",
+          "nombre": "Chaleco Acolchado",
+          "precio": 70,
+          "categoria": "Abrigos",
+          "cantidad": 2,
           "diferencia": 0
         }
       ]
