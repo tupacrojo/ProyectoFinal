@@ -12,6 +12,9 @@ import { ModificarProductoComponent } from '../componentes/productos/modificar-p
 import { NuevoPedidoComponent } from '../componentes/pedidos/nuevo-pedido/nuevo-pedido.component';
 import { NuevoReporteComponent } from '../componentes/reportes/nuevo-reporte/nuevo-reporte.component';
 import { ListaReportesComponent } from '../componentes/reportes/lista-reportes/lista-reportes.component';
+import { NuevoUsuarioComponent } from '../componentes/usuarios/nuevo-usuario/nuevo-usuario.component';
+import { ListaUsuarioComponent } from '../componentes/usuarios/lista-usuario/lista-usuario.component';
+import { ListaPedidosComponent } from '../componentes/pedidos/lista-pedidos/lista-pedidos.component';
 
 export const routes: Routes = [
   {
