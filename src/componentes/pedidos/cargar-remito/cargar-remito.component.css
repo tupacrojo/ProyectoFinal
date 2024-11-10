@@ -22,3 +22,11 @@ td > input {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+input {
+  text-align: center;
+}
+
+button {
+  margin: 16px auto 0;
+}

@@ -43,18 +43,46 @@ export class CargarRemitoComponent implements OnInit {
     });
   }
 
+  setRecibido(pedido: Pedido, id: number | undefined, value: string) {
+    pedido.productos.find((producto) => producto.id === id)!.cantidad =
+      Number(value);
+  }
 
-  cargarProducto(pedido: Pedido, pedidoIndex: number) {
-    const productos = pedido.productos;
-    productos.forEach((producto, index) => {
-      const inputElement = document.querySelector(`#inputRecibido${index}`) as HTMLInputElement;
-      if (inputElement) {
-        const nuevaCantidad = parseInt(inputElement.value, 10);
-        if (!isNaN(nuevaCantidad)) {
-          producto.cantidad = nuevaCantidad;
-        }
+  cargarProducto(pedido: Pedido) {
+    console.log(pedido);
+    pedido.productos.forEach((produ) => {
+      if (produ.id) {
+        this.productoService.getProductoById(produ.id).subscribe({
+          next: (producto) => {
+            if (producto.cantidad !== null && producto.cantidad !== undefined) {
+              producto.cantidad += produ.cantidad ? produ.cantidad : 0;
+            } else {
+              producto.cantidad = produ.cantidad;
+            }
+            this.productoService.putProducto(producto).subscribe({
+              next: (producto) => {
+                console.log('Stock actualizado', producto);
+                pedido.estado = 'Entregado';
+                this.ts.putPedido(pedido).subscribe({
+                  next: (pedido) => {
+                    console.log('Pedido actualizado', pedido);
+                    this.listarPedidosAceptados();
+                  },
+                  error: (err) => {
+                    console.log('Error al actualizar pedido', err);
+                  },
+                });
+              },
+              error: (err) => {
+                console.log('Error al acutalizar stock', err);
+              },
+            });
+          },
+          error: (err) => {
+            console.log('Error no se encuentra producto', err);
+          },
+        });
       }
     });
-    console.log(pedido);
   }
 }
