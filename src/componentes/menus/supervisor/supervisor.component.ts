@@ -25,7 +25,6 @@ export class SupervisorComponent {
     this.listaPedidosService.getListaPedidos().subscribe({
       next: (pedido) => {
         this.listaPedidos = pedido;
-      
       },
 
       error: (err) => {
@@ -45,30 +44,19 @@ export class SupervisorComponent {
     });
   }
 
-<<<<<<< Updated upstream
-  valorEstado(valorEstado: string): boolean {
+  valorEstado(valorEstado: string, index: number): boolean {
     if (valorEstado === 'En espera de confirmacion') return true;
-=======
-
-  valorEstado(valorEstado: string, index: number):boolean{
-    if(valorEstado === "En espera de confirmacion") return true;
->>>>>>> Stashed changes
 
     this.modificarEstado(index);
     return false;
   }
 
-<<<<<<< Updated upstream
-  cambiarEstadoAceptacion(index: number) {
-    this.listaPedidos[index].estado = 'Aceptado';
-=======
-  modificarEstado(index:number){
+  modificarEstado(index: number) {
     this.modifyEstado[index] = true;
   }
 
-  cambiarEstadoAceptacion(index: number){
-    this.listaPedidos[index].estado = "En preparacion";
->>>>>>> Stashed changes
+  cambiarEstadoAceptacion(index: number) {
+    this.listaPedidos[index].estado = 'En preparacion';
 
     this.modficarPedido(this.listaPedidos[index]);
   }
@@ -78,13 +66,9 @@ export class SupervisorComponent {
 
     this.modficarPedido(this.listaPedidos[index]);
   }
-<<<<<<< Updated upstream
-=======
 
-  habilitarSelect(index: number){
+  habilitarSelect(index: number) {
     this.modifyEstado[index] = false;
     this.selects[index] = true;
   }
-
->>>>>>> Stashed changes
 }

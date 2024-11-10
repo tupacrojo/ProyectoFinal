@@ -4,39 +4,6 @@
             <tr>
                 <th>Fecha</th>
                 <th>Estado del pedido</th>
-<<<<<<< Updated upstream
-                <th>Nombre del Producto</th>
-                <th>Cantidad</th>
-                <th>Categoria</th>
-                <th>Precio</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let pedido of listaPedidos; let i = index">
-                <td>{{pedido.fecha}}</td>
-                <td>{{pedido.estado}}</td>
-                <td colspan="4">
-                    <table>
-                        <tbody>
-                            @for (producto of pedido.productos; track $index) {
-
-                            <tr>
-                                <td>{{producto.nombre}}</td>
-                                <td>{{producto.cantidad}}</td>
-                                <td>{{producto.categoria}}</td>
-                                <td>{{producto.precio}}</td>
-                            </tr>
-                            }
-                        </tbody>
-                    </table>
-                </td>
-                <td>
-                    <div *ngIf="valorEstado(pedido.estado)">
-                        <a (click)="cambiarEstadoAceptacion(i)">Aceptar</a>
-                        <br>
-                        <a (click)="cambiarEstadoRechazo(i)">Rechazar</a>
-=======
                 <th>
                     Productos
                     <table>
@@ -50,17 +17,17 @@
                     </table>
                 </th>
 
-                </tr>
-            </thead>
-    
+            </tr>
+        </thead>
+
 
         <tbody>
-            <tr *ngFor = "let pedidos of listaPedidos; let i = index" >
+            <tr *ngFor="let pedidos of listaPedidos; let i = index">
                 <td>{{pedidos.fecha}}</td>
                 <td>{{pedidos.estado}}</td>
                 <table>
                     <tbody>
-                        <tr *ngFor = "let producto of pedidos.productos">
+                        <tr *ngFor="let producto of pedidos.productos">
                             <td>{{producto.nombre}} </td>
                             <td>{{producto.cantidad}} </td>
                             <td>{{producto.precio}} </td>
@@ -69,23 +36,22 @@
                 </table>
 
                 <td>
-                    <div *ngIf = "valorEstado(pedidos.estado,i)">
-                        <a (click) = "cambiarEstadoAceptacion(i)">Aceptar </a>
-                        <a (click) = "cambiarEstadoRechazo(i)">Rechazar</a>
->>>>>>> Stashed changes
+                    <div *ngIf="valorEstado(pedidos.estado,i)">
+                        <a (click)="cambiarEstadoAceptacion(i)">Aceptar </a>
+                        <a (click)="cambiarEstadoRechazo(i)">Rechazar</a>
                     </div>
 
                     <div>
                         <div *ngIf="!selects[i] && modifyEstado[i]">
-                            <a (click) = "habilitarSelect(i)">Modificar estado</a>
+                            <a (click)="habilitarSelect(i)">Modificar estado</a>
                         </div>
-                        <select *ngIf = "selects[i]">
+                        <select *ngIf="selects[i]">
                             <option>En transito</option>
                             <option>Demorado</option>
                             <option>Entregado</option>
                         </select>
                     </div>
-                          
+
                 </td>
             </tr>
         </tbody>
