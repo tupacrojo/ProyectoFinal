@@ -5,7 +5,7 @@
       "nombre": "Camiseta Básica",
       "precio": 15.99,
       "categoria": "Ropa Casual",
-      "cantidad": 100,
+      "cantidad": 102,
       "diferencia": 0
     },
     {
@@ -19,7 +19,7 @@
     {
       "nombre": "Falda de Ecocuero",
       "precio": 75,
-      "cantidad": 30,
+      "cantidad": 33,
       "categoria": "Faldas",
       "id": "6",
       "diferencia": 0
@@ -335,7 +335,7 @@
     {
       "id": "a0f2",
       "fecha": "10/11/2024",
-      "estado": "Aceptado",
+      "estado": "Entregado",
       "productos": [
         {
           "id": "1",
@@ -348,7 +348,7 @@
         {
           "nombre": "Falda de Ecocuero",
           "precio": 75,
-          "cantidad": 2,
+          "cantidad": 3,
           "categoria": "Faldas",
           "id": "6",
           "diferencia": 0

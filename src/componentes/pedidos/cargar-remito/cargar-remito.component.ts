@@ -48,7 +48,41 @@ export class CargarRemitoComponent implements OnInit {
       Number(value);
   }
 
-  cargarProducto(pedido: Pedido, pedidoIndex: number) {
+  cargarProducto(pedido: Pedido) {
     console.log(pedido);
+    pedido.productos.forEach((produ) => {
+      if (produ.id) {
+        this.productoService.getProductoById(produ.id).subscribe({
+          next: (producto) => {
+            if (producto.cantidad !== null && producto.cantidad !== undefined) {
+              producto.cantidad += produ.cantidad ? produ.cantidad : 0;
+            } else {
+              producto.cantidad = produ.cantidad;
+            }
+            this.productoService.putProducto(producto).subscribe({
+              next: (producto) => {
+                console.log('Stock actualizado', producto);
+                pedido.estado = 'Entregado';
+                this.ts.putPedido(pedido).subscribe({
+                  next: (pedido) => {
+                    console.log('Pedido actualizado', pedido);
+                    this.listarPedidosAceptados();
+                  },
+                  error: (err) => {
+                    console.log('Error al actualizar pedido', err);
+                  },
+                });
+              },
+              error: (err) => {
+                console.log('Error al acutalizar stock', err);
+              },
+            });
+          },
+          error: (err) => {
+            console.log('Error no se encuentra producto', err);
+          },
+        });
+      }
+    });
   }
 }
