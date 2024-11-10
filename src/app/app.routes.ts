@@ -15,6 +15,7 @@ import { ListaReportesComponent } from '../componentes/reportes/lista-reportes/l
 import { NuevoUsuarioComponent } from '../componentes/usuarios/nuevo-usuario/nuevo-usuario.component';
 import { ListaUsuarioComponent } from '../componentes/usuarios/lista-usuario/lista-usuario.component';
 import { ListaPedidosComponent } from '../componentes/pedidos/lista-pedidos/lista-pedidos.component';
+import { CargarRemitoComponent } from '../componentes/pedidos/cargar-remito/cargar-remito.component';
 
 export const routes: Routes = [
   {
@@ -80,6 +81,10 @@ export const routes: Routes = [
   {
     path: 'NuevoUsuario',
     component: NuevoUsuarioComponent
+  },
+  {
+    path:'CargarRemito',
+    component: CargarRemitoComponent
   },
   {
     path: '**',

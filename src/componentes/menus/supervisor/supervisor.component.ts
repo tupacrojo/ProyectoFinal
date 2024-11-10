@@ -49,7 +49,7 @@ export class SupervisorComponent {
   }
 
   cambiarEstadoAceptacion(index: number) {
-    this.listaPedidos[index].estado = 'En preparacion';
+    this.listaPedidos[index].estado = 'Aceptado';
 
     this.modficarPedido(this.listaPedidos[index]);
   }

@@ -333,143 +333,22 @@
   ],
   "pedidos": [
     {
-      "id": "1e0c",
-      "fecha": "08/11/2024",
-      "estado": "En espera de confirmacion",
-      "productos": [
-        {
-          "id": "16",
-          "nombre": "Bufanda de Lana",
-          "precio": 15,
-          "categoria": "Accesorios",
-          "cantidad": 5
-        }
-      ]
-    },
-    {
-      "id": "2a2f",
-      "fecha": "09/11/2024",
-      "estado": "En espera de confirmacion",
-      "productos": [
-        {
-          "id": "18",
-          "nombre": "Pantalón Cargo",
-          "precio": 40.5,
-          "categoria": "Pantalones",
-          "cantidad": 1,
-          "diferencia": 0
-        }
-      ]
-    },
-    {
-      "id": "1722",
-      "fecha": "09/11/2024",
-      "estado": "En preparacion",
-      "productos": [
-        {
-          "id": "14",
-          "nombre": "Sombrero de Paja",
-          "precio": 20,
-          "categoria": "Accesorios",
-          "cantidad": 3,
-          "diferencia": 0
-        },
-        {
-          "id": "18",
-          "nombre": "Pantalón Cargo",
-          "precio": 40.5,
-          "categoria": "Pantalones",
-          "cantidad": 4,
-          "diferencia": 0
-        }
-      ]
-    },
-    {
-      "id": "cd73",
-      "fecha": "09/11/2024",
-      "estado": "En espera de confirmacion",
-      "productos": [
-        {
-          "id": "1",
-          "nombre": "Camiseta Básica",
-          "precio": 15.99,
-          "categoria": "Ropa Casual",
-          "cantidad": 8,
-          "diferencia": -8
-        },
-        {
-          "id": "4",
-          "nombre": "Chaqueta de Cuero",
-          "precio": 120,
-          "categoria": "Abrigos",
-          "cantidad": 6,
-          "diferencia": 0
-        }
-      ]
-    },
-    {
-      "id": "4766",
-      "fecha": "09/11/2024",
-      "estado": "En espera de confirmacion",
-      "productos": [
-        {
-          "id": "1",
-          "nombre": "Camiseta Básica",
-          "precio": 15.99,
-          "categoria": "Ropa Casual",
-          "cantidad": 8,
-          "diferencia": -8
-        },
-        {
-          "id": "4",
-          "nombre": "Chaqueta de Cuero",
-          "precio": 120,
-          "categoria": "Abrigos",
-          "cantidad": 6,
-          "diferencia": 0
-        }
-      ]
-    },
-    {
-      "id": "9e13",
-      "fecha": "09/11/2024",
-      "estado": "En preparacion",
-      "productos": [
-        {
-          "id": "1",
-          "nombre": "Camiseta Básica",
-          "precio": 15.99,
-          "categoria": "Ropa Casual",
-          "cantidad": 5,
-          "diferencia": -8
-        }
-      ]
-    },
-    {
-      "id": "7602",
+      "id": "a0f2",
       "fecha": "10/11/2024",
-      "estado": "En espera de confirmacion",
+      "estado": "Aceptado",
       "productos": [
         {
           "id": "1",
           "nombre": "Camiseta Básica",
           "precio": 15.99,
           "categoria": "Ropa Casual",
-          "cantidad": 6,
-          "diferencia": 0
-        },
-        {
-          "id": "4",
-          "nombre": "Chaqueta de Cuero",
-          "precio": 120,
-          "categoria": "Abrigos",
-          "cantidad": 4,
+          "cantidad": 2,
           "diferencia": 0
         },
         {
           "nombre": "Falda de Ecocuero",
           "precio": 75,
-          "cantidad": 4,
+          "cantidad": 2,
           "categoria": "Faldas",
           "id": "6",
           "diferencia": 0
@@ -477,39 +356,55 @@
       ]
     },
     {
-      "id": "998b",
+      "id": "78af",
       "fecha": "10/11/2024",
-      "estado": "En espera de confirmacion",
+      "estado": "Rechazado",
       "productos": [
         {
           "id": "1",
           "nombre": "Camiseta Básica",
           "precio": 15.99,
           "categoria": "Ropa Casual",
-          "cantidad": 2,
+          "cantidad": 0,
           "diferencia": 0
         },
         {
-          "id": "12",
-          "nombre": "Blusa Formal",
-          "precio": 40,
-          "categoria": "Ropa Formal",
-          "cantidad": 2,
+          "nombre": "Shorts Deportivos",
+          "precio": 18.99,
+          "cantidad": 3,
+          "categoria": "Ropa Deportiva",
+          "id": "15",
+          "diferencia": 0
+        },
+        {
+          "id": "eda4",
+          "nombre": "Producto 1",
+          "precio": 100,
+          "cantidad": 4,
+          "categoria": "Abrigos",
           "diferencia": 0
         }
       ]
     },
     {
-      "id": "c884",
+      "id": "7a39",
       "fecha": "10/11/2024",
       "estado": "En espera de confirmacion",
       "productos": [
         {
-          "id": "4",
-          "nombre": "Chaqueta de Cuero",
-          "precio": 120,
-          "categoria": "Abrigos",
-          "cantidad": 1,
+          "id": "14",
+          "nombre": "Sombrero de Paja",
+          "precio": 20,
+          "categoria": "Accesorios",
+          "cantidad": 2,
+          "diferencia": 0
+        },
+        {
+          "nombre": "Pijama de Algodón",
+          "precio": 35,
+          "cantidad": 2,
+          "categoria": "Ropa Interior",
+          "id": "17",
           "diferencia": 0
         }
       ]

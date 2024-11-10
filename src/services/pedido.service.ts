@@ -27,5 +27,14 @@ export class PedidoService {
     return this.http.put<Pedido>(`${this.url}/${ped.id}`, ped);
   }
 
+  getPedidosAceptados(): Observable<Pedido[]> {
+    return this.http.get<Pedido[]>(`${this.url}?estado=Aceptado`);
+  }
+
+  actualizarCantidadProducto(pedidoId: number, productoId: number, nuevaCantidad: number): Observable<any> {
+    return this.http.patch(`${this.url}/pedidos/${pedidoId}/productos/${productoId}`, {
+      cantidad: nuevaCantidad
+    });
+  }
 
 }
