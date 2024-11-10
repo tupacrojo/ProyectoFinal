@@ -17,6 +17,9 @@ import { ListaUsuarioPageComponent } from '../pages/lista-usuario-page/lista-usu
 import { NuevoUsuarioPageComponent } from '../pages/nuevo-usuario-page/nuevo-usuario-page.component';
 import { CargarRemitoPageComponent } from '../pages/cargar-remito-page/cargar-remito-page.component';
 
+import { AuthGuard } from '../guard/auth.guard';
+import { ROLES } from '../enum/roles';
+
 export const routes: Routes = [
   {
     path: '',
@@ -25,10 +28,14 @@ export const routes: Routes = [
   {
     path: 'AgregarProducto',
     component: AgregarProductoPageComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [ROLES.ADMIN] },
   },
   {
     path: 'ListaProductos',
     component: ListaPorductosPageComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [ROLES.ADMIN, ROLES.ENCARGADO] },
   },
   {
     path: 'ModificarProducto/:id',
@@ -37,54 +44,80 @@ export const routes: Routes = [
   {
     path: 'MenuAdministrador',
     component: MenuAdminPageComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [ROLES.ADMIN] },
   },
   {
     path: 'MenuEncargado',
     component: MenuEncargadoPageComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [ROLES.ENCARGADO] },
   },
   {
     path: 'MenuSupervisor',
     component: MenuSupervisorPageComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [ROLES.SUPERVISOR] },
   },
   {
     path: 'MenuVendedor',
     component: MenuVendedorPageComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [ROLES.VENDEDOR] },
   },
   {
     path: 'ListaVentas',
     component: ListaVentasPageComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [ROLES.VENDEDOR] },
   },
   {
     path: 'NuevaVenta',
     component: NuevaVentaPageComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [ROLES.VENDEDOR] },
   },
   {
     path: 'NuevoPedido',
     component: NuevoPedidoPageComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [ROLES.ENCARGADO] },
   },
   {
     path: 'ListarPedido',
     component: ListaPedidosPageComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [ROLES.ENCARGADO] },
   },
   {
     path: 'NuevoReporte',
     component: NuevoReportePageComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [ROLES.ENCARGADO] },
   },
   {
     path: 'ListaReporte',
     component: ListaReportesPageComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [ROLES.ADMIN, ROLES.ENCARGADO] },
   },
   {
     path: 'ListaUsuarios',
-    component: ListaUsuarioPageComponent
+    component: ListaUsuarioPageComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [ROLES.ADMIN] },
   },
   {
     path: 'NuevoUsuario',
-    component: NuevoUsuarioPageComponent
+    component: NuevoUsuarioPageComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [ROLES.ADMIN] },
   },
   {
-    path:'CargarRemito',
-    component: CargarRemitoPageComponent
+    path: 'CargarRemito',
+    component: CargarRemitoPageComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [ROLES.ENCARGADO] },
   },
   {
     path: '**',

@@ -4,24 +4,27 @@ import { Observable } from 'rxjs';
 import { Usuario } from '../interfaces/Usuario.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UsuarioService {
+  url: string = 'http://localhost:3000/usuarios';
 
-  url: string  = 'http://localhost:3000/usuarios';
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  getUsuarios(): Observable<Usuario[]>{
+  getUsuarios(): Observable<Usuario[]> {
     return this.http.get<Usuario[]>(this.url);
   }
+  getUsuario(nombreUsuario: string): Observable<Usuario[]> {
+    return this.http.get<Usuario[]>(
+      `${this.url}?nombreUsuario=${nombreUsuario}`
+    );
+  }
 
-  postUsuario(usuario : Usuario) : Observable<Usuario> {
+  postUsuario(usuario: Usuario): Observable<Usuario> {
     return this.http.post<Usuario>(this.url, usuario);
   }
 
-  deletePersona (id: string | number | null | undefined) : Observable<void> {
+  deletePersona(id: string | number | null | undefined): Observable<void> {
     return this.http.delete<void>(`${this.url}/${id}`);
   }
-
 }
