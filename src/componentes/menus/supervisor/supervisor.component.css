@@ -1,40 +1,80 @@
 .contenedor {
-    height: max-content;
-    position: relative;
-    top: 0;
-    margin-top: 20px;
-  }
-  body {
-    height: 0;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  th,
-  td {
-    border: 1px solid #a7a7a7;
-    padding: 8px;
-  }
-  
-  th {
-    background-color: #a2a2a264;
-    text-align: left;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #8a8a8a5d;
-  }
-  td > input {
-    width: 100%;
-    padding: 5px;
-    border: none;
-    border-radius: 5px;
-    background-color: transparent;
-  }
-  
-  tr:hover {
-    background-color: #d8d8d854;
-  }
+  height: auto;
+  position: relative;
+  top: 0;
+  margin-top: 20px;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  border: 1px solid #a7a7a7;
+  padding: 8px;
+}
+
+th {
+  background-color: #a2a2a264;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #8a8a8a5d;
+}
+
+td > input {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+tr:hover {
+  background-color: #d8d8d854;
+}
+
+.tablaProd thead th {
+  background-color: #a2a2a264;
+}
+
+.tablaProd tbody tr:hover {
+  background-color: #d8d8d854;
+}
+
+.tablaProd tbody td {
+  vertical-align: top;
+}
+
+.tablaProd tbody table {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.tablaProd tbody table th,
+.tablaProd tbody table td {
+  border: none;
+  padding: 4px;
+}
+
+.tablaProd tbody table th {
+  background-color: #e2e2e25e;
+}
+
+.tablaProd tbody table tr:nth-child(even) {
+  background-color: #e2e2e232;
+}
+
+a {
+  cursor: pointer;
+}
