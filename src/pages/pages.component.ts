@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NuevoPedidoComponent } from "../componentes/pedidos/nuevo-pedido/nuevo-pedido.component";
 
 @Component({
   selector: 'app-pages',
