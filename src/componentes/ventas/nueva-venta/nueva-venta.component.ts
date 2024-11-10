@@ -61,8 +61,41 @@ export class NuevaVentaComponent implements OnInit {
     }
   }
 
+  calcularTotal() {
+    this.venta.total = 0;
+    this.venta.productos.forEach((p) => {
+      this.venta.total += p.precio * p.cantidad;
+    });
+  }
+
   cargarVenta() {
-    console.log(this.venta);
+    this.calcularTotal();
+    this.vt.postVenta(this.venta).subscribe({
+      next: (ven) => {
+        this.venta.productos.forEach((productoVenta) => {
+          this.pt.getProductoById(productoVenta.id).subscribe({
+            next: (producto) => {
+              producto.cantidad -= productoVenta.cantidad;
+              this.pt.putProducto(producto).subscribe({
+                next: (updatedProducto) => {
+                  this.listaProductosVenta = [];
+                  this.getListaProductos();
+                },
+                error: (err) => {
+                  console.log('Error al actualizar stock', err);
+                },
+              });
+            },
+            error: (err) => {
+              console.log('Error al obtener producto', err);
+            },
+          });
+        });
+      },
+      error: (err) => {
+        console.log('Error', err);
+      },
+    });
     ///TODO enviar venta y reducir stock
   }
 }

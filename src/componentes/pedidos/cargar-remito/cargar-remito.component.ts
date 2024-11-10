@@ -43,7 +43,7 @@ export class CargarRemitoComponent implements OnInit {
     });
   }
 
-  setRecibido(pedido: Pedido, id: number | undefined, value: string) {
+  setRecibido(pedido: Pedido, id: string, value: string) {
     pedido.productos.find((producto) => producto.id === id)!.cantidad =
       Number(value);
   }

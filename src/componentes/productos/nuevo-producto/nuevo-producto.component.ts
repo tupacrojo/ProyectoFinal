@@ -4,6 +4,7 @@ import { Producto } from '../../../interfaces/Producto.interface';
 import { ProductoService } from '../../../services/producto.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import * as uuid from 'uuid';
 
 @Component({
   selector: 'app-nuevo-producto',
@@ -24,8 +25,9 @@ export class NuevoProductoComponent implements OnInit {
   }
 
   formulario = this.fb.nonNullable.group({
+    id: [uuid.v4()],
     nombre: ['', [Validators.required]],
-    precio: [null, [Validators.required]],
+    precio: [0, [Validators.required]],
     cantidad: [0, [Validators.required]],
     categoria: ['', [Validators.required]],
     diferencia: [0, [Validators.required]],
@@ -40,8 +42,9 @@ export class NuevoProductoComponent implements OnInit {
       this.agregarLista(prod);
 
       this.formulario.reset({
+        id: uuid.v4(),
         nombre: '',
-        precio: null,
+        precio: 0,
         cantidad: 0,
         categoria: '',
         diferencia: 0,

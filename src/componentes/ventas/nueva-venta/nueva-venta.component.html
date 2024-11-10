@@ -18,7 +18,7 @@
                 <td>
                     <div class="counter">
                         <button (click)="restar(producto, i)" class="btn btn-unplus">-</button>
-                        <div class="counter-score">{{listaProductosVenta[i] }}</div>
+                        <div class="counter-score">{{listaProductosVenta[i] || 0 }}</div>
                         <button (click)="sumar(producto, i)" class="btn btn-plus">+</button>
                     </div>
                 </td>

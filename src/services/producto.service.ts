@@ -19,11 +19,11 @@ export class ProductoService {
     return this.http.post<Producto>(this.urlApi, prod);
   }
 
-  deleteProductos(id: number | undefined): Observable<Producto> {
+  deleteProductos(id: string): Observable<Producto> {
     return this.http.delete<Producto>(`${this.urlApi}/${id}`);
   }
 
-  getProductoById(id: number | string | null): Observable<Producto> {
+  getProductoById(id: string): Observable<Producto> {
     return this.http.get<Producto>(`${this.urlApi}/${id}`);
   }
 

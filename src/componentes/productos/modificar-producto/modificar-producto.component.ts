@@ -17,13 +17,14 @@ export class ModificarProductoComponent implements OnInit {
 
   fb = inject(FormBuilder);
   ar = inject(ActivatedRoute);
-  id: string | null = null;
+  id: string = 'default';
 
   ngOnInit(): void {
     this.setearIdProducto();
   }
 
   formulario = this.fb.nonNullable.group({
+    id: [''],
     nombre: ['', [Validators.required]],
     precio: [0, [Validators.required]],
     cantidad: [0, [Validators.required]],
@@ -36,7 +37,7 @@ export class ModificarProductoComponent implements OnInit {
   setearIdProducto() {
     this.ar.paramMap.subscribe({
       next: (param) => {
-        this.id = param.get('id');
+        this.id = param.get('id') ?? 'default';
         this.setearFormulario(this.id ?? '');
       },
       error: (err) => {

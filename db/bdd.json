@@ -5,7 +5,7 @@
       "nombre": "Camiseta Básica",
       "precio": 15.99,
       "categoria": "Ropa Casual",
-      "cantidad": 102,
+      "cantidad": 95,
       "diferencia": 0
     },
     {
@@ -13,13 +13,13 @@
       "nombre": "Chaqueta de Cuero",
       "precio": 120,
       "categoria": "Abrigos",
-      "cantidad": 25,
+      "cantidad": 19,
       "diferencia": 0
     },
     {
       "nombre": "Falda de Ecocuero",
       "precio": 75,
-      "cantidad": 33,
+      "cantidad": 29,
       "categoria": "Faldas",
       "id": "6",
       "diferencia": 0
@@ -29,7 +29,7 @@
       "nombre": "Blusa Formal",
       "precio": 40,
       "categoria": "Ropa Formal",
-      "cantidad": 45,
+      "cantidad": 42,
       "diferencia": 0
     },
     {
@@ -37,13 +37,13 @@
       "nombre": "Sombrero de Paja",
       "precio": 20,
       "categoria": "Accesorios",
-      "cantidad": 100,
+      "cantidad": 99,
       "diferencia": 0
     },
     {
       "nombre": "Shorts Deportivos",
       "precio": 18.99,
-      "cantidad": 110,
+      "cantidad": 109,
       "categoria": "Ropa Deportiva",
       "id": "15",
       "diferencia": 0
@@ -53,7 +53,7 @@
       "nombre": "Bufanda de Lana",
       "precio": 15,
       "categoria": "Accesorios",
-      "cantidad": 70,
+      "cantidad": 69,
       "diferencia": 0
     },
     {
@@ -125,6 +125,14 @@
       "nombre": "vaso",
       "precio": 20,
       "cantidad": 50,
+      "categoria": "nueva",
+      "diferencia": 0
+    },
+    {
+      "id": "c05955ba-59ae-4f63-8aea-1a2218221322",
+      "nombre": "Papasfritas",
+      "precio": 5000,
+      "cantidad": 30,
       "categoria": "nueva",
       "diferencia": 0
     }
