@@ -12,8 +12,6 @@ import { ModificarProductoComponent } from '../componentes/productos/modificar-p
 import { NuevoPedidoComponent } from '../componentes/pedidos/nuevo-pedido/nuevo-pedido.component';
 import { NuevoReporteComponent } from '../componentes/reportes/nuevo-reporte/nuevo-reporte.component';
 import { ListaReportesComponent } from '../componentes/reportes/lista-reportes/lista-reportes.component';
-import { ListaUsuarioComponent } from '../componentes/usuarios/lista-usuario/lista-usuario.component';
-import { NuevoUsuarioComponent } from '../componentes/usuarios/nuevo-usuario/nuevo-usuario.component';
 
 export const routes: Routes = [
   {
@@ -59,6 +57,10 @@ export const routes: Routes = [
   {
     path: 'NuevoPedido',
     component: NuevoPedidoComponent,
+  },
+  {
+    path: 'ListarPedido',
+    component: ListaPedidosComponent,
   },
   {
     path: 'NuevoReporte',

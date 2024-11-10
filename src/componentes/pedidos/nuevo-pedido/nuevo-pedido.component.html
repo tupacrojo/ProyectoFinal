@@ -5,7 +5,7 @@
                 <th>Nombre del producto</th>
                 <th>Precio unitario</th>
                 <th>Categoria</th>
-                <th>Seleccionar Producto</th>
+                <!-- <th>Seleccionar Producto</th> -->
 
             </tr>
         </thead>
@@ -15,44 +15,23 @@
                 <td>{{producto.nombre}}</td>
                 <td>{{producto.precio}}</td>
                 <td>{{producto.categoria}}</td>
+                <!-- <td>
+                    <input type="checkbox" #checkbox (change)="seleccionarProducto(i,checkbox)" [checked]="estadoCheckbox[i]">
+                    <a *ngIf = "estadoCheckbox[i]" (click) = "seleccionarProducto(i,checkbox)">Modificar</a>                
+                </td> -->
+
                 <td>
                     <div class="counter">
-                        <button *ngIf="!mostrarFormulario" (click)="restar(i)" class="btn btn-unplus">-</button>
-                        <div  class="counter-score">{{ArregloCantidad[i]}}</div>
-                        <button *ngIf="!mostrarFormulario" (click)="sumar(i)" class="btn btn-plus">+</button>
-                        <input type="checkbox" #checkbox (change)="seleccionarProducto(i,checkbox)"
-                        [checked]="estadoCheckbox[i]">
-                        <button *ngIf="mostrarFormulario" type="button" (click)="cargarArregloProductos(ArregloCantidad[i])">Agregar</button>
+                        <button (click)="restar(i)" class="btn btn-unplus">-</button>
+                        <div class="counter-score">{{ArregloCantidad[i]}}</div>
+                        <button (click)="sumar(i)" class="btn btn-plus">+</button>
+                        <!-- <button type="button" (click)="cargarArregloProductos(ArregloCantidad[i])">Agregar</button> -->
                     </div>
                 </td>
             </tr>
 
         </tbody>
     </table>
-</div>
-
-<div *ngIf="mostrarFormulario">
-    <form>
-        <fieldset>
-
-            <label for="Nombre"> Nombre: </label>
-            <input type="text" [value]="productoSeleccionado.nombre" disabled>
-
-            <label for="Categoria"> Categoria: </label>
-            <input type="text" [value]="productoSeleccionado.categoria" disabled>
-
-            <label for="Precio"> Precio: </label>
-            <input type="number" [value]="productoSeleccionado.precio" disabled>
-
-            <label for="Cantidad"> Cantidad a pedir: </label>
-            <input type="number" [value]="validarCantidadInicial(productoSeleccionado.id)" min="1" #cantidadInput
-                (input)="validarCantidad(cantidadInput)">
-
-            <button type="button" (click)="eliminarDatoFormulario()">Eliminar</button>
-            <button type="button" (click)="cargarArregloProductos(+cantidadInput.value)">Agregar</button>
-
-        </fieldset>
-    </form>
 </div>
 
 <button class="submitBtn" type="text" (click)="cargarPedido()">Cargar pedido</button>

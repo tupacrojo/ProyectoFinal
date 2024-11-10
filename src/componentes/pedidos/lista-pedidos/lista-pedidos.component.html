@@ -4,16 +4,19 @@
     <table class="tablaProd">
 
         <tbody>
-            @for (pedidos of listaPedidos; track $index){
-            <tr>
-                <td>{{pedidos.id}}</td>
-                <td>{{pedidos.estado}}</td>
+            <tr *ngFor = "let pedidos of listaPedidos; track $index" >
                 <td>{{pedidos.fecha}}</td>
-                <td>{{pedidos.productos}}</td>
-                <td><a (click)="eliminarPedido(pedidos.id)">Eliminar</a></td>
+                <td>{{pedidos.estado}}</td>
+                <tbody>
+                    <tr *ngFor = "let producto of pedidos.productos; track $index">
+                        <td>{{producto.nombre}} </td>
+                        <td>{{producto.cantidad}} </td>
+                        <td>{{producto.categoria}} </td>
+                        <td>{{producto.diferencia}} </td>
+                        <td>{{producto.precio}} </td>
+                    </tr>
+                </tbody>
             </tr>
-            }
-
         </tbody>
     </table>
 </div>

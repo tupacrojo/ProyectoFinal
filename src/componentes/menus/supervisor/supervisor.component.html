@@ -1,10 +1,57 @@
-<h1>Menu supervisor</h1>
+<div class="contenedor">
 
-<section>
-    <ul>
-        <li><a routerLink = " ">Visualizar lista de pedidos</a></li>
-        <li><a routerLink = " ">Aceptar pedidos</a></li>
-        <li><a routerLink = " ">Rechazar pedidos</a></li>
-       
-      </ul>
-</section>
+    <table class="tablaProd">
+        <thead>
+            <tr>
+                <th>Fecha </th>
+                <th>Estado del pedido</th>
+                <th>
+                    Productos
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Cantidad</th>
+                                <th>Categoria</th>
+                                <th>Diferencia</th>
+                                <th>Precio</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </th>
+
+                </tr>
+            </thead>
+    
+
+        <tbody>
+            <tr *ngFor = "let pedidos of listaPedidos; let i = index" >
+                <td>{{pedidos.fecha}}</td>
+                <td>{{pedidos.estado}}</td>
+                <table>
+                    <tbody>
+                        <tr *ngFor = "let producto of pedidos.productos; track $index">
+                            <td>{{producto.nombre}} </td>
+                            <td>{{producto.cantidad}} </td>
+                            <td>{{producto.categoria}} </td>
+                            <td>{{producto.diferencia}} </td>
+                            <td>{{producto.precio}} </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <td>
+                    <div *ngIf = "valorEstado(pedidos.estado)">
+                        <a (click) = "cambiarEstadoAceptacion(i)">Aceptar</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf = "valorEstado(pedidos.estado)">
+                        <a (click) = "cambiarEstadoRechazo(i)">Rechazar</a>
+                    </div>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>

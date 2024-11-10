@@ -6,7 +6,7 @@
       "precio": 15.99,
       "categoria": "Ropa Casual",
       "cantidad": 100,
-      "diferencia": -3
+      "diferencia": 0
     },
     {
       "id": "4",
@@ -317,7 +317,7 @@
     {
       "id": "p001",
       "fecha": "2024-11-08",
-      "estado": "En espera de confirmacion",
+      "estado": "En preparacion",
       "productos": [
         {
           "id": "1",
@@ -355,7 +355,7 @@
     {
       "id": "p003",
       "fecha": "2024-11-07",
-      "estado": "En espera de confirmacion",
+      "estado": "Rechazado",
       "productos": [
         {
           "id": "18",
@@ -441,6 +441,90 @@
           "categoria": "Pantalones",
           "cantidad": 1,
           "diferencia": 0
+        }
+      ]
+    },
+    {
+      "id": "1722",
+      "fecha": "09/11/2024",
+      "estado": "En espera de confirmacion",
+      "productos": [
+        {
+          "id": "14",
+          "nombre": "Sombrero de Paja",
+          "precio": 20,
+          "categoria": "Accesorios",
+          "cantidad": 3,
+          "diferencia": 0
+        },
+        {
+          "id": "18",
+          "nombre": "Pantalón Cargo",
+          "precio": 40.5,
+          "categoria": "Pantalones",
+          "cantidad": 4,
+          "diferencia": 0
+        }
+      ]
+    },
+    {
+      "id": "cd73",
+      "fecha": "09/11/2024",
+      "estado": "En espera de confirmacion",
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "Camiseta Básica",
+          "precio": 15.99,
+          "categoria": "Ropa Casual",
+          "cantidad": 8,
+          "diferencia": -8
+        },
+        {
+          "id": "4",
+          "nombre": "Chaqueta de Cuero",
+          "precio": 120,
+          "categoria": "Abrigos",
+          "cantidad": 6,
+          "diferencia": 0
+        }
+      ]
+    },
+    {
+      "id": "4766",
+      "fecha": "09/11/2024",
+      "estado": "En espera de confirmacion",
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "Camiseta Básica",
+          "precio": 15.99,
+          "categoria": "Ropa Casual",
+          "cantidad": 8,
+          "diferencia": -8
+        },
+        {
+          "id": "4",
+          "nombre": "Chaqueta de Cuero",
+          "precio": 120,
+          "categoria": "Abrigos",
+          "cantidad": 6,
+          "diferencia": 0
+        }
+      ]
+    },
+    {
+      "id": "9e13",
+      "fecha": "09/11/2024",
+      "estado": "En espera de confirmacion",
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "Camiseta Básica",
+          "precio": 15.99,
+          "categoria": "Ropa Casual",
+          "cantidad": 5,
+          "diferencia": -8
         }
       ]
     }
