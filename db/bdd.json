@@ -354,7 +354,7 @@
     {
       "id": "p002",
       "fecha": "2024-11-08",
-      "estado": "En espera de confirmacion",
+      "estado": "En preparacion",
       "productos": [
         {
           "id": "4",
@@ -398,7 +398,7 @@
     {
       "id": "p004",
       "fecha": "2024-11-06",
-      "estado": "En espera de confirmacion",
+      "estado": "Rechazado",
       "productos": [
         {
           "id": "15",
@@ -573,6 +573,44 @@
           "cantidad": 4,
           "categoria": "Faldas",
           "id": "6",
+          "diferencia": 0
+        }
+      ]
+    },
+    {
+      "id": "998b",
+      "fecha": "10/11/2024",
+      "estado": "En espera de confirmacion",
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "Camiseta Básica",
+          "precio": 15.99,
+          "categoria": "Ropa Casual",
+          "cantidad": 2,
+          "diferencia": 0
+        },
+        {
+          "id": "12",
+          "nombre": "Blusa Formal",
+          "precio": 40,
+          "categoria": "Ropa Formal",
+          "cantidad": 2,
+          "diferencia": 0
+        }
+      ]
+    },
+    {
+      "id": "c884",
+      "fecha": "10/11/2024",
+      "estado": "En espera de confirmacion",
+      "productos": [
+        {
+          "id": "4",
+          "nombre": "Chaqueta de Cuero",
+          "precio": 120,
+          "categoria": "Abrigos",
+          "cantidad": 1,
           "diferencia": 0
         }
       ]
