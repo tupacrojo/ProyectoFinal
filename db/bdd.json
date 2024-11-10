@@ -165,6 +165,24 @@
       "nombreUsuario": "eve.gen",
       "contrasena": "12345",
       "tipoUsuario": "administrador"
+    },
+    {
+      "id": "f1dc",
+      "nombreUsuario": "tupi.rodriguez",
+      "contrasena": "12345",
+      "tipoUsuario": "encargado"
+    },
+    {
+      "id": "dffb",
+      "nombreUsuario": "juan.martel",
+      "contrasena": "12345",
+      "tipoUsuario": "vendedor"
+    },
+    {
+      "id": "684b",
+      "nombreUsuario": "nico.lope",
+      "contrasena": "12345",
+      "tipoUsuario": "supervisor"
     }
   ],
   "ventas": [
@@ -447,7 +465,7 @@
     {
       "id": "1722",
       "fecha": "09/11/2024",
-      "estado": "En espera de confirmacion",
+      "estado": "En preparacion",
       "productos": [
         {
           "id": "14",
