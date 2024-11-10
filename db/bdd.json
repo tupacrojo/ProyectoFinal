@@ -545,6 +545,37 @@
           "diferencia": -8
         }
       ]
+    },
+    {
+      "id": "7602",
+      "fecha": "10/11/2024",
+      "estado": "En espera de confirmacion",
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "Camiseta Básica",
+          "precio": 15.99,
+          "categoria": "Ropa Casual",
+          "cantidad": 6,
+          "diferencia": 0
+        },
+        {
+          "id": "4",
+          "nombre": "Chaqueta de Cuero",
+          "precio": 120,
+          "categoria": "Abrigos",
+          "cantidad": 4,
+          "diferencia": 0
+        },
+        {
+          "nombre": "Falda de Ecocuero",
+          "precio": 75,
+          "cantidad": 4,
+          "categoria": "Faldas",
+          "id": "6",
+          "diferencia": 0
+        }
+      ]
     }
   ],
   "reportes": [
@@ -605,6 +636,36 @@
           "categoria": "Ropa Formal",
           "cantidad": 45,
           "diferencia": 5
+        }
+      ]
+    },
+    {
+      "id": null,
+      "fecha": "2024-11-10T04:19:07.869Z",
+      "productos": [
+        {
+          "id": "4",
+          "nombre": "Chaqueta de Cuero",
+          "precio": 120,
+          "categoria": "Abrigos",
+          "cantidad": 25,
+          "diferencia": -1
+        },
+        {
+          "nombre": "Falda de Ecocuero",
+          "precio": 75,
+          "cantidad": 30,
+          "categoria": "Faldas",
+          "id": "6",
+          "diferencia": 1
+        },
+        {
+          "id": "12",
+          "nombre": "Blusa Formal",
+          "precio": 40,
+          "categoria": "Ropa Formal",
+          "cantidad": 45,
+          "diferencia": -25
         }
       ]
     }
