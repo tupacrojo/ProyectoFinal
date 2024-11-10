@@ -57,6 +57,10 @@ export class AuthService {
     return roles ? JSON.parse(roles).includes(role) : false;
   }
 
+  autoRedirect() {
+    this.redirectUser(this.getActiveRole() || '');
+  }
+
   private redirectUser(role: string) {
     switch (role) {
       case 'administrador':

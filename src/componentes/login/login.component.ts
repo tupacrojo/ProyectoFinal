@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
 import { Usuario } from '../../interfaces/Usuario.interface';
@@ -13,8 +13,14 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   constructor(private logService: AuthService) {}
+
+  ngOnInit() {
+    if (this.logService.isAuthenticatedUser()) {
+      this.logService.autoRedirect();
+    }
+  }
 
   fb = inject(FormBuilder);
   listaUsuarios: Usuario[] = [];
@@ -28,8 +34,6 @@ export class LoginComponent {
     if (this.formulario.invalid) return;
 
     const { nombre, contrasena } = this.formulario.getRawValue();
-    console.log('Nombre', nombre);
-    console.log('Contrasena', contrasena);
     this.logService.login(nombre, contrasena);
   }
 }
