@@ -1,0 +1,23 @@
+
+<div>
+    <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nombre usuario</th>
+            <th>Tipo de usuario</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            @for (usuario of listaUsuarios; track $index) {
+             <tr>
+                <td>{{usuario.id}}</td>
+                <td>{{usuario.nombreUsuario}}</td>
+                <td>{{usuario.tipoUsuario}}</td>
+                <td><a (click)="delete(usuario.id)">Eliminar</a></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

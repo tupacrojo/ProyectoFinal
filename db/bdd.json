@@ -6,7 +6,7 @@
       "precio": 15.99,
       "categoria": "Ropa Casual",
       "cantidad": 100,
-      "diferencia": 0
+      "diferencia": -3
     },
     {
       "id": "4",
@@ -159,6 +159,12 @@
       "nombreUsuario": "ana_martinez",
       "contrasena": "An4M@rt1nez!",
       "tipoUsuario": "vendedor"
+    },
+    {
+      "id": "deed",
+      "nombreUsuario": "eve.gen",
+      "contrasena": "12345",
+      "tipoUsuario": "administrador"
     }
   ],
   "ventas": [

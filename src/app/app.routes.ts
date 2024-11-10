@@ -9,10 +9,11 @@ import { VendedorComponent } from '../componentes/menus/vendedor/vendedor.compon
 import { ListaVentasComponent } from '../componentes/ventas/lista-ventas/lista-ventas.component';
 import { NuevaVentaComponent } from '../componentes/ventas/nueva-venta/nueva-venta.component';
 import { ModificarProductoComponent } from '../componentes/productos/modificar-producto/modificar-producto.component';
-import { FiltrarProductosComponent } from '../componentes/productos/filtrar-productos/filtrar-productos.component';
 import { NuevoPedidoComponent } from '../componentes/pedidos/nuevo-pedido/nuevo-pedido.component';
 import { NuevoReporteComponent } from '../componentes/reportes/nuevo-reporte/nuevo-reporte.component';
 import { ListaReportesComponent } from '../componentes/reportes/lista-reportes/lista-reportes.component';
+import { ListaUsuarioComponent } from '../componentes/usuarios/lista-usuario/lista-usuario.component';
+import { NuevoUsuarioComponent } from '../componentes/usuarios/nuevo-usuario/nuevo-usuario.component';
 
 export const routes: Routes = [
   {
@@ -56,10 +57,6 @@ export const routes: Routes = [
     component: NuevaVentaComponent,
   },
   {
-    path: 'filtrar',
-    component: FiltrarProductosComponent,
-  },
-  {
     path: 'NuevoPedido',
     component: NuevoPedidoComponent,
   },
@@ -70,6 +67,14 @@ export const routes: Routes = [
   {
     path: 'ListaReporte',
     component: ListaReportesComponent,
+  },
+  {
+    path: 'ListaUsuarios',
+    component: ListaUsuarioComponent
+  },
+  {
+    path: 'NuevoUsuario',
+    component: NuevoUsuarioComponent
   },
   {
     path: '**',

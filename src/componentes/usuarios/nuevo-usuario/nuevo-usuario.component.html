@@ -1,0 +1,40 @@
+<section>
+    <form [formGroup]="formulario">
+        <legend> Cargar un nuevo usuario </legend>
+
+        
+        <label id="nombreUsuario" >Nombre Usuario:</label>
+        <input type="text"  formControlName="nombreUsuario">
+        @if (formulario.controls['nombreUsuario'].getError('required') && formulario.controls['nombreUsuario'].touched) {
+            <div>
+                Campo requerido
+            </div>
+        }
+
+        <label id="clave" >Clave:</label>
+        <input type="password" formControlName="contrasena">
+        @if (formulario.controls['contrasena'].getError('required')  && formulario.controls['contrasena'].touched) {
+            <div>
+                Campo requerido
+            </div>
+        }
+
+
+        <label for="tipoUsuario">Tipo de Usuario:</label>
+        <select id="tipoUsuario" formControlName="tipoUsuario">
+            <option value="" disabled selected>Seleccione el rol...</option>
+            <option value="administrador">Administrador</option>
+            <option value="supervisor">Supervisor</option>
+            <option value="encargado">Encargado</option>
+            <option value="vendedor">Vendedor</option>
+
+        </select>
+        @if (formulario.controls['tipoUsuario'].getError('required')  && formulario.controls['tipoUsuario'].touched) {
+            <div>
+                Campo requerido
+            </div>
+        }
+
+        <button (click)="addUsuario()">Agregar</button>
+    </form>
+</section>

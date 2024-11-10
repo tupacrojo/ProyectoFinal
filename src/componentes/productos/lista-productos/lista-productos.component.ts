@@ -3,7 +3,7 @@ import { Producto } from '../../../interfaces/Producto.interface';
 import { ProductoService } from '../../../services/producto.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-lista-productos',
@@ -12,8 +12,14 @@ import { ReactiveFormsModule } from '@angular/forms';
   templateUrl: './lista-productos.component.html',
   styleUrl: './lista-productos.component.css',
 })
-export class ListaProductosComponent implements OnInit {
-  listaProductos: Producto[] = [];
+export class ListaProductosComponent implements OnInit {listaProductos: Producto[] = [];
+  listaFiltradaProductos: Producto[] = [];
+  listaCategorias: string[] = [];
+  fb = inject(FormBuilder);
+
+  filtroForm = this.fb.nonNullable.group({
+    categoria: [''],
+  });
 
   constructor(private productosService: ProductoService) {}
 
@@ -25,6 +31,8 @@ export class ListaProductosComponent implements OnInit {
     this.productosService.getProductos().subscribe({
       next: (prod) => {
         this.listaProductos = prod;
+        this.listaFiltradaProductos = prod;
+        this.extraerCategorias();
       },
 
       error: (err) => {
@@ -33,32 +41,15 @@ export class ListaProductosComponent implements OnInit {
     });
   }
 
-  setSubtotal(id: number, cantidad: string | null) {
-    this.productosService.getProductoById(id).subscribe({
-      next: (produc: Producto) => {
-        produc.diferencia = -(produc.cantidad == null
-          ? 0
-          : produc.cantidad - (Number(cantidad) ?? 0));
-        this.productosService.putProducto(produc).subscribe({
-          next: (produc: Producto) => {
-            this.mostrarLista();
-          },
-          error: (err) => {
-            console.log('Error', err);
-          },
-        });
-      },
-      error: (err) => {
-        console.log('Error', err);
-      },
-    });
-  }
-
-  eliminarProducto(id: number | undefined) {
-    this.productosService.deleteProductos(id).subscribe({
+  eliminarProducto(producto: Producto) {
+    this.productosService.deleteProductos(producto.id).subscribe({
       next: (produc: Producto) => {
         this.listaProductos = this.listaProductos.filter(
-          (producto) => producto.id !== id
+          (producto) => producto.id !== producto.id
+        );
+
+        this.listaFiltradaProductos = this.listaFiltradaProductos.filter(
+          (producto) => producto.id !== producto.id
         );
       },
       error: (err) => {
@@ -91,5 +82,22 @@ export class ListaProductosComponent implements OnInit {
       if (valorA > valorB) return this.esAscendente ? 1 : -1;
       return 0;
     });
+  }
+
+  extraerCategorias() {
+    this.listaCategorias = Array.from(
+      new Set(this.listaProductos.map((producto) => producto.categoria))
+    );
+  }
+
+  filtrarPorCategoria() {
+    const categoriaSeleccionada = this.filtroForm.get('categoria')?.value;
+    if (categoriaSeleccionada) {
+      this.listaFiltradaProductos = this.listaProductos.filter(
+        (producto) => producto.categoria === categoriaSeleccionada
+      );
+    } else {
+      this.listaFiltradaProductos = [...this.listaProductos];
+    }
   }
 }

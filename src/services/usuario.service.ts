@@ -16,5 +16,12 @@ export class UsuarioService {
     return this.http.get<Usuario[]>(this.url);
   }
 
+  postUsuario(usuario : Usuario) : Observable<Usuario> {
+    return this.http.post<Usuario>(this.url, usuario);
+  }
+
+  deletePersona (id: string | number | null | undefined) : Observable<void> {
+    return this.http.delete<void>(`${this.url}/${id}`);
+  }
 
 }
