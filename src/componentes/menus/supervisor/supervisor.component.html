@@ -4,6 +4,7 @@
             <tr>
                 <th>Fecha</th>
                 <th>Estado del pedido</th>
+<<<<<<< Updated upstream
                 <th>Nombre del Producto</th>
                 <th>Cantidad</th>
                 <th>Categoria</th>
@@ -35,7 +36,56 @@
                         <a (click)="cambiarEstadoAceptacion(i)">Aceptar</a>
                         <br>
                         <a (click)="cambiarEstadoRechazo(i)">Rechazar</a>
+=======
+                <th>
+                    Productos
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </th>
+
+                </tr>
+            </thead>
+    
+
+        <tbody>
+            <tr *ngFor = "let pedidos of listaPedidos; let i = index" >
+                <td>{{pedidos.fecha}}</td>
+                <td>{{pedidos.estado}}</td>
+                <table>
+                    <tbody>
+                        <tr *ngFor = "let producto of pedidos.productos">
+                            <td>{{producto.nombre}} </td>
+                            <td>{{producto.cantidad}} </td>
+                            <td>{{producto.precio}} </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <td>
+                    <div *ngIf = "valorEstado(pedidos.estado,i)">
+                        <a (click) = "cambiarEstadoAceptacion(i)">Aceptar </a>
+                        <a (click) = "cambiarEstadoRechazo(i)">Rechazar</a>
+>>>>>>> Stashed changes
                     </div>
+
+                    <div>
+                        <div *ngIf="!selects[i] && modifyEstado[i]">
+                            <a (click) = "habilitarSelect(i)">Modificar estado</a>
+                        </div>
+                        <select *ngIf = "selects[i]">
+                            <option>En transito</option>
+                            <option>Demorado</option>
+                            <option>Entregado</option>
+                        </select>
+                    </div>
+                          
                 </td>
             </tr>
         </tbody>
