@@ -43,18 +43,12 @@ export class CargarRemitoComponent implements OnInit {
     });
   }
 
+  setRecibido(pedido: Pedido, id: number | undefined, value: string) {
+    pedido.productos.find((producto) => producto.id === id)!.cantidad =
+      Number(value);
+  }
 
   cargarProducto(pedido: Pedido, pedidoIndex: number) {
-    const productos = pedido.productos;
-    productos.forEach((producto, index) => {
-      const inputElement = document.querySelector(`#inputRecibido${index}`) as HTMLInputElement;
-      if (inputElement) {
-        const nuevaCantidad = parseInt(inputElement.value, 10);
-        if (!isNaN(nuevaCantidad)) {
-          producto.cantidad = nuevaCantidad;
-        }
-      }
-    });
     console.log(pedido);
   }
 }
