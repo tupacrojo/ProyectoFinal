@@ -72,10 +72,16 @@ export class NuevoPedidoComponent {
 
   sumar(i: number) {
     // if ((this.listaProductos[i].cantidad || 0) > this.ArregloCantidad[i]) // limitar la cantidad de productos al stock
+    this.productoSeleccionado = { ...this.listaProductos[i] };
     this.ArregloCantidad[i]++;
+    this.cargarArregloProductos(this.ArregloCantidad[i]);
   }
   restar(i: number) {
-    if (this.ArregloCantidad[i] > 0) this.ArregloCantidad[i]--;
+    if (this.ArregloCantidad[i] > 0) {
+      this.productoSeleccionado = { ...this.listaProductos[i] };
+      this.ArregloCantidad[i]--;
+      this.cargarArregloProductos(this.ArregloCantidad[i]);
+    }
   }
 
   // verificarCantidad(): number {
@@ -150,7 +156,7 @@ export class NuevoPedidoComponent {
 
       this.ArregloCantidad[indice] = cantidad;
       this.estadoCheckbox[indice] = true;
-      this.mostrarInput[indice] = !this.mostrarInput;
+      //this.mostrarInput[indice] = !this.mostrarInput;
     }
   }
 
