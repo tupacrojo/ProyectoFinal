@@ -2,11 +2,12 @@ import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Usuario } from '../../../interfaces/Usuario.interface';
 import { UsuarioService } from '../../../services/usuario.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-nuevo-usuario',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,RouterModule],
   templateUrl: './nuevo-usuario.component.html',
   styleUrl: './nuevo-usuario.component.css'
 })

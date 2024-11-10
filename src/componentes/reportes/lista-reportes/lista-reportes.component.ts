@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { Producto } from '../../../interfaces/Producto.interface';
 import { Reporte } from '../../../interfaces/Reporte.interface';
 import { ReporteService } from '../../../services/reporte.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-lista-reportes',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './lista-reportes.component.html',
   styleUrl: './lista-reportes.component.css',
 })
