@@ -4,6 +4,7 @@ import { ProductoService } from '../../../services/producto.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-lista-productos',
@@ -12,7 +13,9 @@ import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
   templateUrl: './lista-productos.component.html',
   styleUrl: './lista-productos.component.css',
 })
-export class ListaProductosComponent implements OnInit {listaProductos: Producto[] = [];
+export class ListaProductosComponent implements OnInit {
+  role: string | null = '';
+  listaProductos: Producto[] = [];
   listaFiltradaProductos: Producto[] = [];
   listaCategorias: string[] = [];
   fb = inject(FormBuilder);
@@ -21,9 +24,13 @@ export class ListaProductosComponent implements OnInit {listaProductos: Producto
     categoria: [''],
   });
 
-  constructor(private productosService: ProductoService) {}
+  constructor(
+    private productosService: ProductoService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
+    this.role = this.authService.getActiveRole();
     this.mostrarLista();
   }
 
@@ -88,6 +95,7 @@ export class ListaProductosComponent implements OnInit {listaProductos: Producto
     this.listaCategorias = Array.from(
       new Set(this.listaProductos.map((producto) => producto.categoria))
     );
+    this.listaCategorias.push('');
   }
 
   filtrarPorCategoria() {

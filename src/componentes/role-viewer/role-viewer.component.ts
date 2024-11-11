@@ -17,7 +17,6 @@ export class RoleViewerComponent implements OnInit {
   ngOnInit(): void {
     this.username = this.authService.getUserName();
     this.role = this.authService.getActiveRole();
-    console.log(this.username, this.role);
   }
 
   logout() {
