@@ -5,11 +5,12 @@ import { ProductoService } from '../../../services/producto.service';
 import { CommonModule } from '@angular/common';
 import { venta } from '../../../interfaces/Venta.interface';
 import { FormBuilder } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-nueva-venta',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './nueva-venta.component.html',
   styleUrl: './nueva-venta.component.css',
 })
@@ -22,7 +23,7 @@ export class NuevaVentaComponent implements OnInit {
   listaProductosVenta: number[] = [];
 
   venta: venta = {
-    fecha: Date.now().toLocaleString(),
+    fecha: new Date().toLocaleDateString('es-ES'),
     total: 0,
     productos: [],
   };
