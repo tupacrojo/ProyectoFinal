@@ -4,11 +4,12 @@ import { ProductoService } from '../../../services/producto.service';
 import { CommonModule } from '@angular/common';
 import { Reporte } from '../../../interfaces/Reporte.interface';
 import { ReporteService } from '../../../services/reporte.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-nuevo-reporte',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './nuevo-reporte.component.html',
   styleUrl: './nuevo-reporte.component.css',
 })

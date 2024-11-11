@@ -10,11 +10,12 @@ import { PedidoService } from '../../../services/pedido.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ProductoService } from '../../../services/producto.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-cargar-remito',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './cargar-remito.component.html',
   styleUrl: './cargar-remito.component.css',
 })
