@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Pedido } from '../../../interfaces/Pedido.interface';
 import { PedidoService } from '../../../services/pedido.service';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-supervisor',
@@ -56,5 +57,10 @@ export class SupervisorComponent {
   cambiarEstadoRechazo(index: number) {
     this.listaPedidos[index].estado = 'Rechazado';
     this.modficarPedido(this.listaPedidos[index]);
+  }
+
+  authService = inject(AuthService);
+  logout() {
+    this.authService.logout();
   }
 }
