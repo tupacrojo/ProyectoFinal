@@ -5,7 +5,7 @@
       "nombre": "Camiseta Básica",
       "precio": 15.99,
       "categoria": "Ropa Casual",
-      "cantidad": 95,
+      "cantidad": 94,
       "diferencia": 0
     },
     {
@@ -13,7 +13,7 @@
       "nombre": "Chaqueta de Cuero",
       "precio": 120,
       "categoria": "Abrigos",
-      "cantidad": 19,
+      "cantidad": 18,
       "diferencia": 0
     },
     {
@@ -289,6 +289,29 @@
           "cantidad": 1
         }
       ]
+    },
+    {
+      "id": "eeb2",
+      "fecha": "1731287712433",
+      "total": 135.99,
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "Camiseta Básica",
+          "precio": 15.99,
+          "categoria": "Ropa Casual",
+          "cantidad": 1,
+          "diferencia": 0
+        },
+        {
+          "id": "4",
+          "nombre": "Chaqueta de Cuero",
+          "precio": 120,
+          "categoria": "Abrigos",
+          "cantidad": 1,
+          "diferencia": 0
+        }
+      ]
     }
   ],
   "pedidos": [
@@ -418,7 +441,7 @@
     {
       "id": "1c74",
       "fecha": "10/11/2024",
-      "estado": "En espera de confirmacion",
+      "estado": "Aceptado",
       "productos": [
         {
           "id": "1",
