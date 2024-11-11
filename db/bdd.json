@@ -5,7 +5,7 @@
       "nombre": "Camiseta Básica",
       "precio": 15.99,
       "categoria": "Ropa Casual",
-      "cantidad": 94,
+      "cantidad": 90,
       "diferencia": 0
     },
     {
@@ -309,6 +309,36 @@
           "precio": 120,
           "categoria": "Abrigos",
           "cantidad": 1,
+          "diferencia": 0
+        }
+      ]
+    },
+    {
+      "id": "7942",
+      "fecha": "1.731.290.957.646",
+      "total": 31.98,
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "Camiseta Básica",
+          "precio": 15.99,
+          "categoria": "Ropa Casual",
+          "cantidad": 2,
+          "diferencia": 0
+        }
+      ]
+    },
+    {
+      "id": "d8ca",
+      "fecha": "1.731.290.957.646",
+      "total": 31.98,
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "Camiseta Básica",
+          "precio": 15.99,
+          "categoria": "Ropa Casual",
+          "cantidad": 2,
           "diferencia": 0
         }
       ]
