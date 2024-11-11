@@ -1,31 +1,41 @@
-.contenedor {
-  justify-content: center;
-  text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+.ventas-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px; /* Ajusta el tamaño del texto según tus necesidades */
 }
 
-.tablaVentas {
-  top: 15%;
-  left: 5%;
-  width: 90%;
-  margin: 0 auto;
-  background: rgba(0, 0, 0, 0.5);
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-}
-
-.header {
-  font-weight: bold;
-  text-align: center;
-}
-
-tr:nth-child(even) {
-  background-color: #3d3b3b;
-}
-
-td,
-th {
-  border: 1px solid #f2f2f2;
+.ventas-table th, .ventas-table td {
+  border: 1px solid #ddd;
   padding: 8px;
+  text-align: left;
+}
+
+.ventas-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.productos-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.productos-table th, .productos-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.productos-table th {
+  background-color: #f9f9f9;
+  font-weight: bold;
+}
+
+.card {
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }

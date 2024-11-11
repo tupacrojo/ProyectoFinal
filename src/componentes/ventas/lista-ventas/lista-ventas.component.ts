@@ -2,16 +2,16 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { VentaService } from '../../../services/venta.service';
 import { venta } from '../../../interfaces/Venta.interface';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-lista-ventas',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './lista-ventas.component.html',
-  styleUrl: './lista-ventas.component.css'
+  styleUrl: './lista-ventas.component.css',
 })
-export class ListaVentasComponent implements OnInit{
-  
+export class ListaVentasComponent implements OnInit {
   listaVentas: venta[] = [];
   vs = inject(VentaService);
 
@@ -19,19 +19,15 @@ export class ListaVentasComponent implements OnInit{
     this.getLista();
   }
 
-  getLista(){
+  getLista() {
     this.vs.getListaVentas().subscribe({
-      next:(venta) =>{
+      next: (venta) => {
         this.listaVentas = venta;
         console.log(this.listaVentas);
       },
-      error:(err) =>{
-        console.log("Error",err);
-      }
-    })
+      error: (err) => {
+        console.log('Error', err);
+      },
+    });
   }
-
-
-  
-
 }

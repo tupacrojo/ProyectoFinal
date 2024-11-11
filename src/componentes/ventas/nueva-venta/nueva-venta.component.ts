@@ -22,7 +22,7 @@ export class NuevaVentaComponent implements OnInit {
   listaProductosVenta: number[] = [];
 
   venta: venta = {
-    fecha: Date.now().toString(),
+    fecha: Date.now().toLocaleString(),
     total: 0,
     productos: [],
   };
@@ -96,6 +96,5 @@ export class NuevaVentaComponent implements OnInit {
         console.log('Error', err);
       },
     });
-    ///TODO enviar venta y reducir stock
   }
 }
