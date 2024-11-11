@@ -81,59 +81,11 @@
       "diferencia": 0
     },
     {
-      "id": "414b",
-      "nombre": "producto 1",
-      "precio": 11,
-      "cantidad": 11,
-      "categoria": "nueva",
-      "diferencia": 0
-    },
-    {
-      "id": "486f",
-      "nombre": "producto 2",
-      "precio": 2,
-      "cantidad": 2,
-      "categoria": "Abrigos",
-      "diferencia": 0
-    },
-    {
       "id": "20",
       "nombre": "Botas de Montaña",
       "precio": 95.99,
       "categoria": "Calzado",
       "cantidad": 20,
-      "diferencia": 0
-    },
-    {
-      "id": "eda4",
-      "nombre": "Producto 1",
-      "precio": 100,
-      "cantidad": 10,
-      "categoria": "Abrigos",
-      "diferencia": 0
-    },
-    {
-      "id": "08f7",
-      "nombre": "Producto 2",
-      "precio": 100,
-      "cantidad": 9,
-      "categoria": "Categoria nueva",
-      "diferencia": 0
-    },
-    {
-      "id": "0ce2",
-      "nombre": "vaso",
-      "precio": 20,
-      "cantidad": 50,
-      "categoria": "nueva",
-      "diferencia": 0
-    },
-    {
-      "id": "c05955ba-59ae-4f63-8aea-1a2218221322",
-      "nombre": "Papasfritas",
-      "precio": 5000,
-      "cantidad": 30,
-      "categoria": "nueva",
       "diferencia": 0
     }
   ],
