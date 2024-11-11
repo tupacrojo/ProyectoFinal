@@ -2,8 +2,8 @@ td {
   width: 100%;
 }
 button {
-  margin: 0;
-  padding: 0;
+  margin: 0.5rem;
+  padding: 1rem 0.5rem;
 }
 
 .submitBtn {
@@ -12,7 +12,7 @@ button {
   border: 0.125em solid #1a1a1a;
   border-radius: 0.9375em;
   box-sizing: border-box;
-  color: #d6d6d6;
+  color: #929292;
   cursor: pointer;
   display: inline-block;
   font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
@@ -33,7 +33,6 @@ button {
   touch-action: manipulation;
   will-change: transform;
   background-color: #ffffff3b;
-
 }
 
 .submitBtn:disabled {
@@ -54,6 +53,7 @@ button {
 .counter {
   display: flex;
   flex-direction: row;
+  vertical-align: center;
   align-items: center;
   justify-content: space-between;
   width: 100%;
