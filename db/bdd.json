@@ -87,6 +87,14 @@
       "categoria": "Calzado",
       "cantidad": 20,
       "diferencia": 0
+    },
+    {
+      "id": "8bd8c5a3-a82c-43e4-9b34-6d82e777355a",
+      "nombre": "Remera nike",
+      "precio": 50000,
+      "cantidad": 36,
+      "categoria": "Ropa Casual",
+      "diferencia": 0
     }
   ],
   "usuarios": [
@@ -147,198 +155,27 @@
   ],
   "ventas": [
     {
-      "id": "1",
-      "fecha": "2024-10-01",
-      "total": 75.98,
+      "id": "e002",
+      "fecha": "11/11/2024",
+      "total": 200000,
       "productos": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         {
-          "id": "1",
-          "nombre": "Camiseta Básica",
-          "precio": 15.99,
-          "cantidad": 2
-        },
-        {
-          "id": "14",
-          "nombre": "Sombrero de Paja",
-          "precio": 20,
-          "cantidad": 1
-        }
-      ]
-    },
-    {
-      "id": "2",
-      "fecha": "2024-10-05",
-      "total": 158.99,
-      "productos": [
-        {
-          "id": "2",
-          "nombre": "Pantalón Jeans",
-          "precio": 45,
-          "cantidad": 1
-        },
-        {
-          "id": "17",
-          "nombre": "Pijama de Algodón",
-          "precio": 35,
-          "cantidad": 2
-        },
-        {
-          "id": "20",
-          "nombre": "Botas de Montaña",
-          "precio": 95.99,
-          "cantidad": 1
-        }
-      ]
-    },
-    {
-      "id": "3",
-      "fecha": "2024-10-10",
-      "total": 189.99,
-      "productos": [
-        {
-          "id": "4",
-          "nombre": "Chaqueta de Cuero",
-          "precio": 120,
-          "cantidad": 1
-        },
-        {
-          "id": "6",
-          "nombre": "Falda de Cuero",
-          "precio": 55,
-          "cantidad": 1
-        },
-        {
-          "id": "12",
-          "nombre": "Blusa Formal",
-          "precio": 40,
-          "cantidad": 1
-        }
-      ]
-    },
-    {
-      "id": "4",
-      "fecha": "2024-10-15",
-      "total": 89.99,
-      "productos": [
-        {
-          "id": "15",
-          "nombre": "Shorts Deportivos",
-          "precio": 18.99,
-          "cantidad": 2
-        },
-        {
-          "id": "19",
-          "nombre": "Chaleco Acolchado",
-          "precio": 70,
-          "cantidad": 1
-        }
-      ]
-    },
-    {
-      "id": "b074",
-      "fecha": "31/10/2024",
-      "total": 632.25,
-      "productos": [
-        {
-          "id": "1",
-          "nombre": "Camiseta Básica",
-          "precio": 15.99,
+          "id": "8bd8c5a3-a82c-43e4-9b34-6d82e777355a",
+          "nombre": "Remera nike",
+          "precio": 50000,
+          "cantidad": 4,
           "categoria": "Ropa Casual",
-          "cantidad": 15
-        },
-        {
-          "id": "15",
-          "nombre": "Shorts Deportivos",
-          "precio": 18.99,
-          "categoria": "Ropa Deportiva",
-          "cantidad": 10
-        },
-        {
-          "id": "18",
-          "nombre": "Pantalón Cargo",
-          "precio": 40.5,
-          "categoria": "Pantalones",
-          "cantidad": 5
-        }
-      ]
-    },
-    {
-      "id": "df98",
-      "fecha": "03/11/2024",
-      "total": 40,
-      "productos": [
-        {
-          "id": "12",
-          "nombre": "Blusa Formal",
-          "precio": 40,
-          "categoria": "Ropa Formal",
-          "cantidad": 1
-        }
-      ]
-    },
-    {
-      "id": "e8c1",
-      "fecha": "03/11/2024",
-      "total": 18.99,
-      "productos": [
-        {
-          "id": "15",
-          "nombre": "Shorts Deportivos",
-          "precio": 18.99,
-          "categoria": "Ropa Deportiva",
-          "cantidad": 1
-        }
-      ]
-    },
-    {
-      "id": "eeb2",
-      "fecha": "1731287712433",
-      "total": 135.99,
-      "productos": [
-        {
-          "id": "1",
-          "nombre": "Camiseta Básica",
-          "precio": 15.99,
-          "categoria": "Ropa Casual",
-          "cantidad": 1,
-          "diferencia": 0
-        },
-        {
-          "id": "4",
-          "nombre": "Chaqueta de Cuero",
-          "precio": 120,
-          "categoria": "Abrigos",
-          "cantidad": 1,
-          "diferencia": 0
-        }
-      ]
-    },
-    {
-      "id": "7942",
-      "fecha": "1.731.290.957.646",
-      "total": 31.98,
-      "productos": [
-        {
-          "id": "1",
-          "nombre": "Camiseta Básica",
-          "precio": 15.99,
-          "categoria": "Ropa Casual",
-          "cantidad": 2,
-          "diferencia": 0
-        }
-      ]
-    },
-    {
-      "id": "d8ca",
-      "fecha": "1.731.290.957.646",
-      "total": 31.98,
-      "productos": [
-        {
-          "id": "1",
-          "nombre": "Camiseta Básica",
-          "precio": 15.99,
-          "categoria": "Ropa Casual",
-          "cantidad": 2,
           "diferencia": 0
         }
       ]
@@ -503,6 +340,45 @@
           "precio": 70,
           "categoria": "Abrigos",
           "cantidad": 2,
+          "diferencia": 0
+        }
+      ]
+    },
+    {
+      "id": "d14d",
+      "fecha": "11/11/2024",
+      "estado": "Aceptado",
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "Camiseta Básica",
+          "precio": 15.99,
+          "categoria": "Ropa Casual",
+          "cantidad": 7,
+          "diferencia": 0
+        },
+        {
+          "id": "4",
+          "nombre": "Chaqueta de Cuero",
+          "precio": 120,
+          "categoria": "Abrigos",
+          "cantidad": 3,
+          "diferencia": 0
+        },
+        {
+          "id": "14",
+          "nombre": "Sombrero de Paja",
+          "precio": 20,
+          "categoria": "Accesorios",
+          "cantidad": 2,
+          "diferencia": 0
+        },
+        {
+          "id": "12",
+          "nombre": "Blusa Formal",
+          "precio": 40,
+          "categoria": "Ropa Formal",
+          "cantidad": 6,
           "diferencia": 0
         }
       ]
