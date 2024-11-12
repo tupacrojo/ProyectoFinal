@@ -5,7 +5,7 @@
       "nombre": "Camiseta Básica",
       "precio": 15.99,
       "categoria": "Ropa Casual",
-      "cantidad": 90,
+      "cantidad": 88,
       "diferencia": 0
     },
     {
@@ -13,7 +13,7 @@
       "nombre": "Chaqueta de Cuero",
       "precio": 120,
       "categoria": "Abrigos",
-      "cantidad": 18,
+      "cantidad": 22,
       "diferencia": 0
     },
     {
@@ -37,7 +37,7 @@
       "nombre": "Sombrero de Paja",
       "precio": 20,
       "categoria": "Accesorios",
-      "cantidad": 97,
+      "cantidad": 92,
       "diferencia": 0
     },
     {
@@ -59,7 +59,7 @@
     {
       "nombre": "Pijama de Algodón",
       "precio": 35,
-      "cantidad": 59,
+      "cantidad": 58,
       "categoria": "Ropa Interior",
       "id": "17",
       "diferencia": 0
@@ -69,7 +69,7 @@
       "nombre": "Pantalón Cargo",
       "precio": 40.5,
       "categoria": "Pantalones",
-      "cantidad": 54,
+      "cantidad": 57,
       "diferencia": 0
     },
     {
@@ -77,7 +77,7 @@
       "nombre": "Chaleco Acolchado",
       "precio": 70,
       "categoria": "Abrigos",
-      "cantidad": 37,
+      "cantidad": 39,
       "diferencia": 0
     },
     {
@@ -92,7 +92,7 @@
       "id": "8bd8c5a3-a82c-43e4-9b34-6d82e777355a",
       "nombre": "Remera nike",
       "precio": 50000,
-      "cantidad": 36,
+      "cantidad": 35,
       "categoria": "Ropa Casual",
       "diferencia": 0
     }
@@ -151,6 +151,12 @@
       "nombreUsuario": "nico.lope",
       "contrasena": "12345",
       "tipoUsuario": "supervisor"
+    },
+    {
+      "id": "581f",
+      "nombreUsuario": "sofi",
+      "contrasena": "12345",
+      "tipoUsuario": "administrador"
     }
   ],
   "ventas": [
@@ -227,6 +233,60 @@
           "cantidad": 5,
           "categoria": "Ropa Deportiva",
           "id": "15",
+          "diferencia": 0
+        }
+      ]
+    },
+    {
+      "id": "2e999ddf-f61b-4428-ab1a-31b4567702c3",
+      "fecha": "12/11/2024",
+      "total": 50066.98,
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "Camiseta Básica",
+          "precio": 15.99,
+          "categoria": "Ropa Casual",
+          "cantidad": 2,
+          "diferencia": 0
+        },
+        {
+          "nombre": "Pijama de Algodón",
+          "precio": 35,
+          "cantidad": 1,
+          "categoria": "Ropa Interior",
+          "id": "17",
+          "diferencia": 0
+        },
+        {
+          "id": "8bd8c5a3-a82c-43e4-9b34-6d82e777355a",
+          "nombre": "Remera nike",
+          "precio": 50000,
+          "cantidad": 1,
+          "categoria": "Ropa Casual",
+          "diferencia": 0
+        }
+      ]
+    },
+    {
+      "id": "c5a8f645-ae3d-4130-8eaf-b92ee0152b71",
+      "fecha": "12/11/2024",
+      "total": 131.98,
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "Camiseta Básica",
+          "precio": 15.99,
+          "categoria": "Ropa Casual",
+          "cantidad": 2,
+          "diferencia": 0
+        },
+        {
+          "id": "14",
+          "nombre": "Sombrero de Paja",
+          "precio": 20,
+          "categoria": "Accesorios",
+          "cantidad": 5,
           "diferencia": 0
         }
       ]
@@ -359,14 +419,14 @@
     {
       "id": "1c74",
       "fecha": "10/11/2024",
-      "estado": "Aceptado",
+      "estado": "Entregado",
       "productos": [
         {
           "id": "1",
           "nombre": "Camiseta Básica",
           "precio": 15.99,
           "categoria": "Ropa Casual",
-          "cantidad": 3,
+          "cantidad": 2,
           "diferencia": 0
         },
         {
@@ -430,6 +490,29 @@
           "precio": 40,
           "categoria": "Ropa Formal",
           "cantidad": 6,
+          "diferencia": 0
+        }
+      ]
+    },
+    {
+      "id": "4a2a",
+      "fecha": "12/11/2024",
+      "estado": "Aceptado",
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "Camiseta Básica",
+          "precio": 15.99,
+          "categoria": "Ropa Casual",
+          "cantidad": 3,
+          "diferencia": 0
+        },
+        {
+          "nombre": "Falda de Ecocuero",
+          "precio": 75,
+          "cantidad": 3,
+          "categoria": "Faldas",
+          "id": "6",
           "diferencia": 0
         }
       ]
@@ -525,6 +608,33 @@
           "diferencia": -25
         }
       ]
+    },
+    {
+      "id": null,
+      "fecha": "2024-11-12T16:07:30.775Z",
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "Camiseta Básica",
+          "precio": 15.99,
+          "categoria": "Ropa Casual",
+          "cantidad": 90,
+          "diferencia": 2
+        },
+        {
+          "id": "4",
+          "nombre": "Chaqueta de Cuero",
+          "precio": 120,
+          "categoria": "Abrigos",
+          "cantidad": 22,
+          "diferencia": 2
+        }
+      ]
+    },
+    {
+      "id": null,
+      "fecha": "2024-11-12T16:07:30.775Z",
+      "productos": []
     }
   ]
 }
