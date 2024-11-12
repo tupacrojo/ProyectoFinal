@@ -19,7 +19,7 @@
     {
       "nombre": "Falda de Ecocuero",
       "precio": 75,
-      "cantidad": 33,
+      "cantidad": 29,
       "categoria": "Faldas",
       "id": "6",
       "diferencia": 0
@@ -29,7 +29,7 @@
       "nombre": "Blusa Formal",
       "precio": 40,
       "categoria": "Ropa Formal",
-      "cantidad": 42,
+      "cantidad": 39,
       "diferencia": 0
     },
     {
@@ -37,13 +37,13 @@
       "nombre": "Sombrero de Paja",
       "precio": 20,
       "categoria": "Accesorios",
-      "cantidad": 99,
+      "cantidad": 97,
       "diferencia": 0
     },
     {
       "nombre": "Shorts Deportivos",
       "precio": 18.99,
-      "cantidad": 109,
+      "cantidad": 108,
       "categoria": "Ropa Deportiva",
       "id": "15",
       "diferencia": 0
@@ -53,13 +53,13 @@
       "nombre": "Bufanda de Lana",
       "precio": 15,
       "categoria": "Accesorios",
-      "cantidad": 69,
+      "cantidad": 61,
       "diferencia": 0
     },
     {
       "nombre": "Pijama de Algodón",
       "precio": 35,
-      "cantidad": 60,
+      "cantidad": 59,
       "categoria": "Ropa Interior",
       "id": "17",
       "diferencia": 0
@@ -69,7 +69,7 @@
       "nombre": "Pantalón Cargo",
       "precio": 40.5,
       "categoria": "Pantalones",
-      "cantidad": 55,
+      "cantidad": 54,
       "diferencia": 0
     },
     {
@@ -77,7 +77,7 @@
       "nombre": "Chaleco Acolchado",
       "precio": 70,
       "categoria": "Abrigos",
-      "cantidad": 40,
+      "cantidad": 37,
       "diferencia": 0
     },
     {
@@ -85,7 +85,7 @@
       "nombre": "Botas de Montaña",
       "precio": 95.99,
       "categoria": "Calzado",
-      "cantidad": 20,
+      "cantidad": 13,
       "diferencia": 0
     },
     {
@@ -155,27 +155,55 @@
   ],
   "ventas": [
     {
-      "id": "e002",
-      "fecha": "11/11/2024",
-      "total": 200000,
+      "id": "0af9d547-80e6-4bf8-aa81-1f5c9630fe22",
+      "fecha": "12/11/2024",
+      "total": 130,
       "productos": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         {
-          "id": "8bd8c5a3-a82c-43e4-9b34-6d82e777355a",
-          "nombre": "Remera nike",
-          "precio": 50000,
+          "nombre": "Falda de Ecocuero",
+          "precio": 75,
+          "cantidad": 1,
+          "categoria": "Faldas",
+          "id": "6",
+          "diferencia": 0
+        },
+        {
+          "id": "14",
+          "nombre": "Sombrero de Paja",
+          "precio": 20,
+          "categoria": "Accesorios",
+          "cantidad": 2,
+          "diferencia": 0
+        },
+        {
+          "id": "16",
+          "nombre": "Bufanda de Lana",
+          "precio": 15,
+          "categoria": "Accesorios",
+          "cantidad": 1,
+          "diferencia": 0
+        }
+      ]
+    },
+    {
+      "id": "d0efc2ae-b055-4a3e-a030-c77493131289",
+      "fecha": "12/11/2024",
+      "total": 180,
+      "productos": [
+        {
+          "id": "12",
+          "nombre": "Blusa Formal",
+          "precio": 40,
+          "categoria": "Ropa Formal",
+          "cantidad": 3,
+          "diferencia": 0
+        },
+        {
+          "id": "16",
+          "nombre": "Bufanda de Lana",
+          "precio": 15,
+          "categoria": "Accesorios",
           "cantidad": 4,
-          "categoria": "Ropa Casual",
           "diferencia": 0
         }
       ]

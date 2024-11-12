@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { venta } from '../../../interfaces/Venta.interface';
 import { FormBuilder } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import * as uuid from 'uuid';
 
 @Component({
   selector: 'app-nueva-venta',
@@ -22,11 +23,15 @@ export class NuevaVentaComponent implements OnInit {
   listaProductos: Producto[] = [];
   listaProductosVenta: number[] = [];
 
-  venta: venta = {
-    fecha: new Date().toLocaleDateString('es-ES'),
-    total: 0,
-    productos: [],
-  };
+  setThisVenta() {
+    return {
+      id: uuid.v4(),
+      fecha: new Date().toLocaleDateString('es-ES'),
+      total: 0,
+      productos: [],
+    };
+  }
+  venta: venta = this.setThisVenta();
 
   pt = inject(ProductoService);
   vt = inject(VentaService);
@@ -71,6 +76,19 @@ export class NuevaVentaComponent implements OnInit {
 
   cargarVenta() {
     this.calcularTotal();
+    this.venta.productos = this.listaProductos
+      .map((producto, index) => {
+        return {
+          ...producto,
+          cantidad: this.listaProductosVenta[index] || 0,
+        };
+      })
+      .filter((producto) => producto.cantidad > 0);
+    if (this.venta.productos.length === 0) {
+      console.log('No hay productos para vender');
+      return;
+    }
+
     this.vt.postVenta(this.venta).subscribe({
       next: (ven) => {
         this.venta.productos.forEach((productoVenta) => {
@@ -80,6 +98,7 @@ export class NuevaVentaComponent implements OnInit {
               this.pt.putProducto(producto).subscribe({
                 next: (updatedProducto) => {
                   this.listaProductosVenta = [];
+                  this.venta = this.setThisVenta();
                   this.getListaProductos();
                 },
                 error: (err) => {
