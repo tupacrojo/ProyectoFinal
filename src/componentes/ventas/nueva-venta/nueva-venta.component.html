@@ -1,5 +1,5 @@
-<div>
-    <table>
+<div class="card-table">
+    <table class="w-full text-sm text-left">
         <thead>
             <tr>
                 <th>Nombre del producto</th>
@@ -11,12 +11,12 @@
         </thead>
         <tbody>
             <tr *ngFor="let producto of listaProductos; let i = index">
-                <td>{{producto.nombre}}</td>
+                <td class="product-name">{{producto.nombre}}</td>
                 <td>{{producto.precio}}</td>
                 <td>{{producto.cantidad}}</td>
                 <td>{{producto.categoria}}</td>
-                <td>
-                    <div class="counter">
+                <td class="plus-unplus">
+                    <div class="counter relative overflow-x-auto">
                         <button (click)="restar(producto, i)" class="btn btn-unplus">-</button>
                         <div class="counter-score">{{listaProductosVenta[i] || 0 }}</div>
                         <button (click)="sumar(producto, i)" class="btn btn-plus">+</button>
@@ -26,5 +26,7 @@
         </tbody>
     </table>
 </div>
-<button routerLink="/">Volver al Menu</button>
-<button type="text" (click)="cargarVenta()">Cargar venta</button>
+<div>
+    <button routerLink="/">Volver al Menu</button>
+    <button type="text" (click)="cargarVenta()">Cargar venta</button>
+</div>

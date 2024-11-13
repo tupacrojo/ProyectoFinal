@@ -1,17 +1,13 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AuthService } from '../../../services/auth.service';
+import { ButtonRouteComponent } from '../../ui/button-route/button-route.component';
+import { SideNavbarComponent } from "../../ui/side-navbar/side-navbar.component";
 
 @Component({
   selector: 'app-vendedor',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, ButtonRouteComponent, SideNavbarComponent],
   templateUrl: './vendedor.component.html',
   styleUrl: './vendedor.component.css',
 })
-export class VendedorComponent {
-  authService = inject(AuthService);
-  logout() {
-    this.authService.logout();
-  }
-}
+export class VendedorComponent {}

@@ -4,7 +4,6 @@ import { Producto } from '../../../interfaces/Producto.interface';
 import { ProductoService } from '../../../services/producto.service';
 import { CommonModule } from '@angular/common';
 import { venta } from '../../../interfaces/Venta.interface';
-import { FormBuilder } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import * as uuid from 'uuid';
 

@@ -1,0 +1,52 @@
+.card {
+  bottom: 0;
+  right: 0;
+  margin: 2%;
+  position: fixed;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  border-radius: 10%;
+  background: rgb(38, 38, 38);
+  box-shadow: 7px 5px 10px rgba(0, 0, 0, 0.333);
+  display: flex; /* Change to flex to allow centering */
+  flex-direction: column; /* Keep vertical alignment */
+  align-items: center; /* Center the button horizontally */
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the username and role */
+}
+
+.logoutButton {
+  margin-top: 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.UserName {
+  color: white;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+p {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.role {
+  color: rgb(144, 144, 144);
+  font-size: 12px;
+  font-weight: 500;
+}
