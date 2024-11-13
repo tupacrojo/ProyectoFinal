@@ -1,3 +1,6 @@
-<app-theme-switcher></app-theme-switcher>
-<app-role-viewer *ngIf="isAuthenticated()"></app-role-viewer>
-<router-outlet></router-outlet>
+<aside>
+    <app-side-navbar class="sidebar"></app-side-navbar>
+</aside>
+<main class="contenedor">
+    <router-outlet></router-outlet>
+</main>

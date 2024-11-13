@@ -2,8 +2,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-theme-switcher',
   standalone: true,
+  selector: 'app-theme-switcher',
   templateUrl: './theme-switcher.component.html',
   styleUrls: ['./theme-switcher.component.css'],
 })
@@ -13,9 +13,9 @@ export class ThemeSwitcherComponent {
   toggleTheme() {
     this.isDarkMode = !this.isDarkMode;
     if (this.isDarkMode) {
-      document.body.classList.add('dark-mode');
+      document.documentElement.classList.add('dark');
     } else {
-      document.body.classList.remove('dark-mode');
+      document.documentElement.classList.remove('dark');
     }
   }
 }
