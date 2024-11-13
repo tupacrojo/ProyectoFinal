@@ -9,30 +9,6 @@
       "diferencia": 0
     },
     {
-      "id": "4",
-      "nombre": "Chaqueta de Cuero",
-      "precio": 120,
-      "categoria": "Abrigos",
-      "cantidad": 22,
-      "diferencia": 0
-    },
-    {
-      "nombre": "Falda de Ecocuero",
-      "precio": 75,
-      "cantidad": 29,
-      "categoria": "Faldas",
-      "id": "6",
-      "diferencia": 0
-    },
-    {
-      "id": "12",
-      "nombre": "Blusa Formal",
-      "precio": 40,
-      "categoria": "Ropa Formal",
-      "cantidad": 35,
-      "diferencia": 0
-    },
-    {
       "id": "14",
       "nombre": "Sombrero de Paja",
       "precio": 20,
