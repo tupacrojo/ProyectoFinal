@@ -55,7 +55,7 @@
       </div>
   </div>
   <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-      <thead class="text-xs uppercase bg-gray-50 bg-gray-700 text-gray-200">
+      <thead class="text-xs uppercase bg-blue-500 text-gray-200">
           <tr>
             <th scope="col" class="px-6 py-3">
               Product name
@@ -78,20 +78,20 @@
         @for (producto of listaFiltradaProductos; track $index){
           <tr class="bg-white border-b hover:bg-gray-50">
               <tr>
-              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                 {{producto.nombre}}
               </th>
-              <td class="px-6 py-4">
+              <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                 {{producto.precio}}
               </td>
-              <td class="px-6 py-4">
+              <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                 {{producto.cantidad}}
               </td>
-              <td class="px-6 py-4">
+              <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                 {{producto.categoria}}
               </td>
               @if (role === "administrador" ) {
-              <td class="px-6 py-4">
+              <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                   <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline p-1" [routerLink]="['/ModificarProducto', producto.id]">Modificar</a>
                   <a class="hover:underline text-red-600 p-1" (click)="eliminarProducto(producto)">Eliminar</a>
               </td>
