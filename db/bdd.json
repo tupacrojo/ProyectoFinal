@@ -5,7 +5,7 @@
       "nombre": "Camiseta Básica",
       "precio": 15.99,
       "categoria": "Ropa Casual",
-      "cantidad": 88,
+      "cantidad": 91,
       "diferencia": 0
     },
     {
@@ -473,7 +473,7 @@
     {
       "id": "4a2a",
       "fecha": "12/11/2024",
-      "estado": "Aceptado",
+      "estado": "Entregado",
       "productos": [
         {
           "id": "1",
