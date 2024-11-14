@@ -1,25 +1,35 @@
 
-<div class="card">
-    <table>
-        <thead>
+<div class="relative left-10 overflow-x-auto shadow-md sm:rounded-lg">
+  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <thead class="text-xs uppercase bg-blue-500 text-gray-200">
           <tr>
-            <th>Id</th>
-            <th>Nombre usuario</th>
-            <th>Tipo de usuario</th>
+              <th scope="col" class="px-6 py-3">
+                  Id de usuario
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  Nombre de usuario
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  Tipo de usuario
+              </th>
+              
           </tr>
-        </thead>
-
-        <tbody>
-            @for (usuario of listaUsuarios; track $index) {
-             <tr>
-                <td>{{usuario.id}}</td>
-                <td>{{usuario.nombreUsuario}}</td>
-                <td>{{usuario.tipoUsuario}}</td>
-                <td><a (click)="delete(usuario.id)">Eliminar</a></td>
-            </tr>
-            }
-        </tbody>
-    </table>
+      </thead>
+      <tbody>
+        @for (usuario of listaUsuarios; track $index){
+          <tr class="bg-white border-b hover:bg-gray-50">
+              <tr>
+              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                {{usuario.id}}
+              </th>
+              <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                {{usuario.nombreUsuario}}
+              </td>
+              <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                {{usuario.tipoUsuario}}
+              </td>
+          </tr>
+          }
+      </tbody>
+  </table>
 </div>
-
-<button routerLink = "/MenuAdministrador">Volver al menu</button>
