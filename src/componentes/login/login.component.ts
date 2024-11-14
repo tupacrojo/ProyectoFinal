@@ -5,11 +5,12 @@ import { Usuario } from '../../interfaces/Usuario.interface';
 import { UsuarioService } from '../../services/usuario.service';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
+import { LogoComponent } from "../ui/logo/logo.component";
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterModule, ReactiveFormsModule, CommonModule],
+  imports: [RouterModule, ReactiveFormsModule, CommonModule, LogoComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
