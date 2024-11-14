@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { Venta } from '../../../interfaces/Venta.interface';
 import { RouterModule } from '@angular/router';
 import * as uuid from 'uuid';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-nueva-venta',
@@ -22,16 +23,17 @@ export class NuevaVentaComponent implements OnInit {
   listaProductos: Producto[] = [];
   listaProductosVenta: number[] = [];
 
-  setThisVenta() {
+  auth = inject(AuthService);
+  setThisVenta(): Venta {
     return {
       id: uuid.v4(),
       fecha: new Date().toLocaleDateString('es-ES'),
       total: 0,
       productos: [],
+      vendedor: this.auth.getUserName() || '',
     };
   }
   venta: Venta = this.setThisVenta();
-
   pt = inject(ProductoService);
   vt = inject(VentaService);
 

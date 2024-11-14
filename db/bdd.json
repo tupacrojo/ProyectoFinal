@@ -13,7 +13,7 @@
       "nombre": "Sombrero de Paja",
       "precio": 20,
       "categoria": "Accesorios",
-      "cantidad": 92,
+      "cantidad": 88,
       "diferencia": 0
     },
     {
@@ -266,6 +266,22 @@
           "diferencia": 0
         }
       ]
+    },
+    {
+      "id": "ed202e87-75ec-4282-b9a1-bf23a1951959",
+      "fecha": "14/11/2024",
+      "total": 80,
+      "productos": [
+        {
+          "id": "14",
+          "nombre": "Sombrero de Paja",
+          "precio": 20,
+          "categoria": "Accesorios",
+          "cantidad": 4,
+          "diferencia": 0
+        }
+      ],
+      "vendedor": "juan.martel"
     }
   ],
   "pedidos": [
