@@ -3,7 +3,7 @@ import { VentaService } from '../../../services/venta.service';
 import { Producto } from '../../../interfaces/Producto.interface';
 import { ProductoService } from '../../../services/producto.service';
 import { CommonModule } from '@angular/common';
-import { venta } from '../../../interfaces/Venta.interface';
+import { Venta } from '../../../interfaces/Venta.interface';
 import { RouterModule } from '@angular/router';
 import * as uuid from 'uuid';
 
@@ -30,7 +30,7 @@ export class NuevaVentaComponent implements OnInit {
       productos: [],
     };
   }
-  venta: venta = this.setThisVenta();
+  venta: Venta = this.setThisVenta();
 
   pt = inject(ProductoService);
   vt = inject(VentaService);
