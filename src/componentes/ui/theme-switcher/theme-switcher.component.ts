@@ -1,5 +1,4 @@
-// src/componentes/ui/theme-switcher/theme-switcher.component.ts
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -7,15 +6,26 @@ import { Component } from '@angular/core';
   templateUrl: './theme-switcher.component.html',
   styleUrls: ['./theme-switcher.component.css'],
 })
-export class ThemeSwitcherComponent {
-  isDarkMode = false;
+export class ThemeSwitcherComponent implements OnInit {
+  isDarkMode: boolean = true;
+
+  ngOnInit() {
+    this.isDarkMode = localStorage.getItem('theme') === 'dark';
+    this.applyTheme();
+  }
 
   toggleTheme() {
     this.isDarkMode = !this.isDarkMode;
+    localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
+    this.applyTheme();
+  }
+
+  applyTheme() {
+    const htmlElement = document.documentElement;
     if (this.isDarkMode) {
-      document.documentElement.classList.add('dark');
+      htmlElement.classList.add('dark');
     } else {
-      document.documentElement.classList.remove('dark');
+      htmlElement.classList.remove('dark');
     }
   }
 }

@@ -1,3 +1,6 @@
-<button (click)="toggleTheme()">
-    {{ isDarkMode ? 'Modo Claro' : 'Modo Oscuro' }}
-</button>
+<div class="toggle-switch">
+  <label class="switch-label">
+    <input type="checkbox" class="checkbox" (change)="toggleTheme()">
+    <span class="slider"></span>
+  </label>
+</div>
