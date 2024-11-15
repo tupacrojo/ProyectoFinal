@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { ButtonRouteComponent } from '../../ui/button-route/button-route.component';
-import { SideNavbarComponent } from "../../ui/side-navbar/side-navbar.component";
+import { NuevaVentaComponent } from "../../ventas/nueva-venta/nueva-venta.component";
 
 @Component({
   selector: 'app-vendedor',
   standalone: true,
-  imports: [RouterModule, ButtonRouteComponent, SideNavbarComponent],
+  imports: [NuevaVentaComponent],
   templateUrl: './vendedor.component.html',
   styleUrl: './vendedor.component.css',
 })
