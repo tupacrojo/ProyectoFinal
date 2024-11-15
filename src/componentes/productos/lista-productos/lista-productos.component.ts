@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
+import { ROLES } from '../../../enum/roles';
 
 @Component({
   selector: 'app-lista-productos',
@@ -14,6 +15,7 @@ import { AuthService } from '../../../services/auth.service';
   styleUrl: './lista-productos.component.css',
 })
 export class ListaProductosComponent implements OnInit {
+  ROLES = ROLES;
   role: string | null = '';
   listaProductos: Producto[] = [];
   listaFiltradaProductos: Producto[] = [];
@@ -51,7 +53,6 @@ export class ListaProductosComponent implements OnInit {
   eliminarProducto(producto: Producto) {
     this.productosService.deleteProductos(producto.id).subscribe({
       next: (produc: Producto) => {
-      
         this.mostrarLista();
       },
       error: (err) => {

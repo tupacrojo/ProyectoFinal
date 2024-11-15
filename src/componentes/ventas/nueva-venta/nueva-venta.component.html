@@ -1,32 +1,47 @@
-<div class="card-table">
-    <table class="w-full text-sm text-left">
-        <thead>
-            <tr>
-                <th>Nombre del producto</th>
-                <th>Precio unitario</th>
-                <th>Cantidad en stock</th>
-                <th>Categoria</th>
-                <th>Seleccionar Producto</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let producto of listaProductos; let i = index">
-                <td class="product-name">{{producto.nombre}}</td>
-                <td>{{producto.precio}}</td>
-                <td>{{producto.cantidad}}</td>
-                <td>{{producto.categoria}}</td>
-                <td class="plus-unplus">
-                    <div class="counter relative overflow-x-auto">
-                        <button (click)="restar(producto, i)" class="btn btn-unplus">-</button>
-                        <div class="counter-score">{{listaProductosVenta[i] || 0 }}</div>
-                        <button (click)="sumar(producto, i)" class="btn btn-plus">+</button>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<div>
-    <button routerLink="/">Volver al Menu</button>
-    <button type="text" (click)="cargarVenta()">Cargar venta</button>
+<div class="bg-blue-50 p-4 rounded-xl dark:bg-blue-800">
+    <div>
+        <table class=" w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead class="text-xs uppercase bg-blue-500 text-gray-200">
+                <tr>
+                    <th class="cursor-pointer px-6 py-3" (click)="ordenarPor('nombre')">Nombre del producto</th>
+                    <th class="cursor-pointer px-6 py-3" (click)="ordenarPor('precio')">Precio unitario</th>
+                    <th class="cursor-pointer px-6 py-3" (click)="ordenarPor('cantidad')">Cantidad en stock</th>
+                    <th class="cursor-pointer px-6 py-3" (click)="ordenarPor('categoria')">Categoria</th>
+                    <th class="px-4 py-3"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="bg-white border-b hover:bg-gray-50 dark:bg-blue-800 dark:bg-opacity-70 dark:border-blue-400"
+                    *ngFor="let producto of listaProductos; let i = index">
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                        {{producto.nombre}}</td>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                        {{producto.precio}}
+                    </td>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                        {{producto.cantidad}}
+                    </td>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                        {{producto.categoria}}
+                    </td>
+                    <td class="plus-unplus px-6 py-1">
+                        <div class="counter relative overflow-x-auto">
+                            <button (click)="restar(producto, i)" class="btn btn-unplus">-</button>
+                            <div scope="row"
+                                class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                                {{ listaProductosVenta[i] || 0 }}
+                            </div>
+                            <button (click)="sumar(producto, i)" class="btn btn-plus">+</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="w-full flex justify-center">
+        <button
+            class="bg-blue-300 hover:bg-blue-400 text-blue-950 font-medium hover:text-black active:translate-y-1 transition-all p-4 rounded-xl mt-4"
+            type="button" (click)="cargarVenta()">Cargar
+            venta</button>
+    </div>
 </div>

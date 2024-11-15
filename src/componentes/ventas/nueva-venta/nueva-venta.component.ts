@@ -22,6 +22,8 @@ export class NuevaVentaComponent implements OnInit {
 
   listaProductos: Producto[] = [];
   listaProductosVenta: number[] = [];
+  campoOrden: keyof Producto | null = null;
+  esAscendente: boolean = true;
 
   auth = inject(AuthService);
   setThisVenta(): Venta {
@@ -45,6 +47,26 @@ export class NuevaVentaComponent implements OnInit {
       error: (err) => {
         console.log('Error', err);
       },
+    });
+  }
+
+  ordenarPor(campo: keyof Producto) {
+    if (this.campoOrden === campo) {
+      this.esAscendente = !this.esAscendente;
+    } else {
+      this.campoOrden = campo;
+      this.esAscendente = true;
+    }
+    this.listaProductos.sort((a, b) => {
+      const valorA = a[campo];
+      const valorB = b[campo];
+      if (valorA === null || valorA === undefined)
+        return this.esAscendente ? 1 : -1;
+      if (valorB === null || valorB === undefined)
+        return this.esAscendente ? -1 : 1;
+      if (valorA < valorB) return this.esAscendente ? -1 : 1;
+      if (valorA > valorB) return this.esAscendente ? 1 : -1;
+      return 0;
     });
   }
 
