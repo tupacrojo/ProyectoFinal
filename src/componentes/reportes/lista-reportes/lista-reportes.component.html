@@ -1,8 +1,8 @@
 
 @for (item of reportes; track $index) {
-<div class="relative left-10 overflow-x-auto shadow-md sm:rounded-lg my-6">
+<div class="relative mx-10 overflow-x-auto shadow-md sm:rounded-lg my-6 ">
 
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <table class="w-full table-fixed text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead class="text-xs uppercase bg-blue-500 text-gray-200">
             <tr>
                 <th scope="col" class="px-6 py-3">
@@ -25,22 +25,26 @@
         <tbody>
           @for (prod of item.productos; track $index){
             <tr class="bg-white border-b hover:bg-gray-50">
-                <tr>
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+
+                <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                   {{prod.nombre}}
-                </th>
+                </td>
+
                 <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                   {{prod.categoria}}
                 </td>
+
                 <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                   {{prod.diferencia}}
                 </td>
+
                 <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                     {{prod.cantidad}}
-                  </td>
-                  <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                </td>
+
+                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                     {{prod.precio}}
-                  </td>
+                </td>
             </tr>
             }
         </tbody>
