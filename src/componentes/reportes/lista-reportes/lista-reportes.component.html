@@ -1,29 +1,52 @@
+
 @for (item of reportes; track $index) {
-<div class="card">
-    <p class="card-header">{{item.fecha}}</p>
-    <table>
-        <thead>
+<div class="relative left-10 overflow-x-auto shadow-md sm:rounded-lg my-6">
+
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs uppercase bg-blue-500 text-gray-200">
             <tr>
-                <th>Nombre</th>
-                <th>Categoría</th>
-                <th>Diferencia</th>
-                <th>Cantidad</th>
-                <th>Precio</th>
+                <th scope="col" class="px-6 py-3">
+                    Nombre
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Categoria
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Diferencia
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Cantidad
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Precio
+                </th>                
             </tr>
         </thead>
         <tbody>
-            @for (prod of item.productos; track $index) {
-            <tr>
-                <td>{{prod.nombre}}</td>
-                <td>{{prod.categoria}}</td>
-                <td>{{prod.diferencia}}</td>
-                <td>{{prod.cantidad}}</td>
-                <td>{{prod.precio}}</td>
+          @for (prod of item.productos; track $index){
+            <tr class="bg-white border-b hover:bg-gray-50">
+                <tr>
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                  {{prod.nombre}}
+                </th>
+                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                  {{prod.categoria}}
+                </td>
+                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                  {{prod.diferencia}}
+                </td>
+                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                    {{prod.cantidad}}
+                  </td>
+                  <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                    {{prod.precio}}
+                  </td>
             </tr>
             }
         </tbody>
     </table>
-</div>
+  </div>
+
 }
 
-<button routerLink = "/MenuAdministrador">Volver al menu</button>
+
