@@ -1,6 +1,6 @@
 <aside class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
     aria-label="Sidebar">
-    <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+    <div class="flex flex-col justify-between h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
         <ul class="space-y-2 font-medium">
             <li>
                 <a routerLink="/"
@@ -128,15 +128,12 @@
 
             }
 
-            <li>
-                <app-theme-switcher></app-theme-switcher>
-            </li>
 
-            <li>
-                <app-role-viewer></app-role-viewer>
-
-            </li>
         </ul>
+        <div>
+            <app-theme-switcher></app-theme-switcher>
+            <app-role-viewer></app-role-viewer>
+        </div>
 
     </div>
 </aside>
