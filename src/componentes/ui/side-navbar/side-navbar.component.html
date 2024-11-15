@@ -5,7 +5,7 @@
             <li>
                 <a routerLink="/"
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <app-logo stroke="slate-900" className="h-16 w-16" routerLink="/" />
+                    <app-logo className="h-16 w-16 dark:fill-white" routerLink="/" />
                     <span>
                         Stock Manager
                     </span>
@@ -130,8 +130,8 @@
 
 
         </ul>
-        <div>
-            <app-theme-switcher></app-theme-switcher>
+        <div class="flex flex-col items-center pb-4 ">
+            <app-theme-switcher class="py-6"></app-theme-switcher>
             <app-role-viewer></app-role-viewer>
         </div>
 
