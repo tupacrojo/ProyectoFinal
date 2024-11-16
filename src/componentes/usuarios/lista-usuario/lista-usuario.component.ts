@@ -5,11 +5,17 @@ import { RouterModule } from '@angular/router';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
+import { HeaderTableComponent } from '../../ui/header-table/header-table.component';
 
 @Component({
   selector: 'app-lista-usuario',
   standalone: true,
-  imports: [RouterModule, ReactiveFormsModule, CommonModule],
+  imports: [
+    RouterModule,
+    ReactiveFormsModule,
+    CommonModule,
+    HeaderTableComponent,
+  ],
   templateUrl: './lista-usuario.component.html',
   styleUrl: './lista-usuario.component.css',
 })
@@ -78,5 +84,30 @@ export class ListaUsuarioComponent implements OnInit {
   resetearFiltros() {
     this.filtroForm.reset();
     this.listaFiltrada = [...this.listaUsuarios];
+  }
+  campoOrden: keyof Usuario | null = null;
+  esAscendente: boolean = true;
+
+  ordenarPor(campo: keyof Usuario) {
+    if (this.campoOrden === campo) {
+      this.esAscendente = !this.esAscendente;
+    } else {
+      this.campoOrden = campo;
+      this.esAscendente = true;
+    }
+
+    this.listaUsuarios.sort((a, b) => {
+      const valorA = a[campo];
+      const valorB = b[campo];
+
+      if (valorA === null || valorA === undefined)
+        return this.esAscendente ? 1 : -1;
+      if (valorB === null || valorB === undefined)
+        return this.esAscendente ? -1 : 1;
+
+      if (valorA < valorB) return this.esAscendente ? -1 : 1;
+      if (valorA > valorB) return this.esAscendente ? 1 : -1;
+      return 0;
+    });
   }
 }
