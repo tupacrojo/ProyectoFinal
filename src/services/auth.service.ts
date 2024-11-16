@@ -19,23 +19,34 @@ export class AuthService {
   }
 
   login(username: string, password: string) {
-    this.uss.getUsuario(username).subscribe({
-      next: (usuario) => {
-        if (usuario[0].contrasena === password) {
-          this.isAuthenticated = true;
-          this.currentUser = usuario[0].nombreUsuario;
-          this.userRoles = [usuario[0].tipoUsuario];
-          localStorage.setItem('isAuthenticated', 'true');
-          localStorage.setItem('currentUser', this.currentUser);
-          localStorage.setItem('userRoles', JSON.stringify(this.userRoles));
-          this.redirectUser(usuario[0].tipoUsuario);
-        }
-      },
-      error: (err) => {
-        this.toastr.error('Usuario o contraseña incorrectos');
-        console.log('Error', err);
-      },
-    });
+    try {
+      this.uss.getUsuario(username).subscribe({
+        next: (usuario) => {
+          if (usuario.length === 0) {
+            this.toastr.error('Usuario no existe');
+            return;
+          }
+          if (usuario[0].contrasena === password) {
+            this.isAuthenticated = true;
+            this.currentUser = usuario[0].nombreUsuario;
+            this.userRoles = [usuario[0].tipoUsuario];
+            localStorage.setItem('isAuthenticated', 'true');
+            localStorage.setItem('currentUser', this.currentUser);
+            localStorage.setItem('userRoles', JSON.stringify(this.userRoles));
+            this.redirectUser(usuario[0].tipoUsuario);
+          } else {
+            this.toastr.error('Usuario o contraseña incorrectos');
+          }
+        },
+        error: (err) => {
+          this.toastr.error('Usuario o contraseña incorrectos');
+          console.log('Error', err);
+        },
+      });
+    } catch (error) {
+      console.log('Error', error);
+      this.toastr.error('Usuario o contraseña incorrectos');
+    }
   }
 
   logout() {
