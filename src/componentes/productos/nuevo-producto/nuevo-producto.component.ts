@@ -5,11 +5,12 @@ import { ProductoService } from '../../../services/producto.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import * as uuid from 'uuid';
+import { GoodToastComponent } from "../../ui/good-toast/good-toast.component";
 
 @Component({
   selector: 'app-nuevo-producto',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, RouterModule],
+  imports: [ReactiveFormsModule, CommonModule, RouterModule, GoodToastComponent],
   templateUrl: './nuevo-producto.component.html',
   styleUrl: './nuevo-producto.component.css',
 })
@@ -27,8 +28,8 @@ export class NuevoProductoComponent implements OnInit {
   formulario = this.fb.nonNullable.group({
     id: [uuid.v4()],
     nombre: ['', [Validators.required]],
-    precio: [0, [Validators.required]],
-    cantidad: [0, [Validators.required]],
+    precio: [0, [Validators.required, Validators.min(0)]],
+    cantidad: [0, [Validators.required, Validators.min(1)]],
     categoria: ['', [Validators.required]],
     diferencia: [0, [Validators.required]],
   });
