@@ -21,13 +21,13 @@
       "nombre": "Bufanda de Lana",
       "precio": 15,
       "categoria": "Accesorios",
-      "cantidad": 61,
+      "cantidad": 57,
       "diferencia": 0
     },
     {
       "nombre": "Pijama de Algodón",
       "precio": 35,
-      "cantidad": 55,
+      "cantidad": 52,
       "categoria": "Ropa Interior",
       "id": "17",
       "diferencia": 0
@@ -45,7 +45,7 @@
       "nombre": "Chaleco Acolchado",
       "precio": 70,
       "categoria": "Abrigos",
-      "cantidad": 39,
+      "cantidad": 37,
       "diferencia": -1
     },
     {
@@ -60,7 +60,7 @@
       "id": "8bd8c5a3-a82c-43e4-9b34-6d82e777355a",
       "nombre": "Remera nike",
       "precio": 50000,
-      "cantidad": 34,
+      "cantidad": 31,
       "categoria": "Ropa Casual",
       "diferencia": 0
     },
@@ -195,6 +195,62 @@
         }
       ],
       "vendedor": "ana_martinez"
+    },
+    {
+      "id": "56e7321b-6829-4277-9033-761c004e8bf9",
+      "fecha": "16/11/2024",
+      "total": 150170,
+      "productos": [
+        {
+          "id": "16",
+          "nombre": "Bufanda de Lana",
+          "precio": 15,
+          "categoria": "Accesorios",
+          "cantidad": 2,
+          "diferencia": 0
+        },
+        {
+          "id": "19",
+          "nombre": "Chaleco Acolchado",
+          "precio": 70,
+          "categoria": "Abrigos",
+          "cantidad": 2,
+          "diferencia": -1
+        },
+        {
+          "id": "8bd8c5a3-a82c-43e4-9b34-6d82e777355a",
+          "nombre": "Remera nike",
+          "precio": 50000,
+          "cantidad": 3,
+          "categoria": "Ropa Casual",
+          "diferencia": 0
+        }
+      ],
+      "vendedor": "juan.martel"
+    },
+    {
+      "id": "3a5b986c-2858-499d-be49-ef06751e6d2f",
+      "fecha": "16/11/2024",
+      "total": 135,
+      "productos": [
+        {
+          "id": "16",
+          "nombre": "Bufanda de Lana",
+          "precio": 15,
+          "categoria": "Accesorios",
+          "cantidad": 2,
+          "diferencia": 0
+        },
+        {
+          "nombre": "Pijama de Algodón",
+          "precio": 35,
+          "cantidad": 3,
+          "categoria": "Ropa Interior",
+          "id": "17",
+          "diferencia": 0
+        }
+      ],
+      "vendedor": "juan.martel"
     }
   ],
   "pedidos": [
@@ -348,7 +404,7 @@
     {
       "id": "2c0b",
       "fecha": "16/11/2024",
-      "estado": "En espera de confirmacion",
+      "estado": "Aceptado",
       "productos": [
         {
           "id": "16",
