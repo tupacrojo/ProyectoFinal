@@ -444,7 +444,7 @@
   "reportes": [
     {
       "id": "r001",
-      "fecha": "2024-11-09T04:11:44.363Z",
+      "fecha": "2024-10-09T04:11:44.363Z",
       "productos": [
         {
           "id": "1",
@@ -452,7 +452,7 @@
           "precio": 15.99,
           "categoria": "Ropa Casual",
           "cantidad": 100,
-          "diferencia": 0
+          "diferencia": 3
         },
         {
           "id": "4",
@@ -460,7 +460,7 @@
           "precio": 120,
           "categoria": "Abrigos",
           "cantidad": 25,
-          "diferencia": 0
+          "diferencia": 3
         }
       ]
     },
