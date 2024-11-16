@@ -7,6 +7,7 @@ import { Venta } from '../../../interfaces/Venta.interface';
 import { RouterModule } from '@angular/router';
 import * as uuid from 'uuid';
 import { AuthService } from '../../../services/auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-nueva-venta',
@@ -26,6 +27,8 @@ export class NuevaVentaComponent implements OnInit {
   esAscendente: boolean = true;
 
   auth = inject(AuthService);
+  toastr = inject(ToastrService);
+
   setThisVenta(): Venta {
     return {
       id: uuid.v4(),
@@ -45,7 +48,7 @@ export class NuevaVentaComponent implements OnInit {
         this.listaProductos = prod;
       },
       error: (err) => {
-        console.log('Error', err);
+        this.toastr.error(err.message, 'Error');
       },
     });
   }
@@ -108,7 +111,7 @@ export class NuevaVentaComponent implements OnInit {
       })
       .filter((producto) => producto.cantidad > 0);
     if (this.venta.productos.length === 0) {
-      console.log('No hay productos para vender');
+      this.toastr.error("No hay productos para vender", 'Error');
       return;
     }
 
@@ -125,18 +128,19 @@ export class NuevaVentaComponent implements OnInit {
                   this.getListaProductos();
                 },
                 error: (err) => {
-                  console.log('Error al actualizar stock', err);
+                  this.toastr.error("Error al actualizar el stock", 'Error');
                 },
               });
             },
             error: (err) => {
-              console.log('Error al obtener producto', err);
+              this.toastr.error("Error al obtener el producto", 'Error');
             },
           });
         });
+        this.toastr.success("Venta generada correctamente y stock actualizado", 'Exito');
       },
       error: (err) => {
-        console.log('Error', err);
+        this.toastr.error(err.message, 'Error');
       },
     });
   }

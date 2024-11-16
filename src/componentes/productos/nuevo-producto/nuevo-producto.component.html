@@ -77,6 +77,18 @@
                     <option class="dark:text-white" [ngValue]="null" disabled>Ingrese una categoria...</option>
                     <option *ngFor="let categoria of listaCategorias" [ngValue]="categoria">{{categoria}}</option>
                 </select>
+
+                <div>
+                    <button type="button" (click)="deshabilitarCategoria()">Agregar categoria</button>
+                    
+                    <div *ngIf = "estadoCategoria()">
+                    
+                        <input #categoriaInput type = "string" placeholder="Escribe una categoria nueva..." >
+                        <button type="button" (click)="habilitarCategoria()">Cancelar</button>
+                        <button type="button" (click)="cargarDatoCaregorias(categoriaInput.value)">Agregar</button>
+                    </div>
+                </div>
+
                 <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                     <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
@@ -84,6 +96,8 @@
                     </svg>
                 </div>
             </div>
+
+
         </div>
 
         <div class="flex justify-end">
