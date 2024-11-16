@@ -13,6 +13,7 @@ import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
 import { ROLES } from '../../../enum/roles';
 import { HeaderTableComponent } from '../../ui/header-table/header-table.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-lista-productos',
@@ -33,6 +34,7 @@ export class ListaProductosComponent implements OnInit {
   listaProductos: Producto[] = [];
   listaFiltradaProductos: Producto[] = [];
   listaCategorias: string[] = [];
+  toastr = inject(ToastrService);
   fb = inject(FormBuilder);
   terminoBusqueda: string = '';
 
@@ -67,6 +69,7 @@ export class ListaProductosComponent implements OnInit {
   eliminarProducto(producto: Producto) {
     this.productosService.deleteProductos(producto.id).subscribe({
       next: (produc: Producto) => {
+        this.toastr.success('Producto eliminado correctamente');
         this.mostrarLista();
       },
       error: (err) => {
