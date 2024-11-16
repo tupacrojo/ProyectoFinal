@@ -4,6 +4,7 @@ import { ProductoService } from '../../../services/producto.service';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Producto } from '../../../interfaces/Producto.interface';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-modificar-producto',
@@ -15,6 +16,7 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 export class ModificarProductoComponent implements OnInit {
   constructor(private productosService: ProductoService) {}
 
+  toastr = inject(ToastrService);
   fb = inject(FormBuilder);
   ar = inject(ActivatedRoute);
   id: string = 'default';
@@ -67,7 +69,7 @@ export class ModificarProductoComponent implements OnInit {
   updateProd(prod: Producto) {
     this.productosService.putProducto(prod).subscribe({
       next: () => {
-        alert('El producto se actualizo correctamente');
+        this.toastr.success('El producto se actualizo correctamente');
       },
       error(err) {
         console.log(err.message);
