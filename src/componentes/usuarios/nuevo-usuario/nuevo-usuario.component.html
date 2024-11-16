@@ -17,7 +17,7 @@
             </div>
             @if(formulario.controls['nombreUsuario'].getError('required') &&
             formulario.controls['nombreUsuario'].touched){
-            <div class="text-red-500 text-sm mt-1">
+            <div class="text-red-500 text-sm mt-1 dark:bg-red-400 dark:p-2 dark:rounded-md dark:text-white">
                 Campo requerido
             </div>
             }
@@ -36,7 +36,7 @@
                 </div>
             </div>
             @if(formulario.controls['contrasena'].getError('required') && formulario.controls['contrasena'].touched){
-            <div class="text-red-500 text-sm mt-1">
+            <div class="text-red-500 text-sm mt-1 dark:bg-red-400 dark:p-2 dark:rounded-md dark:text-white">
                 Campo requerido
             </div>
             }
