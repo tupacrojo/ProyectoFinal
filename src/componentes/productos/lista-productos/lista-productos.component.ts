@@ -91,7 +91,6 @@ export class ListaProductosComponent implements OnInit {
     this.listaCategorias = Array.from(
       new Set(this.listaProductos.map((producto) => producto.categoria))
     );
-    this.listaCategorias.push('');
   }
 
   filtrarPorCategoria() {
@@ -103,5 +102,12 @@ export class ListaProductosComponent implements OnInit {
     } else {
       this.listaFiltradaProductos = [...this.listaProductos];
     }
+  }
+
+
+  resetearFiltros() {
+    
+    this.filtroForm.reset();
+    this.listaFiltradaProductos = [...this.listaProductos];
   }
 }

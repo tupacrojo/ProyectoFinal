@@ -83,10 +83,8 @@ export class ListaUsuarioComponent implements OnInit {
 
 
   resetearFiltros() {
-    // Resetear el formulario (si quieres que el select vuelva al valor inicial)
-    this.filtroForm.reset();
     
-    // Restaurar la lista completa de usuarios
+    this.filtroForm.reset();
     this.listaFiltrada = [...this.listaUsuarios];
   }
   
