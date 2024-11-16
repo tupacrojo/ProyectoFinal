@@ -87,6 +87,14 @@
       "cantidad": 2,
       "categoria": "Calzado",
       "diferencia": 0
+    },
+    {
+      "id": "89024a4c-4b37-4c8f-b212-b982659ba8db",
+      "nombre": "Producto 1",
+      "precio": 19,
+      "cantidad": 6,
+      "categoria": "Ropa Interior",
+      "diferencia": 0
     }
   ],
   "usuarios": [
@@ -348,7 +356,7 @@
     {
       "id": "2c0b",
       "fecha": "16/11/2024",
-      "estado": "En espera de confirmacion",
+      "estado": "Aceptado",
       "productos": [
         {
           "id": "16",
