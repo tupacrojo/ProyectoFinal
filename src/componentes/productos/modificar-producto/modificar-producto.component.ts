@@ -40,7 +40,8 @@ export class ModificarProductoComponent implements OnInit {
     this.ar.paramMap.subscribe({
       next: (param) => {
         this.id = param.get('id') ?? 'default';
-        this.setearFormulario(this.id ?? '');
+        console.log(this.id);
+        this.setearFormulario(this.id);
       },
       error: (err) => {
         console.log(err.message);
@@ -51,6 +52,7 @@ export class ModificarProductoComponent implements OnInit {
   setearFormulario(id: string) {
     this.productosService.getProductoById(id).subscribe({
       next: (prod) => {
+        this.formulario.controls['id'].setValue(prod.id);
         this.formulario.controls['nombre'].setValue(prod.nombre);
         this.formulario.controls['precio'].setValue(prod.precio ?? 0);
         this.formulario.controls['categoria'].setValue(prod.categoria);
@@ -60,9 +62,13 @@ export class ModificarProductoComponent implements OnInit {
   }
 
   actualizarProducto() {
-    if (this.formulario.invalid) return;
+    if (this.formulario.invalid) {
+      this.toastr.error('Error al actualizar el producto');
+      return;
+    }
 
     const prod = this.formulario.getRawValue();
+    console.log(prod);
     this.updateProd(prod);
   }
 
