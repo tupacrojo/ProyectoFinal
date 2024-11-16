@@ -1,71 +1,65 @@
-
-<div class="flex items-center space-x-4">
-  <form [formGroup]="filtroForm" class="flex items-center space-x-2">
-    <label for="categoriaSelect" class="text-sm font-medium text-gray-700 dark:text-white">Filtrar por tipo de usuario:</label>
-    <select 
-      formControlName="tipoUsuario" 
-      class="block w-60 rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-    >
-      <option *ngFor="let tipoUsuario of tiposUsuarios" [ngValue]="tipoUsuario">
-        {{ tipoUsuario }}
-      </option>
-    </select>
-  </form>
-  <button 
-    (click)="filtrarPorTipoUsuario()"
-    class="group flex justify-center py-2 px-5 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-  >
-    Aplicar filtro
-  </button>
-
-  <button 
-  (click)="resetearFiltros()"
-  class="group flex justify-center py-2 px-5 border border-transparent text-sm font-medium rounded-md text-white bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
->
-  Resetear filtros
-</button>
-</div>
-
 <div class="relative mx-10 overflow-x-auto shadow-md sm:rounded-lg">
+  <div class="flex items-center space-x-4 mb-1">
+    <form [formGroup]="filtroForm" class="flex items-center space-x-2">
+      <label for="categoriaSelect" class="text-sm font-medium text-gray-700 dark:text-white">Filtrar por tipo de
+        usuario:</label>
+      <select formControlName="tipoUsuario"
+        class="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <option *ngFor="let tipoUsuario of tiposUsuarios" [ngValue]="tipoUsuario">
+          {{ tipoUsuario }}
+        </option>
+      </select>
+    </form>
+    <button (click)="filtrarPorTipoUsuario()"
+      class="group flex justify-center py-2 px-5 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+      Aplicar filtro
+    </button>
+
+    <button (click)="resetearFiltros()"
+      class="group flex justify-center py-2 px-5 border border-transparent text-sm font-medium rounded-md text-white bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+      Resetear filtros
+    </button>
+  </div>
+
 
   <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-      <thead class="text-xs uppercase bg-blue-500 text-gray-200">
-          <tr>
-              <th scope="col" class="px-6 py-3">
-                  Id de usuario
-              </th>
-              <th scope="col" class="px-6 py-3">
-                  Nombre de usuario
-              </th>
-              <th scope="col" class="px-6 py-3">
-                  Tipo de usuario
-              </th>
-              <th scope="col" class="px-6 py-3">
-                Eliminar
-            </th>
-              
-          </tr>
-      </thead>
-      <tbody>
-        @for (usuario of listaFiltrada; track $index){
-          <tr class="bg-white border-b hover:bg-gray-50 dark:bg-blue-950">
-              
-              <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap  dark:text-white">
-                {{usuario.id}}
-              </td>
+    <thead class="text-xs uppercase bg-blue-500 text-gray-200">
+      <tr>
+        <th scope="col" class="px-6 py-3">
+          Id de usuario
+        </th>
+        <th scope="col" class="px-6 py-3">
+          Nombre de usuario
+        </th>
+        <th scope="col" class="px-6 py-3">
+          Tipo de usuario
+        </th>
+        <th scope="col" class="px-6 py-3">
+          Eliminar
+        </th>
 
-              <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap  dark:text-white">
-                {{usuario.nombreUsuario}}
-              </td>
-              
-              <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap  dark:text-white">
-                {{usuario.tipoUsuario}}
-              </td>
-              <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap  dark:text-white ">
-                <a class="hover:underline text-red-600 p-1 cursor-pointer"  (click)="delete(usuario.id)">Eliminar</a>
-              </td>
-          </tr>
-          }
-      </tbody>
+      </tr>
+    </thead>
+    <tbody>
+      @for (usuario of listaFiltrada; track $index){
+      <tr class="bg-white border-b hover:bg-gray-50 dark:bg-blue-950">
+
+        <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap  dark:text-white">
+          {{usuario.id}}
+        </td>
+
+        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap  dark:text-white">
+          {{usuario.nombreUsuario}}
+        </td>
+
+        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap  dark:text-white">
+          {{usuario.tipoUsuario}}
+        </td>
+        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap  dark:text-white ">
+          <a class="hover:underline text-red-600 p-1 cursor-pointer" (click)="delete(usuario.id)">Eliminar</a>
+        </td>
+      </tr>
+      }
+    </tbody>
   </table>
 </div>
