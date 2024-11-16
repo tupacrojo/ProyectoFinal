@@ -84,16 +84,16 @@
     <thead class="text-xs uppercase bg-blue-500 text-gray-200">
       <tr>
         <th scope="col" class="px-6 py-3">
-          Product name
+         Nombre
         </th>
         <th scope="col" class="px-6 py-3">
-          Price
+          Precio
         </th>
         <th scope="col" class="px-6 py-3">
-          Color
+          Cantidad
         </th>
         <th scope="col" class="px-6 py-3">
-          Category
+          Categoria
         </th>
 
         @if (role === ROLES.ADMIN) {
@@ -106,21 +106,21 @@
     </thead>
     <tbody>
       @for (producto of listaFiltradaProductos; track $index){
-      <tr class="bg-white border-b hover:bg-gray-50">
+      <tr class="bg-white border-b hover:bg-gray-50  dark:bg-blue-950" >
 
-        <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+        <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap  dark:text-white">
           {{producto.nombre}}
         </td>
 
-        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap  dark:text-white">
           {{producto.precio}}
         </td>
 
-        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap  dark:text-white ">
           {{producto.cantidad}}
         </td>
 
-        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap  dark:text-white">
           {{producto.categoria}}
         </td>
 
@@ -138,7 +138,22 @@
   </table>
 </div>
 
+
+
+
 <!-- <div class="contenedor"> -->
+
+  <div>
+    <section>
+      <form [formGroup]="filtroForm" class="filtro-categoria">
+        <label for="categoriaSelect">Filtrar por Categoría:</label>
+        <select formControlName="categoria">
+          <option *ngFor="let categoria of listaCategorias" [ngValue]="categoria">{{categoria}}</option>
+        </select>
+        <button (click)="filtrarPorCategoria()">Aplicar Filtro</button>
+      </form>
+    </section>
+  </div>
 
 <!-- Filtro de categorías 
   <section>
