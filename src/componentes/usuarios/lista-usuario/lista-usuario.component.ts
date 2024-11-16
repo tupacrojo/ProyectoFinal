@@ -2,11 +2,13 @@ import { Component, inject, OnInit } from '@angular/core';
 import { UsuarioService } from '../../../services/usuario.service';
 import { Usuario } from '../../../interfaces/Usuario.interface';
 import { RouterModule } from '@angular/router';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-lista-usuario',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, ReactiveFormsModule, CommonModule],
   templateUrl: './lista-usuario.component.html',
   styleUrl: './lista-usuario.component.css'
 })
@@ -17,8 +19,15 @@ export class ListaUsuarioComponent implements OnInit {
   }
 
   ts = inject(UsuarioService);
+  fb = inject(FormBuilder);
 
   listaUsuarios : Usuario [] = [];
+  listaFiltrada : Usuario [] = [];
+  tiposUsuarios : string [] = [];
+
+  filtroForm = this.fb.nonNullable.group({
+    tipoUsuario : ['']
+  });
 
   agregarUsuario (usuario : Usuario) {
 
@@ -30,6 +39,8 @@ export class ListaUsuarioComponent implements OnInit {
     this.ts.getUsuarios().subscribe({
       next: (usuarios : Usuario[]) => {
         this.listaUsuarios = usuarios;
+        this.listaFiltrada = usuarios;
+        this.extrarTiposUsuarios();
       },
       error : (e : Error) => {
         console.log(e.message);
@@ -51,5 +62,32 @@ export class ListaUsuarioComponent implements OnInit {
     })
   }
 
+  extrarTiposUsuarios() {
+    this.tiposUsuarios = Array.from(
+      new Set(this.listaUsuarios.map((usuario) => usuario.tipoUsuario))
+    );
+    
+  }
+
+  filtrarPorTipoUsuario() {
+
+    const tipoSeleccionado = this.filtroForm.get('tipoUsuario')?.value;
+    if(tipoSeleccionado) {
+      this.listaFiltrada = this.listaUsuarios.filter(
+        (usuario) => usuario.tipoUsuario === tipoSeleccionado
+      );
+    } else {
+      this.listaFiltrada = [...this.listaUsuarios];
+    }
+  }
+
+
+  resetearFiltros() {
+    // Resetear el formulario (si quieres que el select vuelva al valor inicial)
+    this.filtroForm.reset();
+    
+    // Restaurar la lista completa de usuarios
+    this.listaFiltrada = [...this.listaUsuarios];
+  }
   
 }

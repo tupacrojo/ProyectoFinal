@@ -1,10 +1,29 @@
 
-<div>
-  <button  
-      class = "group relative flex justify-center my-5 mx-10 py-2 px-10 
-      border border-transparent text-sm font-medium rounded-md 
-      text-white bg-blue-500 hover:bg-indigo-600 focus:outline-none 
-      focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Aplicar filtro</button>
+<div class="flex items-center space-x-4">
+  <form [formGroup]="filtroForm" class="flex items-center space-x-2">
+    <label for="categoriaSelect" class="text-sm font-medium text-gray-700 dark:text-white">Filtrar por tipo de usuario:</label>
+    <select 
+      formControlName="tipoUsuario" 
+      class="block w-60 rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+    >
+      <option *ngFor="let tipoUsuario of tiposUsuarios" [ngValue]="tipoUsuario">
+        {{ tipoUsuario }}
+      </option>
+    </select>
+  </form>
+  <button 
+    (click)="filtrarPorTipoUsuario()"
+    class="group flex justify-center py-2 px-5 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+  >
+    Aplicar filtro
+  </button>
+
+  <button 
+  (click)="resetearFiltros()"
+  class="group flex justify-center py-2 px-5 border border-transparent text-sm font-medium rounded-md text-white bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+>
+  Resetear filtros
+</button>
 </div>
 
 <div class="relative mx-10 overflow-x-auto shadow-md sm:rounded-lg">
@@ -28,7 +47,7 @@
           </tr>
       </thead>
       <tbody>
-        @for (usuario of listaUsuarios; track $index){
+        @for (usuario of listaFiltrada; track $index){
           <tr class="bg-white border-b hover:bg-gray-50 dark:bg-blue-950">
               
               <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap  dark:text-white">
