@@ -1,50 +1,53 @@
-<div class="contenedor">
-    <table class="tablaProd">
-        <thead>
+<div class="relative mx-10 overflow-x-auto shadow-md sm:rounded-lg my-6 ">
+    <table class="w-full table-fixed text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs uppercase bg-blue-500 text-gray-200">
             <tr>
-                <th>Fecha</th>
-                <th>Estado del pedido</th>
-                <th>
-                    Productos
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Cantidad</th>
-                                <th>Precio</th>
-                            </tr>
-                        </thead>
-                    </table>
+                <th scope="col" class="px-6 py-3">
+                    Fecha
                 </th>
-
+                <th scope="col" class="px-6 py-3">
+                    Estado del pedido
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Productos
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Acciones
+                </th>
             </tr>
         </thead>
 
 
         <tbody>
-            <tr *ngFor="let pedidos of listaPedidos; let i = index">
-                <td>{{pedidos.fecha}}</td>
-                <td>{{pedidos.estado}}</td>
-                <table>
-                    <tbody>
-                        <tr *ngFor="let producto of pedidos.productos">
-                            <td>{{producto.nombre}} </td>
-                            <td>{{producto.cantidad}} </td>
-                            <td>{{producto.precio}} </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <tr *ngFor="let pedidos of listaPedidos; let i = index " class="bg-white border-b hover:bg-gray-50  dark:bg-blue-950">
+                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap  dark:text-white">
+                    {{pedidos.fecha}}
+                </td>
+                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap  dark:text-white">
+                    {{pedidos.estado}}
+                </td>
+                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap  dark:text-white"> 
+                    <table>
+                        <ul>
+                            @for (producto of pedidos.productos; track $index) {
+                            <li>
+                                {{producto.cantidad + "x " + producto.nombre}}
+                            </li>
+                            }
+                        </ul>
+                    </table>
+                </td>
 
-                <td>
+                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap  dark:text-white">
                     <div *ngIf="valorEstado(pedidos.estado,i)">
                         <a (click)="cambiarEstadoAceptacion(i)">Aceptar </a>
                         <a (click)="cambiarEstadoRechazo(i)">Rechazar</a>
                     </div>
-
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
 
-<button (click)="logout()">Salir</button>
+
+
