@@ -75,12 +75,6 @@
   ],
   "usuarios": [
     {
-      "id": "a1b2c3d4",
-      "nombreUsuario": "juan_perez",
-      "contrasena": "12345",
-      "tipoUsuario": "administrador"
-    },
-    {
       "id": "e5f6g7h8",
       "nombreUsuario": "maria_gomez",
       "contrasena": "12345",

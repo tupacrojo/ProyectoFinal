@@ -12,6 +12,9 @@
               <th scope="col" class="px-6 py-3">
                   Tipo de usuario
               </th>
+              <th scope="col" class="px-6 py-3">
+                Eliminar
+            </th>
               
           </tr>
       </thead>
@@ -29,6 +32,9 @@
               
               <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                 {{usuario.tipoUsuario}}
+              </td>
+              <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                <a class="hover:underline text-red-600 p-1"  (click)="delete(usuario.id)">Eliminar</a>
               </td>
           </tr>
           }
