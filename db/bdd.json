@@ -87,6 +87,14 @@
       "cantidad": 0,
       "categoria": "Ropa Casual",
       "diferencia": 0
+    },
+    {
+      "id": "f89d8c06-2f70-49e3-8d5f-92db1b7746a1",
+      "nombre": "croc",
+      "precio": 200,
+      "cantidad": 2,
+      "categoria": "Calzado",
+      "diferencia": 0
     }
   ],
   "usuarios": [
