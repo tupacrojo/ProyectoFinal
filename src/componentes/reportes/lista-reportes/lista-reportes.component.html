@@ -1,10 +1,10 @@
-<div class="flex items-center space-x-4 my-4">
+<div class="relative mx-10 overflow-x-auto sm:rounded-lg">
+    <div class="flex items-center space-x-4 mb-1 my-2">
     <form [formGroup]="filtroForm" class="flex items-center space-x-2">
       <label for="mesSelect" class="text-sm font-medium text-gray-700 dark:text-white">Filtrar por mes:</label>
       <select 
         formControlName="mes" 
-        class="block w-28 rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-      >
+        class="block p-2 text-sm text-gray-900 border border-gray-300 rounded-lg w-50 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
         <option *ngFor="let mes of meses" [value]="mes.valor">
           {{ mes.nombre }}
         </option>
@@ -13,8 +13,7 @@
       <label for="anioSelect" class="text-sm font-medium text-gray-700 dark:text-white">Filtrar por año:</label>
       <select 
         formControlName="anio" 
-        class="block w-28 rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-      >
+        class="block p-2 text-sm text-gray-900 border border-gray-300 rounded-lg w-50 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
         <option *ngFor="let anio of anios" [value]="anio">
           {{ anio }}
         </option>
@@ -22,18 +21,17 @@
   
       <button 
         (click)="aplicarFiltro()"
-        class="group flex justify-center py-2 px-5 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-      >
+        class="group flex justify-center py-2 px-5 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
         Aplicar filtro
       </button>
     </form>
   
     <button 
       (click)="resetearFiltros()"
-      class="group flex justify-center py-2 px-5 border border-transparent text-sm font-medium rounded-md text-white bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
-    >
+      class="group flex justify-center py-2 px-5 border border-transparent text-sm font-medium rounded-md text-white bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
       Resetear filtros
     </button>
+  </div>
   </div>
   
 
