@@ -423,6 +423,37 @@
           "diferencia": 0
         }
       ]
+    },
+    {
+      "id": "3cc7",
+      "fecha": "16/11/2024",
+      "estado": "En espera de confirmacion",
+      "productos": [
+        {
+          "id": "16",
+          "nombre": "Bufanda de Lana",
+          "precio": 15,
+          "categoria": "Accesorios",
+          "cantidad": 2,
+          "diferencia": 0
+        },
+        {
+          "nombre": "Pijama de Algodón",
+          "precio": 35,
+          "cantidad": 2,
+          "categoria": "Ropa Interior",
+          "id": "17",
+          "diferencia": 0
+        },
+        {
+          "id": "18",
+          "nombre": "Pantalón Cargo",
+          "precio": 40.5,
+          "categoria": "Pantalones",
+          "cantidad": 1,
+          "diferencia": 0
+        }
+      ]
     }
   ],
   "reportes": [
