@@ -8,11 +8,12 @@ import { RouterModule } from '@angular/router';
 import * as uuid from 'uuid';
 import { AuthService } from '../../../services/auth.service';
 import { ToastrService } from 'ngx-toastr';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-nueva-venta',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule],
   templateUrl: './nueva-venta.component.html',
   styleUrl: './nueva-venta.component.css',
 })
@@ -25,9 +26,16 @@ export class NuevaVentaComponent implements OnInit {
   listaProductosVenta: number[] = [];
   campoOrden: keyof Producto | null = null;
   esAscendente: boolean = true;
+  listaFiltradaProductos: Producto[] = [];
+  listaCategorias: string[] = [];
+  fb = inject(FormBuilder);
 
   auth = inject(AuthService);
   toastr = inject(ToastrService);
+
+  filtroForm = this.fb.nonNullable.group({
+    categoria: [''],
+  });
 
   setThisVenta(): Venta {
     return {
@@ -46,6 +54,9 @@ export class NuevaVentaComponent implements OnInit {
     this.pt.getProductos().subscribe({
       next: (prod) => {
         this.listaProductos = prod;
+        this.listaFiltradaProductos = prod;
+        this.extraerCategorias();
+
       },
       error: (err) => {
         this.toastr.error(err.message, 'Error');
@@ -143,5 +154,28 @@ export class NuevaVentaComponent implements OnInit {
         this.toastr.error(err.message, 'Error');
       },
     });
+  }
+
+
+  extraerCategorias() {
+    this.listaCategorias = Array.from(
+      new Set(this.listaProductos.map((producto) => producto.categoria))
+    );
+  }
+
+  filtrarPorCategoria() {
+    const categoriaSeleccionada = this.filtroForm.get('categoria')?.value;
+    if (categoriaSeleccionada) {
+      this.listaFiltradaProductos = this.listaProductos.filter(
+        (producto) => producto.categoria === categoriaSeleccionada
+      );
+    } else {
+      this.listaFiltradaProductos = [...this.listaProductos];
+    }
+  }
+
+  resetearFiltros() {
+    this.filtroForm.reset();
+    this.listaFiltradaProductos = [...this.listaProductos];
   }
 }
