@@ -1,12 +1,14 @@
 import { inject, Injectable } from '@angular/core';
 import { UsuarioService } from './usuario.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   uss = inject(UsuarioService);
+  toastr = inject(ToastrService);
   private isAuthenticated = false;
   private userRoles: string[] = [];
   private router = inject(Router);
@@ -29,7 +31,10 @@ export class AuthService {
           this.redirectUser(usuario[0].tipoUsuario);
         }
       },
-      error: (err) => console.log('Error', err),
+      error: (err) => {
+        this.toastr.error('Usuario o contraseña incorrectos');
+        console.log('Error', err);
+      },
     });
   }
 
