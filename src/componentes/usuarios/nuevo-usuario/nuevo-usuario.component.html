@@ -49,7 +49,7 @@
                 <select formControlName="tipoUsuario"
                     class="block w-full pr-10 border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:bg-blue-800 dark:text-white">
                     <option [ngValue]="null" disabled>Seleccione un tipo de usuario...</option>
-                    <option *ngFor="let tipo of listaTipos" [ngValue]="tipo">{{tipo}}</option>
+                    <option *ngFor="let tipoUsuario of listaTipos" [ngValue]="tipoUsuario">{{tipoUsuario}}</option>
                 </select>
                 <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                     <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
