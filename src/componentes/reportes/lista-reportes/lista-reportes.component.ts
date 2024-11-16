@@ -3,11 +3,12 @@ import { Producto } from '../../../interfaces/Producto.interface';
 import { Reporte } from '../../../interfaces/Reporte.interface';
 import { ReporteService } from '../../../services/reporte.service';
 import { RouterModule } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-lista-reportes',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule,DatePipe],
   templateUrl: './lista-reportes.component.html',
   styleUrl: './lista-reportes.component.css',
 })
