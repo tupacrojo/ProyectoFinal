@@ -1,4 +1,10 @@
-import { Component, inject, OnInit } from '@angular/core';
+import {
+  Component,
+  inject,
+  OnInit,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
 import { Producto } from '../../../interfaces/Producto.interface';
 import { ProductoService } from '../../../services/producto.service';
 import { CommonModule } from '@angular/common';
@@ -6,21 +12,29 @@ import { RouterModule } from '@angular/router';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
 import { ROLES } from '../../../enum/roles';
+import { HeaderTableComponent } from '../../ui/header-table/header-table.component';
 
 @Component({
   selector: 'app-lista-productos',
   standalone: true,
-  imports: [CommonModule, RouterModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    ReactiveFormsModule,
+    HeaderTableComponent,
+  ],
   templateUrl: './lista-productos.component.html',
   styleUrl: './lista-productos.component.css',
 })
 export class ListaProductosComponent implements OnInit {
+  @ViewChild('searchInput') searchInput!: ElementRef;
   ROLES = ROLES;
   role: string | null = '';
   listaProductos: Producto[] = [];
   listaFiltradaProductos: Producto[] = [];
   listaCategorias: string[] = [];
   fb = inject(FormBuilder);
+  terminoBusqueda: string = '';
 
   filtroForm = this.fb.nonNullable.group({
     categoria: [''],
@@ -104,9 +118,15 @@ export class ListaProductosComponent implements OnInit {
     }
   }
 
+  filtrarProductos(termino: string) {
+    this.listaFiltradaProductos = this.listaProductos.filter(
+      (producto) =>
+        producto.nombre.toLowerCase().includes(termino.toLowerCase()) ||
+        producto.categoria.toLowerCase().includes(termino.toLowerCase())
+    );
+  }
 
   resetearFiltros() {
-    
     this.filtroForm.reset();
     this.listaFiltradaProductos = [...this.listaProductos];
   }
