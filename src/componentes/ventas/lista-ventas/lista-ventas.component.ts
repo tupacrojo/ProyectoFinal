@@ -23,7 +23,6 @@ export class ListaVentasComponent implements OnInit {
     this.vs.getListaVentas().subscribe({
       next: (venta) => {
         this.listaVentas = venta;
-        console.log(this.listaVentas);
       },
       error: (err) => {
         console.log('Error', err);

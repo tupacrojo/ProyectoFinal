@@ -49,7 +49,6 @@ export class NuevoReporteComponent {
   listaReporte() {
     this.reporteService.getListaReportes().subscribe({
       next: (rep) => {
-        console.log('Reportes', rep);
       },
     });
   }

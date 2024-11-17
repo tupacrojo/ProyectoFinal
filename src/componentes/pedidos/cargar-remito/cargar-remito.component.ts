@@ -53,7 +53,6 @@ export class CargarRemitoComponent implements OnInit {
   }
 
   cargarProducto(pedido: Pedido) {
-    console.log(pedido);
     pedido.productos.forEach((produ) => {
       if (produ.id) {
         this.productoService.getProductoById(produ.id).subscribe({
