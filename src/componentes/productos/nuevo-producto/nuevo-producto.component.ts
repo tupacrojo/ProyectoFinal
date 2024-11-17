@@ -122,7 +122,7 @@ export class NuevoProductoComponent implements OnInit {
       this.habilitarCategoria();
       this.showSuccess('Categoria agregada', 'Se agrego correctamente');
     } else {
-      this.showError('Error', 'La categoria ya existe');
+      this.showError('Error', 'La categoria ya existe o esta vacia');
     }
   }
 
