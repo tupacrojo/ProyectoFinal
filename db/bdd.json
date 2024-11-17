@@ -5,7 +5,7 @@
       "nombre": "Camiseta Básica",
       "precio": 15.99,
       "categoria": "Ropa Casual",
-      "cantidad": 91,
+      "cantidad": 89,
       "diferencia": -9
     },
     {
@@ -20,8 +20,8 @@
       "id": "16",
       "nombre": "Bufanda de Lana",
       "precio": 15,
-      "categoria": "Accesorios",
       "cantidad": 57,
+      "categoria": "Accesorios",
       "diferencia": 0
     },
     {
@@ -248,6 +248,22 @@
           "categoria": "Ropa Interior",
           "id": "17",
           "diferencia": 0
+        }
+      ],
+      "vendedor": "juan.martel"
+    },
+    {
+      "id": "bac6db17-289f-4b4c-9477-58b590f92d36",
+      "fecha": "16/11/2024",
+      "total": 31.98,
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "Camiseta Básica",
+          "precio": 15.99,
+          "categoria": "Ropa Casual",
+          "cantidad": 2,
+          "diferencia": -9
         }
       ],
       "vendedor": "juan.martel"

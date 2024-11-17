@@ -38,7 +38,6 @@ export class ModificarProductoComponent implements OnInit {
     this.ar.paramMap.subscribe({
       next: (param) => {
         this.id = param.get('id') ?? 'default';
-        console.log(this.id);
         this.setearFormulario(this.id);
       },
       error: (err) => {
@@ -65,18 +64,24 @@ export class ModificarProductoComponent implements OnInit {
       return;
     }
     const prod = this.formulario.getRawValue();
-    this.productosService
-      .getProductoByNombre(prod.nombre)
-      .subscribe((produ) => {
-        if (produ.length === 0) {
+
+    this.productosService.getProductoByNombre(prod.nombre).subscribe({
+      next: (producto) => {
+        console.log(producto);
+        if (producto.length > 0) {
+          this.toastr.error('Error al actualizar el producto', 'Nombre existente');
+        } else {
+          this.updateProd(prod);
+        }
+      },
+      error: (err) => {
+        if (err.status === 404) {
           this.updateProd(prod);
         } else {
-          this.toastr.error(
-            'Error al actualizar el producto',
-            'Nombre existente'
-          );
+          console.error('Error al verificar producto por nombre:', err);
         }
-      });
+      },
+    });
   }
 
   updateProd(prod: Producto) {
