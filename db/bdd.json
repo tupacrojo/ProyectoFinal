@@ -71,7 +71,15 @@
       "cantidad": 2,
       "categoria": "Calzado",
       "diferencia": 0
-    }    
+    },
+    {
+      "id": "1cc3e7aa-958a-4453-9424-2baa8d80e95e",
+      "nombre": "lkmdlasmnd",
+      "precio": 1313,
+      "cantidad": 132156,
+      "categoria": "qdada",
+      "diferencia": 0
+    }
   ],
   "usuarios": [
     {
