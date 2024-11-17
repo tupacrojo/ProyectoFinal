@@ -34,6 +34,7 @@ export class NuevoProductoComponent implements OnInit {
     precio: [0, [Validators.required, Validators.min(0)]],
     cantidad: [0, [Validators.required, Validators.min(1)]],
     categoria: ['', [Validators.required]],
+    nuevaCategoria: ['', [Validators.required]],
     diferencia: [0, [Validators.required]],
   });
 
@@ -53,6 +54,7 @@ export class NuevoProductoComponent implements OnInit {
         precio: 0,
         cantidad: 0,
         categoria: '',
+        nuevaCategoria: '',
         diferencia: 0,
       });
     } else {
@@ -114,9 +116,6 @@ export class NuevoProductoComponent implements OnInit {
     this.toastr.error(`${mensaje}`, `${titulo}`);
   }
   cargarDatoCaregorias(categoria: string) {
-
-    console.log("Hola", categoria);
-
     if (!this.buscarCategoria(categoria) && categoria !== '') {
       this.listaCategorias.push(categoria);
       this.habilitarCategoria();
@@ -128,10 +127,12 @@ export class NuevoProductoComponent implements OnInit {
 
   deshabilitarCategoria() {
     this.formulario.get('categoria')?.disable();
+    this.formulario.get('nuevaCategoria')?.enable();
   }
 
   habilitarCategoria() {
     this.formulario.get('categoria')?.enable();
+    this.formulario.get('nuevaCategoria')?.disable();
   }
 
   estadoCategoria() {
