@@ -34,8 +34,6 @@ export class ModificarProductoComponent implements OnInit {
     diferencia: [0, [Validators.required]],
   });
 
-  updateProducto() {}
-
   setearIdProducto() {
     this.ar.paramMap.subscribe({
       next: (param) => {
@@ -66,10 +64,12 @@ export class ModificarProductoComponent implements OnInit {
       this.toastr.error('Error al actualizar el producto');
       return;
     }
-
     const prod = this.formulario.getRawValue();
-    console.log(prod);
-    this.updateProd(prod);
+    if (this.productosService.getProductoByNombre(prod.nombre) === null) {
+      this.updateProd(prod);
+    } else {
+      this.toastr.error('Error al actualizar el producto', 'Nombre existente');
+    }
   }
 
   updateProd(prod: Producto) {
