@@ -27,8 +27,8 @@ export class ProductoService {
     return this.http.get<Producto>(`${this.urlApi}/${id}`);
   }
 
-  getProductoByNombre(nombre: string): Observable<Producto> {
-    return this.http.get<Producto>(`${this.urlApi}?nombre=${nombre}`);
+  getProductoByNombre(nombre: string): Observable<Producto[]> {
+    return this.http.get<Producto[]>(`${this.urlApi}?nombre=${nombre}`);
   }
 
   getProductoOrderByDiferenciaMayor(): Observable<Producto[]> {

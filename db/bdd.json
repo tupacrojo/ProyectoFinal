@@ -20,8 +20,8 @@
       "id": "16",
       "nombre": "Bufanda de Lana",
       "precio": 15,
-      "categoria": "Accesorios",
       "cantidad": 57,
+      "categoria": "Accesorios",
       "diferencia": 0
     },
     {
@@ -71,39 +71,7 @@
       "cantidad": 2,
       "categoria": "Calzado",
       "diferencia": 0
-    },
-    {
-      "id": "89024a4c-4b37-4c8f-b212-b982659ba8db",
-      "nombre": "Producto 2",
-      "precio": 19,
-      "cantidad": 6,
-      "categoria": "Ropa Interior",
-      "diferencia": 0
-    },
-    {
-      "id": "45e9602f-8f16-4764-8f12-b1ca6e29e2c2",
-      "nombre": "Producto prueba 333",
-      "precio": 12,
-      "cantidad": 12,
-      "categoria": "Nuevita",
-      "diferencia": 0
-    },
-    {
-      "id": "9a8fca79-0b74-4ce9-9aa2-36fb338fd7a0",
-      "nombre": "hola",
-      "precio": 22,
-      "cantidad": 2,
-      "categoria": "",
-      "diferencia": 0
-    },
-    {
-      "id": "44d35f50-c002-426f-8208-1702d18b0852",
-      "nombre": "probamos",
-      "precio": 2,
-      "cantidad": 2,
-      "categoria": "Nuevita",
-      "diferencia": 0
-    }
+    }    
   ],
   "usuarios": [
     {
