@@ -87,6 +87,22 @@
       "cantidad": 12,
       "categoria": "Nuevita",
       "diferencia": 0
+    },
+    {
+      "id": "9a8fca79-0b74-4ce9-9aa2-36fb338fd7a0",
+      "nombre": "hola",
+      "precio": 22,
+      "cantidad": 2,
+      "categoria": "",
+      "diferencia": 0
+    },
+    {
+      "id": "44d35f50-c002-426f-8208-1702d18b0852",
+      "nombre": "probamos",
+      "precio": 2,
+      "cantidad": 2,
+      "categoria": "Nuevita",
+      "diferencia": 0
     }
   ],
   "usuarios": [
