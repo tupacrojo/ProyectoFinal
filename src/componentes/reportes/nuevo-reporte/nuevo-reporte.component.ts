@@ -22,6 +22,7 @@ export class NuevoReporteComponent {
     fecha: new Date(),
     productos: new Array<Producto>(),
   };
+  
   constructor(
     private productosService: ProductoService,
     private reporteService: ReporteService
@@ -75,24 +76,32 @@ export class NuevoReporteComponent {
   }
 
   enviarDatos() {
+
     this.reporte.productos = this.productos.filter(
       (producto) => producto.diferencia !== 0
     );
-    this.reporteService.postReportes(this.reporte).subscribe({
-      next: (rep: Reporte) => {
-        this.toastr.success("Reporte creado correctamente","Exito");
-        this.productos.forEach((producto) => {
-          if (producto.id) {
-            producto.diferencia = 0;
-            this.productosService.putProducto(producto).subscribe({
-              next: (prod: Producto) => {
-                this.mostrarLista();
-              },
-            });
-          }
-        });
-      },
-    });
+
+    if(this.reporte.productos.length != 0){
+      this.reporteService.postReportes(this.reporte).subscribe({
+        next: (rep: Reporte) => {
+          this.toastr.success("Reporte creado correctamente","Exito");
+          this.productos.forEach((producto) => {
+            if (producto.id) {
+              producto.diferencia = 0;
+              this.productosService.putProducto(producto).subscribe({
+                next: (prod: Producto) => {
+                  this.mostrarLista();
+                },
+              });
+            }
+          });
+        },
+      });
+      
+    }else{
+      this.toastr.error('No se ha realizado el ajuste de ningun producto',"Error");
+    }
+
   }
 
   campoOrden: keyof Producto | null = null;

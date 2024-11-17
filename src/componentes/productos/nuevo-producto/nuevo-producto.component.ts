@@ -115,14 +115,14 @@ export class NuevoProductoComponent implements OnInit {
   }
   cargarDatoCaregorias(categoria: string) {
 
-    console.log(this.buscarCategoria(categoria));
+    console.log("Hola", categoria);
 
-    if (!this.buscarCategoria(categoria)) {
+    if (!this.buscarCategoria(categoria) && categoria !== '') {
       this.listaCategorias.push(categoria);
       this.habilitarCategoria();
       this.showSuccess('Categoria agregada', 'Se agrego correctamente');
     } else {
-      this.showError('Error', 'La categoria ya existe');
+      this.showError('Error', 'La categoria ya existe o esta vacia');
     }
   }
 
