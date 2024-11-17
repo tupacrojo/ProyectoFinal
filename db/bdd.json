@@ -639,6 +639,60 @@
           "diferencia": 0
         }
       ]
+    },
+    {
+      "id": "96be",
+      "fecha": "17/11/2024",
+      "estado": "En espera de confirmacion",
+      "productos": [
+        {
+          "id": "19",
+          "nombre": "Chaleco Acolchado",
+          "precio": 70,
+          "categoria": "Abrigos",
+          "cantidad": 1,
+          "diferencia": 0
+        },
+        {
+          "id": "17",
+          "nombre": "Pijama de Algodón",
+          "precio": 35,
+          "cantidad": 1,
+          "categoria": "Ropa Interior",
+          "diferencia": 0
+        },
+        {
+          "id": "16",
+          "nombre": "Bufanda de Lana",
+          "precio": 1513,
+          "cantidad": 1,
+          "categoria": "Accesorios",
+          "diferencia": 0
+        }
+      ]
+    },
+    {
+      "id": "216e",
+      "fecha": "17/11/2024",
+      "estado": "En espera de confirmacion",
+      "productos": [
+        {
+          "id": "89024a4c-4b37-4c8f-b212-b982659ba8db",
+          "nombre": "Producto 2",
+          "precio": 19,
+          "cantidad": 1,
+          "categoria": "Ropa Interior",
+          "diferencia": 0
+        },
+        {
+          "id": "f89d8c06-2f70-49e3-8d5f-92db1b7746a1",
+          "nombre": "croc",
+          "precio": 200,
+          "cantidad": 1,
+          "categoria": "Calzado",
+          "diferencia": 0
+        }
+      ]
     }
   ],
   "reportes": [
