@@ -68,7 +68,7 @@ export class ModificarProductoComponent implements OnInit {
     this.productosService.getProductoByNombre(prod.nombre).subscribe({
       next: (producto) => {
         console.log(producto);
-        if (producto.length > 0) {
+        if (producto.length > 0 && producto[0].nombre !== prod.nombre) {
           this.toastr.error('Error al actualizar el producto', 'Nombre existente');
         } else {
           this.updateProd(prod);

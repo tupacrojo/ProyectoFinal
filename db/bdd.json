@@ -19,7 +19,7 @@
     {
       "id": "16",
       "nombre": "Bufanda de Lana",
-      "precio": 15,
+      "precio": 1513,
       "cantidad": 57,
       "categoria": "Accesorios",
       "diferencia": 0
@@ -30,14 +30,6 @@
       "cantidad": 52,
       "categoria": "Ropa Interior",
       "id": "17",
-      "diferencia": 0
-    },
-    {
-      "id": "18",
-      "nombre": "Pantalón Cargo",
-      "precio": 40.5,
-      "categoria": "Pantalones",
-      "cantidad": 54,
       "diferencia": 0
     },
     {
@@ -71,14 +63,6 @@
       "cantidad": 2,
       "categoria": "Calzado",
       "diferencia": 0
-    },
-    {
-      "id": "1cc3e7aa-958a-4453-9424-2baa8d80e95e",
-      "nombre": "lkmdlasmnd",
-      "precio": 1313,
-      "cantidad": 132156,
-      "categoria": "qdada",
-      "diferencia": 0
     }
   ],
   "usuarios": [
@@ -91,12 +75,6 @@
     {
       "id": "i9j0k1l2",
       "nombreUsuario": "carlos_ortega",
-      "contrasena": "12345",
-      "tipoUsuario": "vendedor"
-    },
-    {
-      "id": "q7r8s9t0",
-      "nombreUsuario": "ana_martinez",
       "contrasena": "12345",
       "tipoUsuario": "vendedor"
     },
@@ -129,6 +107,12 @@
       "nombreUsuario": "sofi",
       "contrasena": "12345",
       "tipoUsuario": "administrador"
+    },
+    {
+      "id": "5650",
+      "nombreUsuario": "carlos_felipe",
+      "contrasena": "12345",
+      "tipoUsuario": "vendedor"
     }
   ],
   "ventas": [

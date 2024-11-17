@@ -115,8 +115,6 @@ export class NuevoProductoComponent implements OnInit {
   }
   cargarDatoCaregorias(categoria: string) {
 
-    console.log(this.buscarCategoria(categoria));
-
     if (!this.buscarCategoria(categoria)) {
       this.listaCategorias.push(categoria);
       this.habilitarCategoria();
