@@ -65,11 +65,18 @@ export class ModificarProductoComponent implements OnInit {
       return;
     }
     const prod = this.formulario.getRawValue();
-    if (this.productosService.getProductoByNombre(prod.nombre) === null) {
-      this.updateProd(prod);
-    } else {
-      this.toastr.error('Error al actualizar el producto', 'Nombre existente');
-    }
+    this.productosService
+      .getProductoByNombre(prod.nombre)
+      .subscribe((produ) => {
+        if (produ.length === 0) {
+          this.updateProd(prod);
+        } else {
+          this.toastr.error(
+            'Error al actualizar el producto',
+            'Nombre existente'
+          );
+        }
+      });
   }
 
   updateProd(prod: Producto) {
