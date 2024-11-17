@@ -9,11 +9,17 @@ import * as uuid from 'uuid';
 import { AuthService } from '../../../services/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { HeaderTableComponent } from '../../ui/header-table/header-table.component';
 
 @Component({
   selector: 'app-nueva-venta',
   standalone: true,
-  imports: [CommonModule, RouterModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    ReactiveFormsModule,
+    HeaderTableComponent,
+  ],
   templateUrl: './nueva-venta.component.html',
   styleUrl: './nueva-venta.component.css',
 })
@@ -56,7 +62,6 @@ export class NuevaVentaComponent implements OnInit {
         this.listaProductos = prod;
         this.listaFiltradaProductos = prod;
         this.extraerCategorias();
-
       },
       error: (err) => {
         this.toastr.error(err.message, 'Error');
@@ -122,7 +127,7 @@ export class NuevaVentaComponent implements OnInit {
       })
       .filter((producto) => producto.cantidad > 0);
     if (this.venta.productos.length === 0) {
-      this.toastr.error("No hay productos para vender", 'Error');
+      this.toastr.error('No hay productos para vender', 'Error');
       return;
     }
 
@@ -139,23 +144,25 @@ export class NuevaVentaComponent implements OnInit {
                   this.getListaProductos();
                 },
                 error: (err) => {
-                  this.toastr.error("Error al actualizar el stock", 'Error');
+                  this.toastr.error('Error al actualizar el stock', 'Error');
                 },
               });
             },
             error: (err) => {
-              this.toastr.error("Error al obtener el producto", 'Error');
+              this.toastr.error('Error al obtener el producto', 'Error');
             },
           });
         });
-        this.toastr.success("Venta generada correctamente y stock actualizado", 'Exito');
+        this.toastr.success(
+          'Venta generada correctamente y stock actualizado',
+          'Exito'
+        );
       },
       error: (err) => {
         this.toastr.error(err.message, 'Error');
       },
     });
   }
-
 
   extraerCategorias() {
     this.listaCategorias = Array.from(
