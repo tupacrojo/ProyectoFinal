@@ -57,7 +57,6 @@ export class NuevoUsuarioComponent implements OnInit {
         contrasena: '',
         tipoUsuario: '',
       });
-      this.toastr.success('Usuario agregado correctamente', 'Éxito');
     } else {
       this.toastr.error(
         'El nombre de usuario ya existe. Por favor ingrese otro',

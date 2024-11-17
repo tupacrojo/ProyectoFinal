@@ -5,8 +5,8 @@
       "nombre": "Camiseta Básica",
       "precio": 15.99,
       "categoria": "Ropa Casual",
-      "cantidad": 89,
-      "diferencia": -9
+      "cantidad": 96,
+      "diferencia": 0
     },
     {
       "nombre": "Shorts Deportivos",
@@ -20,16 +20,16 @@
       "id": "16",
       "nombre": "Bufanda de Lana",
       "precio": 1513,
-      "cantidad": 57,
+      "cantidad": 60,
       "categoria": "Accesorios",
       "diferencia": 0
     },
     {
+      "id": "17",
       "nombre": "Pijama de Algodón",
       "precio": 35,
       "cantidad": 52,
       "categoria": "Ropa Interior",
-      "id": "17",
       "diferencia": 0
     },
     {
@@ -37,8 +37,8 @@
       "nombre": "Chaleco Acolchado",
       "precio": 70,
       "categoria": "Abrigos",
-      "cantidad": 37,
-      "diferencia": -1
+      "cantidad": 40,
+      "diferencia": 0
     },
     {
       "id": "20",
@@ -52,7 +52,7 @@
       "id": "8bd8c5a3-a82c-43e4-9b34-6d82e777355a",
       "nombre": "Remera nike",
       "precio": 50000,
-      "cantidad": 31,
+      "cantidad": 33,
       "categoria": "Ropa Casual",
       "diferencia": 0
     },
@@ -113,6 +113,12 @@
       "nombreUsuario": "carlos_felipe",
       "contrasena": "12345",
       "tipoUsuario": "vendedor"
+    },
+    {
+      "id": "8737",
+      "nombreUsuario": "asdasd",
+      "contrasena": "assdasda",
+      "tipoUsuario": "administrador"
     }
   ],
   "ventas": [
@@ -334,7 +340,7 @@
     {
       "id": "d14d",
       "fecha": "11/11/2024",
-      "estado": "Aceptado",
+      "estado": "Entregado",
       "productos": [
         {
           "id": "1",
@@ -396,7 +402,7 @@
     {
       "id": "2c0b",
       "fecha": "16/11/2024",
-      "estado": "Aceptado",
+      "estado": "Entregado",
       "productos": [
         {
           "id": "16",
@@ -427,7 +433,7 @@
     {
       "id": "3cc7",
       "fecha": "16/11/2024",
-      "estado": "En espera de confirmacion",
+      "estado": "Rechazado",
       "productos": [
         {
           "id": "16",
@@ -451,6 +457,21 @@
           "precio": 40.5,
           "categoria": "Pantalones",
           "cantidad": 1,
+          "diferencia": 0
+        }
+      ]
+    },
+    {
+      "id": "5ab9",
+      "fecha": "17/11/2024",
+      "estado": "Aceptado",
+      "productos": [
+        {
+          "id": "16",
+          "nombre": "Bufanda de Lana",
+          "precio": 1513,
+          "cantidad": 4,
+          "categoria": "Accesorios",
           "diferencia": 0
         }
       ]
@@ -516,6 +537,43 @@
           "diferencia": 5
         }
       ]
+    },
+    {
+      "id": null,
+      "fecha": "2024-11-17T19:38:43.223Z",
+      "productos": [
+        {
+          "id": "1",
+          "nombre": "Camiseta Básica",
+          "precio": 15.99,
+          "categoria": "Ropa Casual",
+          "cantidad": 96,
+          "diferencia": -9
+        },
+        {
+          "id": "19",
+          "nombre": "Chaleco Acolchado",
+          "precio": 70,
+          "categoria": "Abrigos",
+          "cantidad": 37,
+          "diferencia": -1
+        }
+      ]
+    },
+    {
+      "id": null,
+      "fecha": "2024-11-17T19:38:43.223Z",
+      "productos": []
+    },
+    {
+      "id": null,
+      "fecha": "2024-11-17T19:38:43.223Z",
+      "productos": []
+    },
+    {
+      "id": null,
+      "fecha": "2024-11-17T19:40:26.896Z",
+      "productos": []
     }
   ]
 }
