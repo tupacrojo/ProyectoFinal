@@ -97,6 +97,7 @@ export class NuevoReporteComponent {
           });
         },
       });
+      
     }else{
       this.toastr.error('No se ha realizado el ajuste de ningun producto',"Error");
     }
