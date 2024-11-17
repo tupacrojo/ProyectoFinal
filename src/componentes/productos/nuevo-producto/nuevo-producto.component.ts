@@ -99,7 +99,12 @@ export class NuevoProductoComponent implements OnInit {
   }
 
   buscarCategoria(categoria: string) {
-    return this.listaCategorias.some((cate) => (cate = categoria));
+    return (
+      this.listaCategorias.some((cate) => cate === categoria) ||
+      this.listaCategorias.some(
+        (cate) => cate.toLowerCase() === categoria.toLocaleLowerCase()
+      )
+    );
   }
 
   showSuccess(titulo: string, mensaje: string) {
