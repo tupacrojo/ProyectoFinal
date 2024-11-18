@@ -85,6 +85,7 @@ export class NuevoReporteComponent {
           this.toastr.success('Reporte creado correctamente', 'Exito');
           this.productos.forEach((producto) => {
             if (producto.id) {
+              producto.cantidad += producto.diferencia;
               producto.diferencia = 0;
               this.productosService.putProducto(producto).subscribe({
                 next: (prod: Producto) => {

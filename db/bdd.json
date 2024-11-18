@@ -60,7 +60,7 @@
       "id": "f89d8c06-2f70-49e3-8d5f-92db1b7746a1",
       "nombre": "croc",
       "precio": 200,
-      "cantidad": 2,
+      "cantidad": 12,
       "categoria": "Calzado",
       "diferencia": 0
     },
@@ -777,6 +777,48 @@
           "cantidad": 12,
           "categoria": "Nuevita",
           "diferencia": -4
+        }
+      ]
+    },
+    {
+      "id": "f83084de-2c2d-44b6-a445-74353b7b65c7",
+      "fecha": "2024-11-18T04:24:23.615Z",
+      "productos": [
+        {
+          "id": "f89d8c06-2f70-49e3-8d5f-92db1b7746a1",
+          "nombre": "croc",
+          "precio": 200,
+          "cantidad": 2,
+          "categoria": "Calzado",
+          "diferencia": 11
+        }
+      ]
+    },
+    {
+      "id": "11be7e22-677b-47bc-a1d4-a579f8f10ab8",
+      "fecha": "2024-11-18T04:25:05.161Z",
+      "productos": [
+        {
+          "id": "f89d8c06-2f70-49e3-8d5f-92db1b7746a1",
+          "nombre": "croc",
+          "precio": 200,
+          "cantidad": 2,
+          "categoria": "Calzado",
+          "diferencia": 11
+        }
+      ]
+    },
+    {
+      "id": "735d0840-2edb-4f60-8272-4101e0d8c047",
+      "fecha": "2024-11-18T04:26:51.630Z",
+      "productos": [
+        {
+          "id": "f89d8c06-2f70-49e3-8d5f-92db1b7746a1",
+          "nombre": "croc",
+          "precio": 200,
+          "cantidad": 2,
+          "categoria": "Calzado",
+          "diferencia": 10
         }
       ]
     }
