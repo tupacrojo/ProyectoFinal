@@ -26,6 +26,7 @@ export class NuevoProductoComponent implements OnInit {
 
   ngOnInit(): void {
     this.getLista();
+    this.habilitarCategoria();
   }
 
   formulario = this.fb.nonNullable.group({
