@@ -6,11 +6,12 @@ import { Reporte } from '../../../interfaces/Reporte.interface';
 import { ReporteService } from '../../../services/reporte.service';
 import { RouterModule } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import * as uuid from 'uuid';
 
 @Component({
   selector: 'app-nuevo-reporte',
   standalone: true,
-  imports: [CommonModule, RouterModule,DatePipe],
+  imports: [CommonModule, RouterModule, DatePipe],
   templateUrl: './nuevo-reporte.component.html',
   styleUrl: './nuevo-reporte.component.css',
 })
@@ -18,11 +19,11 @@ export class NuevoReporteComponent {
   dia = new Date();
   productos: Producto[] = [];
   reporte: Reporte = {
-    id: null,
+    id: uuid.v4(),
     fecha: new Date(),
     productos: new Array<Producto>(),
   };
-  
+
   constructor(
     private productosService: ProductoService,
     private reporteService: ReporteService
@@ -48,8 +49,7 @@ export class NuevoReporteComponent {
 
   listaReporte() {
     this.reporteService.getListaReportes().subscribe({
-      next: (rep) => {
-      },
+      next: (rep) => {},
     });
   }
 
@@ -75,15 +75,14 @@ export class NuevoReporteComponent {
   }
 
   enviarDatos() {
-
     this.reporte.productos = this.productos.filter(
       (producto) => producto.diferencia !== 0
     );
 
-    if(this.reporte.productos.length != 0){
+    if (this.reporte.productos.length != 0) {
       this.reporteService.postReportes(this.reporte).subscribe({
         next: (rep: Reporte) => {
-          this.toastr.success("Reporte creado correctamente","Exito");
+          this.toastr.success('Reporte creado correctamente', 'Exito');
           this.productos.forEach((producto) => {
             if (producto.id) {
               producto.diferencia = 0;
@@ -96,11 +95,12 @@ export class NuevoReporteComponent {
           });
         },
       });
-      
-    }else{
-      this.toastr.error('No se ha realizado el ajuste de ningun producto',"Error");
+    } else {
+      this.toastr.error(
+        'No se ha realizado el ajuste de ningun producto',
+        'Error'
+      );
     }
-
   }
 
   campoOrden: keyof Producto | null = null;

@@ -717,7 +717,68 @@
           "diferencia": 3
         }
       ]
+    },
+    {
+      "id": "a90dbc0c-0a54-4b52-a50b-70d171c28796",
+      "fecha": "2024-11-18T04:22:15.558Z",
+      "productos": [
+        {
+          "id": "16",
+          "nombre": "Bufanda de Lana",
+          "precio": 1513,
+          "cantidad": 67,
+          "categoria": "Accesorios",
+          "diferencia": 3
+        },
+        {
+          "id": "17",
+          "nombre": "Pijama de Algodón",
+          "precio": 35,
+          "cantidad": 56,
+          "categoria": "Ropa Interior",
+          "diferencia": -4
+        },
+        {
+          "id": "20",
+          "nombre": "Botas de Montaña",
+          "precio": 95.99,
+          "categoria": "Calzado",
+          "cantidad": 12,
+          "diferencia": -7
+        },
+        {
+          "id": "8bd8c5a3-a82c-43e4-9b34-6d82e777355a",
+          "nombre": "Remera nike",
+          "precio": 50000,
+          "cantidad": 38,
+          "categoria": "Ropa Casual",
+          "diferencia": -1
+        },
+        {
+          "id": "f89d8c06-2f70-49e3-8d5f-92db1b7746a1",
+          "nombre": "croc",
+          "precio": 200,
+          "cantidad": 2,
+          "categoria": "Calzado",
+          "diferencia": 18
+        },
+        {
+          "id": "89024a4c-4b37-4c8f-b212-b982659ba8db",
+          "nombre": "Producto 2",
+          "precio": 19,
+          "cantidad": 6,
+          "categoria": "Ropa Interior",
+          "diferencia": 5
+        },
+        {
+          "id": "45e9602f-8f16-4764-8f12-b1ca6e29e2c2",
+          "nombre": "Producto 3",
+          "precio": 12,
+          "cantidad": 12,
+          "categoria": "Nuevita",
+          "diferencia": -4
+        }
+      ]
     }
-
   ]
 }
