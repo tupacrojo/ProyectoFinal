@@ -19,7 +19,7 @@
     {
       "id": "16",
       "nombre": "Bufanda de Lana",
-      "precio": 1513,
+      "precio": 13,
       "cantidad": 67,
       "categoria": "Accesorios",
       "diferencia": 0
@@ -49,35 +49,12 @@
       "diferencia": 0
     },
     {
-      "id": "8bd8c5a3-a82c-43e4-9b34-6d82e777355a",
-      "nombre": "Remera nike",
-      "precio": 50000,
-      "cantidad": 38,
-      "categoria": "Ropa Casual",
-      "diferencia": 0
-    },
-    {
-      "id": "f89d8c06-2f70-49e3-8d5f-92db1b7746a1",
-      "nombre": "croc",
-      "precio": 200,
-      "cantidad": 2,
-      "categoria": "Calzado",
-      "diferencia": 0
-    },
-    {
-      "id": "89024a4c-4b37-4c8f-b212-b982659ba8db",
-      "nombre": "Producto 2",
-      "precio": 19,
-      "cantidad": 6,
-      "categoria": "Ropa Interior",
-      "diferencia": 0
-    },
-    {
-      "id": "45e9602f-8f16-4764-8f12-b1ca6e29e2c2",
-      "nombre": "Producto 3",
-      "precio": 12,
-      "cantidad": 12,
-      "categoria": "Nuevita",
+      "id": "4a7671c6-a7fb-4562-9f1e-d18b3aa9604d",
+      "nombre": "Remera Nike",
+      "precio": 15,
+      "cantidad": 7,
+      "categoria": "Ropa Deportiva",
+      "nuevaCategoria": "",
       "diferencia": 0
     }
   ],
@@ -718,6 +695,5 @@
         }
       ]
     }
-
   ]
 }
