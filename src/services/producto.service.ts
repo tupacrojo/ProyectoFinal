@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ProductoService {
-  urlApi: string = 'http://localhost:3000/productos';
+  urlApi: string =
+    'https://my-json-server.typicode.com/tupacrojo/ProyectoFinal/productos';
 
   constructor(private http: HttpClient) {}
 

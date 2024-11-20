@@ -7,7 +7,8 @@ import { Usuario } from '../interfaces/Usuario.interface';
   providedIn: 'root',
 })
 export class UsuarioService {
-  url: string = 'http://localhost:3000/usuarios';
+  url: string =
+    'https://my-json-server.typicode.com/tupacrojo/ProyectoFinal/usuarios';
 
   constructor(private http: HttpClient) {}
 

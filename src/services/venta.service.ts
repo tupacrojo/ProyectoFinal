@@ -9,7 +9,8 @@ import { Venta } from '../interfaces/Venta.interface';
 export class VentaService {
   constructor(private http: HttpClient) {}
 
-  url: string = 'http://localhost:3000/ventas';
+  url: string =
+    'https://my-json-server.typicode.com/tupacrojo/ProyectoFinal/ventas';
 
   getListaVentas(): Observable<Venta[]> {
     return this.http.get<Venta[]>(this.url);

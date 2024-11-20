@@ -9,7 +9,8 @@ import { Pedido } from '../interfaces/Pedido.interface';
 export class PedidoService {
   constructor(private http: HttpClient) {}
 
-  url: string = 'http://localhost:3000/pedidos';
+  url: string =
+    'https://my-json-server.typicode.com/tupacrojo/ProyectoFinal/pedidos';
 
   getListaPedidos(): Observable<Pedido[]> {
     return this.http.get<Pedido[]>(this.url);
@@ -28,16 +29,24 @@ export class PedidoService {
   }
 
   getPedidosEnEspera(): Observable<Pedido[]> {
-    return this.http.get<Pedido[]>(`${this.url}?estado=En espera de confirmacion`);
+    return this.http.get<Pedido[]>(
+      `${this.url}?estado=En espera de confirmacion`
+    );
   }
   getPedidosAceptados(): Observable<Pedido[]> {
     return this.http.get<Pedido[]>(`${this.url}?estado=Aceptado`);
   }
 
-  actualizarCantidadProducto(pedidoId: number, productoId: number, nuevaCantidad: number): Observable<any> {
-    return this.http.patch(`${this.url}/pedidos/${pedidoId}/productos/${productoId}`, {
-      cantidad: nuevaCantidad
-    });
+  actualizarCantidadProducto(
+    pedidoId: number,
+    productoId: number,
+    nuevaCantidad: number
+  ): Observable<any> {
+    return this.http.patch(
+      `${this.url}/pedidos/${pedidoId}/productos/${productoId}`,
+      {
+        cantidad: nuevaCantidad,
+      }
+    );
   }
-
 }
