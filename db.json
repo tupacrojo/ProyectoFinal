@@ -9,11 +9,11 @@
       "diferencia": 0
     },
     {
+      "id": "15",
       "nombre": "Shorts Deportivos",
       "precio": 18.99,
       "cantidad": 109,
       "categoria": "Ropa Deportiva",
-      "id": "15",
       "diferencia": 0
     },
     {
@@ -100,11 +100,11 @@
       "total": 50322.49,
       "productos": [
         {
+          "id": "17",
           "nombre": "Pijama de Algodón",
           "precio": 35,
           "cantidad": 3,
           "categoria": "Ropa Interior",
-          "id": "17",
           "diferencia": 0
         },
         {
