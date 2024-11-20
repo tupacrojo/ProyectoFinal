@@ -5,9 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "gh-build": "ng build --configuration github --base-href /ProyectoFinal/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "backend": "json-server ./db/bdd.json --watch"
+    "backend": "json-server ./db.json --watch"
   },
   "private": true,
   "dependencies": {
