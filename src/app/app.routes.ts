@@ -19,6 +19,7 @@ import { CargarRemitoPageComponent } from '../pages/cargar-remito-page/cargar-re
 
 import { AuthGuard } from '../guard/auth.guard';
 import { ROLES } from '../enum/roles';
+import { PageNotFoundComponent } from '../pages/page-not-found/page-not-found.component';
 
 export const routes: Routes = [
   {
@@ -123,6 +124,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '',
+    component: PageNotFoundComponent,
   },
 ];
