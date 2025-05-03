@@ -26,7 +26,7 @@ export class AuthGuard implements CanActivate {
         return true;
       }
     }
-    window.location.href = '/login';
+    window.location.href = '/';
     return false;
   }
 }
